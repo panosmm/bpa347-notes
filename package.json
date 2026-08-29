@@ -1,0 +1,14 @@
+{
+  "name": "bpa347-notes",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "markdown-it": "^15.0.1",
+    "markdown-it-github-alerts": "^1.0.1"
+  }
+}

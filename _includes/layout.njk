@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} · BPA347</title>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/">BPA347 · Digital Businesses and AI</a>
+  {% if week %}<nav>
+    <span class="week">{{ week | replace("week-", "Week ") }}</span>
+    <a href="/{{ week }}/mon/">Mon</a>
+    <a href="/{{ week }}/thu/">Thu</a>
+    <a href="/{{ week }}/homework/">Homework</a>
+  </nav>{% endif %}
+</header>
+<main>
+{{ content | safe }}
+</main>
+<footer>University of Cyprus · Fall 2026 · notes are markdown files — download the folder and ask your agent about them</footer>
+</body>
+</html>

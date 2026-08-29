@@ -1,0 +1,20 @@
+---
+layout: layout.njk
+title: Course notes
+permalink: /index.html
+---
+<h1>BPA347 · Digital Businesses and AI — course notes</h1>
+<p>One folder per week, one file per session. Read them here, or download the folder and point an agent at it.</p>
+<table>
+<thead><tr><th>Week</th><th>Monday</th><th>Thursday</th><th>Homework</th></tr></thead>
+<tbody>
+{% for w in collections.weeks %}
+<tr>
+  <td>{{ w.week | replace("week-", "") }}</td>
+  {% for slug in ["mon", "thu", "homework"] %}
+  <td>{% for p in w.pages %}{% if p.fileSlug == slug %}<a href="{{ p.url }}">{{ p.data.title | replace(r/^Week \d+ · \w+ — /, "") }}</a>{% endif %}{% endfor %}</td>
+  {% endfor %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
