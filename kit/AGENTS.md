@@ -22,7 +22,10 @@
 
 ## Materials
 
-- The data file: TODO name.csv, about 50 MB. TODO: one line on what it contains.
+- The data file: `online_retail.csv`, 47 MB, 541,909 rows. Every transaction of a UK online gift retailer from 1 December 2010 to 9 December 2011.
+- Columns: InvoiceNo, StockCode, Description, Quantity, InvoiceDate, UnitPrice (GBP), CustomerID, Country.
+- Known issues: invoice numbers starting with C are cancellations and have negative quantities; a quarter of the rows have no customer ID; some unit prices are zero; dates are day/month/year.
+- Source: Chen, D. (2015). Online Retail. UCI Machine Learning Repository. Licence CC BY 4.0.
 
 ## Done means
 

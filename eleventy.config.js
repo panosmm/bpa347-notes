@@ -48,7 +48,7 @@ export default function (eleventyConfig) {
     const kit = new AdmZip();
     kit.addLocalFolder("kit", "", keep);
     kit.writeZip(`${dir.output}/kit.zip`);
-    cpSync("kit", `${dir.output}/kit`, { recursive: true, filter: keep });
+    cpSync("kit", `${dir.output}/kit`, { recursive: true, filter: (p) => keep(p) && !p.endsWith(".csv") }); // the data file ships in the zip only
   });
 
   return {

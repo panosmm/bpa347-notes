@@ -36,7 +36,7 @@ Install the tools, then use an agent on a data file that is too big for a chat w
 
 ## 3. A chat window and a large file
 
-- The data file in the kit is a CSV of about 50 MB. TODO: one line on what the data is.
+- The data file in the kit, `online_retail.csv`: every transaction of a UK online gift retailer for one year, 541,909 rows, 47 MB. Source: [Online Retail, UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/352/online+retail), licence CC BY 4.0.
 - Task: upload it to the chat website (claude.ai or chatgpt.com) and ask a simple question about it.
 - Expected result: it refuses, or uses only part of the file, or answers about data it never read.
 - Reason: a chat window can only work with text that fits inside its window. The rest of the file does not exist for it.
@@ -48,7 +48,7 @@ Install the tools, then use an agent on a data file that is too big for a chat w
 - That is the difference: an agent has tools (read a file, write a file, run a program) and repeats until the job is done.
 
 > [!IMPORTANT]
-> **KEY POINT:** The agent did not "read" the 50 MB file; it wrote a program that did. An agent's advantage over a chatbot is tools and a loop, not a bigger memory.
+> **KEY POINT:** The agent did not "read" the 47 MB file; it wrote a program that did. An agent's advantage over a chatbot is tools and a loop, not a bigger memory.
 
 ## 5. The permission prompt
 
@@ -69,7 +69,7 @@ Install the tools, then use an agent on a data file that is too big for a chat w
 > **PLEASE NOTE:** A page opened from your disk cannot open other files on your disk by itself. If your dashboard opens blank, that is why. Tell the agent: *"it opens blank; I need to drag the CSV into the page instead."*
 
 > [!CAUTION]
-> **Cost.** Claude Code: stay on Sonnet, the Pro default; Opus and Fable use up your weekly limit faster and this task does not need them. `/usage` shows how much of your week is used. Codex: keep the default model. Both: the 50 MB file costs almost nothing, the agent reads its first lines and writes a program for the rest.
+> **Cost.** Claude Code: stay on Sonnet, the Pro default; Opus and Fable use up your weekly limit faster and this task does not need them. `/usage` shows how much of your week is used. Codex: keep the default model. Both: the 47 MB file costs almost nothing, the agent reads its first lines and writes a program for the rest.
 
 ## In class
 
