@@ -36,7 +36,7 @@ Install the tools, then use an agent on a data file that is too big for a chat w
 
 ## 3. A chat window and a large file
 
-- The data file in the kit, `online_retail.csv`: every transaction of a UK online gift retailer for one year, 541,909 rows, 47 MB. Source: [Online Retail, UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/352/online+retail), licence CC BY 4.0.
+- The data file in the kit, `online_retail.csv`: every transaction of a UK online gift retailer from December 2024 to December 2025, 541,909 rows, 47 MB. The dates were moved forward 14 years from the original data. Source: [Online Retail, UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/352/online+retail), licence CC BY 4.0.
 - Task: upload it to the chat website (claude.ai or chatgpt.com) and ask a simple question about it.
 - Expected result: it refuses, or uses only part of the file, or answers about data it never read.
 - Reason: a chat window can only work with text that fits inside its window. The rest of the file does not exist for it.
