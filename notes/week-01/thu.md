@@ -92,7 +92,7 @@ Install the tools, then use an agent on a data file that is too big for a chat w
 5. A browser tab opens. Log in with the account that has Pro. Return to the terminal. If it asks whether you trust the files in this folder, answer yes.
 6. Fetch the course kit. Read the permission prompt, then approve it.
    ```prompt
-   Download https://bpa347-notes.vercel.app/kit.zip into this folder with curl and unpack it here.
+   Download https://bpa347-notes.vercel.app/kit.zip into this folder and unpack it here.
    ```
 7. In the browser, open claude.ai (or chatgpt.com), upload the CSV from the `bpa347` folder and ask a question about it. Note what happens. Back to the terminal.
 8. Restart the agent so it reads the kit: type `/exit`, then start it again as in step 4.
@@ -125,7 +125,7 @@ Install the tools, then use an agent on a data file that is too big for a chat w
 4. A browser tab opens. Log in with the account that has Pro. Return to the terminal. If it asks whether you trust the files in this folder, answer yes.
 5. Fetch the course kit. Read the permission prompt, then approve it.
    ```prompt
-   Download https://bpa347-notes.vercel.app/kit.zip into this folder with curl and unpack it here.
+   Download https://bpa347-notes.vercel.app/kit.zip into this folder and unpack it here.
    ```
 6. In the browser, open claude.ai (or chatgpt.com), upload the CSV from the `bpa347` folder and ask a question about it. Note what happens. Back to the terminal.
 7. Restart the agent so it reads the kit: type `/exit`, then start it again as in step 3.
