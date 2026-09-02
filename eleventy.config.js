@@ -1,7 +1,7 @@
 import markdownIt from "markdown-it";
 import MarkdownItGitHubAlerts from "markdown-it-github-alerts";
 import AdmZip from "adm-zip";
-import { mkdirSync } from "node:fs";
+import { mkdirSync, cpSync } from "node:fs";
 
 export default function (eleventyConfig) {
   // html:false — raw HTML in notes is rendered as text, which is the point.
@@ -13,6 +13,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("notes/**/*.md"); // raw markdown stays reachable at /notes/week-NN/*.md
   eleventyConfig.ignores.add("README.md");
   eleventyConfig.ignores.add("NOTES-STYLE.md");
+  eleventyConfig.ignores.add("kit/**"); // kit files are copied as-is below, never rendered as pages
 
   const order = { mon: 0, thu: 1, homework: 2 };
   eleventyConfig.addCollection("weeks", (api) => {
@@ -30,12 +31,24 @@ export default function (eleventyConfig) {
       }));
   });
 
-  // After every build, zip notes/ into _site/notes.zip so the site can offer the folder for download.
+  const keep = (p) => !p.endsWith(".11tydata.js") && !p.endsWith(".DS_Store");
+
+  // After every build:
+  //  - zip notes/ into _site/notes.zip so the site can offer the folder for download;
+  //  - zip kit/ into _site/kit.zip, files at the root of the archive, so "unpack it here"
+  //    puts them straight into the student's working folder; also copy kit/ to _site/kit/
+  //    so each file is readable in the browser.
   eleventyConfig.on("eleventy.after", ({ dir }) => {
-    const zip = new AdmZip();
-    zip.addLocalFolder("notes", "notes", (p) => !p.endsWith(".11tydata.js"));
     mkdirSync(dir.output, { recursive: true });
-    zip.writeZip(`${dir.output}/notes.zip`);
+
+    const notes = new AdmZip();
+    notes.addLocalFolder("notes", "notes", keep);
+    notes.writeZip(`${dir.output}/notes.zip`);
+
+    const kit = new AdmZip();
+    kit.addLocalFolder("kit", "", keep);
+    kit.writeZip(`${dir.output}/kit.zip`);
+    cpSync("kit", `${dir.output}/kit`, { recursive: true, filter: keep });
   });
 
   return {

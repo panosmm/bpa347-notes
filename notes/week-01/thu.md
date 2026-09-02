@@ -6,12 +6,12 @@ Install the tools, then use an agent on a data file that is too big for a chat w
 
 - Claude Pro active on your account (or ChatGPT Plus, if you are using Codex)
 - Windows only: the Git for Windows installer downloaded, not yet run (link in the homework)
-- The dataset zip downloaded and unzipped to your Desktop
 - Laptop charged
 
 ## Big picture
 
 - Installing the tools
+- The course kit
 - A chat window and a large file
 - What an agent does differently
 - The permission prompt
@@ -26,14 +26,22 @@ Install the tools, then use an agent on a data file that is too big for a chat w
 > [!WARNING]
 > **PLEASE NOTE:** Windows: there are two versions of PowerShell. Use the one called "PowerShell", not "PowerShell (x86)". The x86 version fails without a clear error.
 
-## 2. A chat window and a large file
+## 2. The course kit
 
-- The dataset is a CSV file of about 50 MB. TODO: one line on what the data is.
+- A small zip file on the course website: the data file and two text files for the agent.
+- You do not download it. The agent does, into your working folder, from one pasted line. Exact steps under In class below.
+- `AGENTS.md`: a briefing the agent reads every time it starts in this folder. What it says is Monday's topic.
+- Claude Code: `CLAUDE.md` is one line that points to `AGENTS.md`, and `.claude/settings.json` holds rules the agent cannot break in this folder, for example no installing and no deleting. Codex: reads `AGENTS.md` directly and has its own rules; it ignores the settings file.
+- The agent reads the briefing and the rules when it starts, so after the download you restart it.
+
+## 3. A chat window and a large file
+
+- The data file in the kit is a CSV of about 50 MB. TODO: one line on what the data is.
 - Task: upload it to the chat website (claude.ai or chatgpt.com) and ask a simple question about it.
 - Expected result: it refuses, or uses only part of the file, or answers about data it never read.
 - Reason: a chat window can only work with text that fits inside its window. The rest of the file does not exist for it.
 
-## 3. What an agent does differently
+## 4. What an agent does differently
 
 - Same model, in a terminal, started inside the folder that holds the file.
 - It does not read the whole file either. It looks at the first lines, writes a small program that does the work, runs it, checks the result, and gives you a file.
@@ -42,7 +50,7 @@ Install the tools, then use an agent on a data file that is too big for a chat w
 > [!IMPORTANT]
 > **KEY POINT:** The agent did not "read" the 50 MB file; it wrote a program that did. An agent's advantage over a chatbot is tools and a loop, not a bigger memory.
 
-## 4. The permission prompt
+## 5. The permission prompt
 
 - Before the agent runs a command or changes a file, it stops and asks you.
 - Read what it wants to do. Approve what you understand. Ask it to explain what you do not.
@@ -51,7 +59,7 @@ Install the tools, then use an agent on a data file that is too big for a chat w
 > [!TIP]
 > **Try it.** When the first permission prompt appears, before answering, type: *"Explain what this command does and why you need it."* Then decide.
 
-## 5. Your first task: a dashboard
+## 6. Your first task: a dashboard
 
 - Ask for an interactive dashboard as a single HTML file that opens in a browser and takes the CSV by drag-and-drop.
 - Why this form: the browser is the only program on your laptop that can run code, and a single HTML file needs nothing installed.
@@ -76,22 +84,28 @@ Install the tools, then use an agent on a data file that is too big for a chat w
    ```bash
    irm https://chatgpt.com/codex/install.ps1 | iex
    ```
-3. Open the folder where you unzipped the dataset. Right-click on empty space and choose **Open in Terminal**.
+3. Make a folder on the Desktop named `bpa347` and open it. Right-click on empty space and choose **Open in Terminal**.
 4. Start the agent (Codex users: type `codex` instead):
    ```bash
    claude
    ```
-5. A browser tab opens. Log in with the account that has Pro. Return to the terminal.
-6. Claude Code: check the model. It should say Sonnet; if not, set it. Codex: skip this step.
+5. A browser tab opens. Log in with the account that has Pro. Return to the terminal. If it asks whether you trust the files in this folder, answer yes.
+6. Fetch the course kit. Read the permission prompt, then approve it.
+   ```prompt
+   Download https://bpa347-notes.vercel.app/kit.zip into this folder with curl and unpack it here.
+   ```
+7. In the browser, open claude.ai (or chatgpt.com), upload the CSV from the `bpa347` folder and ask a question about it. Note what happens. Back to the terminal.
+8. Restart the agent so it reads the kit: type `/exit`, then start it again as in step 4.
+9. Claude Code: check the model. It should say Sonnet; if not, set it. Codex: skip this step.
    ```prompt
    /model sonnet
    ```
-7. Ask for the dashboard:
-   ```prompt
-   Look at the CSV file in this folder. Build me an interactive dashboard as a single HTML file that I can open in my browser and drag the CSV into. No installs.
-   ```
-8. Answer the permission prompts. Read each one first.
-9. Double-click the HTML file it made. Drag the CSV onto it. Ask the agent for one change.
+10. Ask for the dashboard:
+    ```prompt
+    Look at the CSV file in this folder. Build me an interactive dashboard as a single HTML file that I can open in my browser and drag the CSV into. No installs.
+    ```
+11. Answer the permission prompts. Read each one first.
+12. Double-click the HTML file it made. Drag the CSV onto it. Ask the agent for one change.
 
 ### Mac
 
@@ -103,27 +117,36 @@ Install the tools, then use an agent on a data file that is too big for a chat w
    ```bash
    curl -fsSL https://chatgpt.com/codex/install.sh | sh
    ```
-2. In Finder, right-click the folder where you unzipped the dataset and choose **New Terminal at Folder** (at the bottom of the menu, or inside **Services**). If it is not there: open Terminal, type `cd ` (with a space), drag the folder from Finder into the Terminal window, press Enter.
+2. In Finder, make a folder on the Desktop named `bpa347`. Right-click it and choose **New Terminal at Folder** (at the bottom of the menu, or inside **Services**). If it is not there: open Terminal, type `cd ` (with a space), drag the folder from Finder into the Terminal window, press Enter.
 3. Start the agent (Codex users: type `codex` instead):
    ```bash
    claude
    ```
-4. A browser tab opens. Log in with the account that has Pro. Return to the terminal.
-5. Claude Code: check the model. It should say Sonnet; if not, set it. Codex: skip this step.
+4. A browser tab opens. Log in with the account that has Pro. Return to the terminal. If it asks whether you trust the files in this folder, answer yes.
+5. Fetch the course kit. Read the permission prompt, then approve it.
+   ```prompt
+   Download https://bpa347-notes.vercel.app/kit.zip into this folder with curl and unpack it here.
+   ```
+6. In the browser, open claude.ai (or chatgpt.com), upload the CSV from the `bpa347` folder and ask a question about it. Note what happens. Back to the terminal.
+7. Restart the agent so it reads the kit: type `/exit`, then start it again as in step 3.
+8. Claude Code: check the model. It should say Sonnet; if not, set it. Codex: skip this step.
    ```prompt
    /model sonnet
    ```
-6. Ask for the dashboard:
+9. Ask for the dashboard:
    ```prompt
    Look at the CSV file in this folder. Build me an interactive dashboard as a single HTML file that I can open in my browser and drag the CSV into. No installs.
    ```
-7. Answer the permission prompts. Read each one first.
-8. Double-click the HTML file it made. Drag the CSV onto it. Ask the agent for one change.
+10. Answer the permission prompts. Read each one first.
+11. Double-click the HTML file it made. Drag the CSV onto it. Ask the agent for one change.
 
 ## Terms
 
 - **Working folder**: the folder the agent was started in. It sees the files there and nowhere else without asking.
 - **Terminal**: on Windows, the window from "Open in Terminal"; on a Mac, the Terminal app.
+- **Course kit**: the zip on the course website with the data file and the agent's briefing. The agent downloads it into the working folder.
+- **Briefing**: a text file, `AGENTS.md`, that the agent reads every time it starts in the folder. Instructions that hold for every conversation.
+- **Settings file**: Claude Code only. `.claude/settings.json`, rules enforced before the agent acts; unlike the briefing, the agent cannot argue with it.
 - **Permission prompt**: the agent's request for your approval before it runs a command or changes a file.
 - **Tool**: something an agent can do besides write text: read a file, write a file, run a program.
 - **Git for Windows**: Windows only. Software Claude Code needs to run commands. Installed once, never opened.

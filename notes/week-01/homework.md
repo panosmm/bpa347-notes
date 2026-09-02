@@ -5,9 +5,8 @@
 1. Create an account at claude.ai with an email address you will still have in December.
 2. Subscribe to **Claude Pro**, monthly billing. Not annual, not Max. If you already pay for ChatGPT Plus, keep it and install Codex instead (see Monday's notes).
 3. Windows only: download the [Git for Windows installer](https://git-scm.com/downloads/win). Do not run it yet. Mac: nothing to download.
-4. Read Thursday's notes. Do not install anything before class; we do it together.
-5. Download the dataset zip and unzip it to your Desktop. TODO: link.
-6. Open the typing app from class on your phone and write down the next two changes you would ask for. TODO: URL.
+4. Read Thursday's notes. Do not install anything before class; we do it together. The data file arrives in class, through the agent.
+5. Open the typing app from class on your phone and write down the next two changes you would ask for. TODO: URL.
 
 ## Before Monday 14 September
 
