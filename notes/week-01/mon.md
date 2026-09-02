@@ -1,84 +1,69 @@
-# Week 1 · Monday — What this course is
+# Week 1 · Monday: What this course is
 
-By the end of this session you will have watched a working web app get built from nothing, in front of you, in under an hour — and you'll have its address on your phone. You won't be able to do it yourself yet. By Thursday you will have started.
+What the course covers, what you must buy and install before Thursday. Grading and rules are in the syllabus on Blackboard.
 
 ## Big picture
 
-- What the course is, and what it isn't
-- The promises, in both directions
-- The textbook is a subscription
-- AI that builds, not AI that answers
-- The stack, and why there is only one
-- Homework that decides whether Thursday works
+- What the course covers
+- What you must buy
+- What an agent is: first look
+- The tools we use
 
-## 1. What the course is, and what it isn't
+## 1. What the course covers
 
-BPA347 used to be the information-systems course. It is now *Digital Businesses and AI*, and it has two halves. Weeks 1 to 7 are hands-on: you learn to use AI the way a business analyst or a management trainee will be expected to use it in 2027 — not by chatting, but by delegating work to an agent, checking what comes back, and signing your name to it. Weeks 8 to 13 keep the parts of the classic course that still matter: how digital businesses are structured, why IT projects fail, what a platform is, when technology is a competitive advantage and when it isn't.
+- Lectures are in Greek. These notes, the tools, and everything the tools say to you are in English.
+- Goal: prepare you to work as an AI-native business analyst.
+- Part 1, weeks 1–7: the AI toolkit, hands-on: delegate work to an agent, check the result, take responsibility for it.
+- Part 2, weeks 8–13: the role of the business analyst in a digital enterprise.
+- Not a programming course. Not a course on prompting a chatbot.
+- Sessions: Monday and Thursday, 90 minutes each. Bring your laptop, charged, to every session.
 
-The competency you leave with, in one sentence: *given a messy business problem, produce an AI-assisted analysis you're willing to sign, and a working prototype you can defend.*
+## 2. What you must buy
 
-What the course is not. It is not a programming course — you will not learn to write code, although you will watch a lot of it get written. It is not a "how to prompt ChatGPT" course; most of you can already do that, and it is where the course starts, not where it ends. And it is not a survey of AI products. You will use one set of tools, deeply, and understand why they work.
-
-## 2. The promises, in both directions
-
-From the instructor. Every session ends with you able to do something you could not do at ten o'clock — a file on your disk, a command you can run, a question you can now answer. Exams test what is in your head, not what your AI can produce; they are written on paper, without a laptop, and they are worth 75% of the grade for exactly that reason. Help is available in class and in office hours, and the tools are chosen so that help is possible: everyone uses the same ones.
-
-From you. You will type into a black window with no buttons — a terminal — and for the first two weeks you will not fully understand what you are typing. You will pay for the tool (next section). You will bring your laptop to every session, charged. And you will show up: the hands-on half is built on doing, and a session you miss is a session you cannot read your way through.
-
-This course is designed for few, motivated students rather than many passive ones. If that is not you, week 1 is the cheap time to leave. No hard feelings.
-
-## 3. The textbook is a subscription
-
-There is no textbook. Instead you buy two months of **Claude Pro**, about €40 in total, and that is your course material — the same way a Harvard coursepack would be. It has to be active by Thursday, because Thursday's session does not work without it.
-
-Why paid, and why this one. The tool we use, **Claude Code**, has no free tier — there is no way around the subscription. Buy the *monthly* plan, not the annual one; remind yourself to cancel it in November. You will never be given an API key and you will never need one; when the course looks under the hood at how these tools are billed, the instructor uses his own.
+- A **Claude Pro** subscription: about €20 per month, for September and October. Choose *monthly* billing, not annual. Not "Max".
+- It must be active before Thursday's session.
+- Required: Claude Code is included in Pro and has no free version.
+- Already paying for **ChatGPT Plus**? Keep it and use **Codex CLI** (OpenAI's equivalent) until it runs out, then switch to Claude Pro. Condition: Codex must install in class on Thursday within the time allowed; if not, buy Claude Pro that evening.
+- Gemini subscriptions do not qualify.
+- Cancel your subscription in November unless you want to keep it. GitHub and Vercel are used on their free plans.
+- You do not need an API key.
 
 > [!CAUTION]
-> **Cost.** Pro is not unlimited: it is a weekly allowance that some ways of working burn far faster than others. Week 2 teaches you to read the meter. Until then: buy it, log in, and don't spend it.
+> **Cost.** Claude Pro and ChatGPT Plus both have weekly usage limits. Some ways of working use them up much faster than others. Week 2 shows you how to read yours.
 
-## 4. AI that builds, not AI that answers
+## 3. What an agent is: first look
 
-What you saw today: a typing-tutor app, built from an empty folder, with features shouted from the room, published to the internet, with a QR code on the screen — in under an hour, by someone who typed sentences, not code.
-
-The thing that built it was an **agent**. The chat window you know produces text. An agent produces *actions*: it created files, ran programs, checked its own results, and put the app online. The model underneath is the same one you have been chatting with; the difference is that this one has hands. Week 2 explains the machinery. Today you only needed to see it.
+- Today's demo: a typing-tutor web app, built from an empty folder and published on the internet in under an hour. Nobody wrote code.
+- The skill on display was not programming. It was saying precisely what the app should do, judging what came back, and asking for changes. That is a business analyst's job.
+- The tool that built it is an **agent**: an AI model that can create files, run programs and publish, not only write text.
 
 > [!IMPORTANT]
-> **Exam.** A chatbot produces text. An agent takes actions — it reads and writes files, runs programs, and loops until the job is done. Same model underneath; the difference is tools and a loop.
+> **KEY POINT:** A chatbot produces text. An agent takes actions: it reads and writes files, runs programs, and repeats until the job is done. The model underneath is the same.
 
 > [!TIP]
-> **Try it.** Open the app on your phone (the address is in the homework). Beat your own score. Then notice what is missing from it — that gap is Thursday's material.
+> **Try it.** Open the app from class on your phone (address in the homework). Write down the next two changes you would ask for.
 
-## 5. The stack, and why there is only one
+## 4. The tools we use
 
-Three tools, and no substitutions in class:
-
-- **Claude Code** — the agent. It runs in a terminal on your laptop.
-- **GitHub** — where work lives once it matters. You meet it in week 6.
-- **Vercel** — where work gets published. Also week 6, and you saw it today.
-
-One stack, because when thirty people install thirty different things, nobody can be helped. If you already use something else, keep using it at home; the concepts transfer, the recipes and the support don't.
-
-Terminal, not the chat website and not the desktop app. The terminal is where the agent has hands — it can see your files and run programs there. Opening it is the whole trick, and it is one right-click: open a folder, right-click empty space, **Open in Terminal**. Everything else the agent will teach you itself.
+- **Claude Code**: the agent. Runs in a terminal (a text-only window) on your laptop.
+- **Codex CLI**: accepted instead of Claude Code for ChatGPT Plus subscribers (conditions in section 2). Help in class is limited to Thursday's installation.
+- **GitHub**: where work is stored. Free account. From week 6.
+- **Vercel**: where work is published on the internet. Free account. From week 6.
+- Nothing else is supported in class.
+- To open a terminal in a folder. Windows: open the folder in Explorer, right-click on empty space, **Open in Terminal**. Mac: right-click the folder in Finder, **New Terminal at Folder**.
 
 > [!WARNING]
-> **Trap.** "Claude" is three different products: the chat website (claude.ai), the desktop app, and Claude Code. We use Claude Code, in a terminal. Installing one of the other two on Thursday costs you the session.
-
-## Takeaways
-
-- The course teaches delegating work to an agent and standing behind the result, not chatting.
-- The exam is 75% of the grade and is written without a laptop, because take-home work can be faked with AI.
-- Claude Pro, monthly, active by Thursday, is the textbook; there is no free route.
-- An agent differs from a chatbot by having tools and a loop, not by being a better model.
-- One stack — Claude Code in a terminal, GitHub, Vercel — because shared tools are the only way help scales.
+> **PLEASE NOTE:** Three different products are called "Claude": the website claude.ai, the desktop app, and Claude Code. We use Claude Code. Do not install the desktop app.
 
 ## Terms
 
-- **Agent** — a model given tools and a loop, so it can act on files and programs rather than only produce text.
-- **Terminal** — the text window where the agent runs; opened with right-click → Open in Terminal.
-- **Deploy** — to publish an app to the internet so it has an address.
-- **Claude Pro** — the paid subscription that gives access to Claude Code; the course's textbook.
-- **Stack** — the fixed set of tools a course or a company standardises on.
+- **Agent**: an AI model that can act: read and write files, run programs, publish.
+- **Terminal**: a text-only window where you type commands; where the agent runs.
+- **Claude Code**: the agent used in this course.
+- **Claude Pro**: the paid subscription that includes Claude Code.
+- **Codex CLI**: OpenAI's equivalent of Claude Code; included in ChatGPT Plus.
+- **Deploy**: publish an app on the internet so it has an address.
 
 ## Homework
 
-The load-bearing email: account, Pro, two downloads, the dataset — all before Thursday. See [homework](homework.md).
+Before Thursday: account, subscription, two downloads, the dataset. See [homework](homework.md).

@@ -9,6 +9,7 @@
 <body>
 <header class="top">
   <a class="brand" href="/">BPA347 · Digital Businesses and AI</a>
+  <a class="download" href="/notes.zip">Download notes (zip)</a>
   {% if week %}<nav>
     <span class="week">{{ week | replace("week-", "Week ") }}</span>
     <a href="/{{ week }}/mon/">Mon</a>
@@ -19,6 +20,6 @@
 <main>
 {{ content | safe }}
 </main>
-<footer>University of Cyprus · Fall 2026 · notes are markdown files — download the folder and ask your agent about them</footer>
+<footer>University of Cyprus · Fall 2026. The notes are plain markdown files: <a href="/notes.zip">download the folder</a>, open a terminal in it, and ask your agent about them.</footer>
 </body>
 </html>
