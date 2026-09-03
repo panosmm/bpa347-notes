@@ -12,7 +12,3 @@
 ## Before Monday 14 September
 
 1. Open the agent in Thursday's folder again and ask for one change to your dashboard.
-
-## What to bring
-
-- Laptop, charged, with Thursday's folder on it.

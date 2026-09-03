@@ -26,7 +26,7 @@ One line: what the session covers.
 
 Sections may be omitted where marked optional, never renamed or reordered. No other H2 names exist.
 
-`homework.md`: `# Week N · Homework` → `## Before Thursday D Month` / `## Before Monday D Month` (numbered lists; the deadline, always with the date) → `## What to bring` → `## Groups` (when it applies).
+`homework.md`: `# Week N · Homework` → `## Before Thursday D Month` / `## Before Monday D Month` (numbered lists; the deadline, always with the date) → `## Groups` (when it applies). No "what to bring" section: laptops are assumed.
 
 ## Elements: everything that may appear
 
