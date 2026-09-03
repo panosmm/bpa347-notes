@@ -15,7 +15,8 @@
 ## Constraints
 
 - Work only inside this folder. Do not create, change or delete files anywhere else.
-- Install nothing: no Python, no Node, no packages, no apps. Everything runs in the browser.
+- Install nothing: no packages, no apps, no runtimes.
+- Python is not installed on this computer. The dashboard runs in the browser, so it is not needed.
 - The dashboard is one HTML file. It opens by double-click and takes the CSV by drag and drop or a file chooser. A charting library may be loaded from a CDN by URL.
 - Do not read the whole data file. Look at the first lines in the terminal to learn the columns, then write JavaScript that processes the file inside the page.
 - Before running any command, say in one sentence what it does and why.
