@@ -16,7 +16,7 @@ Every file under `notes/` follows this. Nothing else is used. Read this before w
 One line: what the session covers.
 
 ## Before class          (optional) bullets: what to have done / bring
-## Big picture           3–6 bullets, topic names only
+## Big picture           (omit with fewer than 3 topics) 3–6 bullets, topic names only
 ## 1. Topic              numbered H2s, one per topic; bullets only, one fact per bullet
 ## 2. Topic
 ## In class              (optional) numbered steps; every command and prompt in a code block
