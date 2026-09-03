@@ -20,28 +20,21 @@ Install the tools, then put an agent to work on your laptop and on a data file.
 
 ## 1. Installing the tools
 
-- Windows: Git for Windows, then Claude Code, then log in. Mac: Claude Code, then log in. Exact steps under In class below.
 - Git for Windows: Claude Code needs it; you will never open it yourself.
-- Python: installed at home before class. The agent writes and runs small programs with it; you will never open it yourself either.
-- Codex: same steps, different command.
+- Python: installed at home. The agent writes and runs small programs with it; you never open it either.
 
 > [!WARNING]
 > **PLEASE NOTE:** Windows: there are two versions of PowerShell. Use the one called "PowerShell", not "PowerShell (x86)". The x86 version fails without a clear error.
 
 ## 2. The course kit
 
-- A small zip file on the course website: the data file and two text files for the agent.
-- You do not download it. The agent does, into your working folder, from one pasted line. Exact steps under In class below.
-- `AGENTS.md`: a briefing the agent reads every time it starts in this folder. Who you are, how to talk to you, two things it may not do, and what is in the data file. Why a text file changes the agent is next Thursday's topic.
-- Claude Code: `CLAUDE.md` is one line that points to `AGENTS.md`, and `.claude/settings.json` holds rules the agent cannot break in this folder: no deleting, no installing programs. Codex: reads `AGENTS.md` directly and has its own rules; it ignores the settings file.
-- The agent reads the briefing and the rules when it starts, so after the download you restart it.
+- A zip file on the course website: the data file and a briefing for the agent. You do not download it; the agent does, from one pasted line.
+- The briefing, `AGENTS.md`: who you are, how to talk to you, two things it may not do, what is in the data file. The agent reads it every time it starts in this folder. Why a text file changes the agent is next Thursday's topic.
+- The agent reads the briefing only at start, so after the download you restart it.
 
 ## 3. What an agent does that a chat window cannot
 
-- Same models as the chat website. The difference is where it runs and what it can reach.
-- A chat window works on what you upload, in a sandbox on the company's servers. An agent runs on your laptop and can use what is there: your folders, your programs, your Python.
 - Today you will see it do three things a chat window cannot: look at a folder on your laptop, install a Python library for itself, and leave its work as files in your folder.
-- It works in a loop: looks, runs a command or a program, reads the result, tries again until the job is done. You watch every step.
 
 > [!IMPORTANT]
 > **KEY POINT:** An agent is the same model with hands. It runs on your computer and can use what is on it; a chat window has never seen your computer.
@@ -58,8 +51,7 @@ Install the tools, then put an agent to work on your laptop and on a data file.
 ## 5. Your laptop, seen by the agent
 
 - First task, before the data: ask the agent about your Downloads folder. It runs a command, reads the output, and reports back in plain words.
-- The Downloads folder is outside its working folder, so it asks permission before looking. It may look; it may not delete. The rules in the kit forbid deleting.
-- The answer is about your laptop: how many files, how much space, the biggest ones, what is safe to remove. Delete nothing today; decide at home, by hand.
+- The Downloads folder is outside its working folder, so it asks permission before looking. It may look; it may not delete. Delete nothing today; decide at home, by hand.
 
 > [!TIP]
 > **Try it.** Ask claude.ai or chatgpt.com the same question about your Downloads folder. Compare the two answers.
@@ -68,7 +60,6 @@ Install the tools, then put an agent to work on your laptop and on a data file.
 
 - First ask the agent whether it has what it needs to analyse the file with Python, and to install what is missing. It installs a library or two; pandas is the usual one. The rules in the kit allow Python libraries and nothing else.
 - Then ask for the facts and the dashboard: the three most important things in the file, and an interactive dashboard as a single HTML file that opens in your browser.
-- The agent does the counting in Python and puts the results in the page, or builds a page you drag the CSV into. Either is fine.
 - Want it in Excel? Ask for the same dashboard as an Excel workbook, one sheet per chart. It writes the file into the folder; double-click it.
 - Different students will get different dashboards from the same request. That is expected. Monday starts from them.
 
@@ -76,7 +67,7 @@ Install the tools, then put an agent to work on your laptop and on a data file.
 > **PLEASE NOTE:** A page opened from your disk cannot open other files on your disk by itself. If your dashboard opens blank, tell the agent: *"it opens blank"*. It will put the numbers inside the page or add a place to drag the CSV into.
 
 > [!CAUTION]
-> **Cost.** Claude Code: stay on Sonnet, the Pro default; Opus and Fable use up your weekly limit faster and this task does not need them. `/usage` shows how much of your week is used. Codex: keep the default model. Both: the 47 MB file costs almost nothing; the agent reads its first lines and writes a program for the rest.
+> **Cost.** Claude Code: stay on Sonnet, the Pro default. `/usage` shows how much of your week is used. Codex: keep the default model.
 
 ## In class
 
@@ -164,18 +155,11 @@ Install the tools, then put an agent to work on your laptop and on a data file.
 ## Terms
 
 - **Working folder**: the folder the agent was started in. It sees the files there and nowhere else without asking.
-- **Terminal**: on Windows, the window from "Open in Terminal"; on a Mac, the Terminal app.
-- **Course kit**: the zip on the course website with the data file and the agent's briefing. The agent downloads it into the working folder.
 - **Briefing**: a text file, `AGENTS.md`, that the agent reads every time it starts in the folder. Instructions that hold for every conversation.
-- **Settings file**: Claude Code only. `.claude/settings.json`, rules enforced before the agent acts; unlike the briefing, the agent cannot argue with it.
 - **Permission prompt**: the agent's request for your approval before it runs a command or changes a file.
-- **Tool**: something an agent can do besides write text: read a file, write a file, run a program.
 - **Python**: a programming language, installed as a program on your laptop. The agent writes and runs small programs in it; you never open it.
 - **Library**: an add-on for Python, installed with one command. pandas, for tables, is the one the agent asks for first.
-- **Git for Windows**: Windows only. Software Claude Code needs to run commands. Installed once, never opened.
-- **PowerShell**: Windows only. The command window, used here only to run the installer.
 - **CSV**: a plain-text table; each line is a row, commas separate the columns. Excel opens it.
-- **Dashboard**: a page that turns a data file into charts and filters.
 
 ## Homework
 
