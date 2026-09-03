@@ -7,7 +7,7 @@
 3. Install Python. Windows: [Python 3.13 in the Microsoft Store](https://apps.microsoft.com/detail/9PNRBTZXMB4Z), click Install. Mac: [python.org downloads](https://www.python.org/downloads/), the yellow Download button, then run the installer.
 4. Windows only: on the [Git for Windows page](https://git-scm.com/install/windows), under Standalone Installer, download **Git for Windows/x64 Setup**. Do not run it.
 5. Read Thursday's notes.
-6. Open the typing app on your phone and note the next two changes you would ask for. TODO: URL.
+6. Open the [typing app from class](https://bpa347-typing.vercel.app) on your phone and note the next two changes you would ask for.
 
 ## Before Monday 14 September
 
