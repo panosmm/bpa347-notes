@@ -11,4 +11,5 @@
 
 ## Before Monday 14 September
 
-1. Open the agent in Thursday's folder again and ask for one change to your dashboard.
+1. Finish the app if class ended before it did: the steps are in Thursday's notes.
+2. Open the agent in Thursday's folder, ask it to start the app, then ask for one change.

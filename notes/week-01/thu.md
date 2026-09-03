@@ -16,7 +16,7 @@ Install the tools, then put an agent to work on your laptop and on a data file.
 - What an agent does that a chat window cannot
 - The permission prompt
 - Your laptop, seen by the agent
-- Your first build: a dashboard
+- Your first build: an app on your laptop
 
 ## 1. Installing the tools
 
@@ -34,7 +34,7 @@ Install the tools, then put an agent to work on your laptop and on a data file.
 
 ## 3. What an agent does that a chat window cannot
 
-- Today you will see it do three things a chat window cannot: look at a folder on your laptop, install a Python library for itself, and leave its work as files in your folder.
+- Today you will see it do three things a chat window cannot: look at a folder on your laptop, install Python libraries for itself, and build an app that runs on your laptop.
 
 > [!IMPORTANT]
 > **KEY POINT:** An agent is the same model with hands. It runs on your computer and can use what is on it; a chat window has never seen your computer.
@@ -56,15 +56,17 @@ Install the tools, then put an agent to work on your laptop and on a data file.
 > [!TIP]
 > **Try it.** Ask claude.ai or chatgpt.com the same question about your Downloads folder. Compare the two answers.
 
-## 6. Your first build: a dashboard
+## 6. Your first build: an app on your laptop
 
-- First ask the agent whether it has what it needs to analyse the file with Python, and to install what is missing. It installs a library or two; pandas is the usual one. The rules in the kit allow Python libraries and nothing else.
-- Then ask for the facts and the dashboard: the three most important things in the file, and an interactive dashboard as a single HTML file that opens in your browser.
-- Want it in Excel? Ask for the same dashboard as an Excel workbook, one sheet per chart. It writes the file into the folder; double-click it.
-- Different students will get different dashboards from the same request. That is expected. Monday starts from them.
+- First ask the agent whether it has what it needs to analyse the file with Python, and to install what is missing. It installs pandas, the library for tables. The rules in the kit allow Python libraries and nothing else.
+- Then ask for the facts and the app: the three most important things in the file, then a Streamlit app with a country picker and a month picker. The agent installs Streamlit, writes one Python program, starts it, and gives you an address starting with `http://localhost`. Open it in your browser.
+- The app runs on your laptop only, while the agent's terminal window stays open. Nobody else can open the address.
+- Every change you ask for goes into the program. Reload the page, or click **Rerun** when the page offers it, and the change is there.
+- Want a spreadsheet? Ask for the same numbers as an Excel workbook. It writes the file into the folder; double-click it.
+- Different students will get different apps from the same request. That is expected. Monday starts from them.
 
 > [!WARNING]
-> **PLEASE NOTE:** A page opened from your disk cannot open other files on your disk by itself. If your dashboard opens blank, tell the agent: *"it opens blank"*. It will put the numbers inside the page or add a place to drag the CSV into.
+> **PLEASE NOTE:** Windows may ask whether to allow Python through the firewall. Either answer works. If the terminal asks for an email address, press Enter. If the address does not open, tell the agent: *"the page does not load"*.
 
 > [!CAUTION]
 > **Cost.** Claude Code: stay on Sonnet, the Pro default. `/usage` shows how much of your week is used. Codex: keep the default model.
@@ -105,12 +107,12 @@ Install the tools, then put an agent to work on your laptop and on a data file.
     ```prompt
     Do you have what you need to analyse the CSV file in this folder with Python? Install what is missing.
     ```
-11. The dashboard:
+11. The app:
     ```prompt
-    Look at the CSV file in this folder. Tell me the three most important facts in it, then build me an interactive dashboard as a single HTML file that I can open in my browser.
+    Look at the CSV file in this folder. Tell me the three most important facts in it. Then build me a Streamlit app that runs on my laptop: I pick a country and a month, and I see revenue, number of orders and the ten best-selling products. Start it and give me the address.
     ```
-12. Answer the permission prompts. Read each one first.
-13. Double-click the HTML file it made. If it asks for the CSV, drag it in. Ask the agent for one change.
+12. Answer the permission prompts. Read each one first. The Streamlit install takes a few minutes.
+13. Open the address in your browser. Try the pickers. Ask the agent for one change, then reload the page.
 
 ### Mac
 
@@ -145,12 +147,12 @@ Install the tools, then put an agent to work on your laptop and on a data file.
     ```prompt
     Do you have what you need to analyse the CSV file in this folder with Python? Install what is missing.
     ```
-10. The dashboard:
+10. The app:
     ```prompt
-    Look at the CSV file in this folder. Tell me the three most important facts in it, then build me an interactive dashboard as a single HTML file that I can open in my browser.
+    Look at the CSV file in this folder. Tell me the three most important facts in it. Then build me a Streamlit app that runs on my laptop: I pick a country and a month, and I see revenue, number of orders and the ten best-selling products. Start it and give me the address.
     ```
-11. Answer the permission prompts. Read each one first.
-12. Double-click the HTML file it made. If it asks for the CSV, drag it in. Ask the agent for one change.
+11. Answer the permission prompts. Read each one first. The Streamlit install takes a few minutes.
+12. Open the address in your browser. Try the pickers. Ask the agent for one change, then reload the page.
 
 ## Terms
 
@@ -158,9 +160,11 @@ Install the tools, then put an agent to work on your laptop and on a data file.
 - **Briefing**: a text file, `AGENTS.md`, that the agent reads every time it starts in the folder. Instructions that hold for every conversation.
 - **Permission prompt**: the agent's request for your approval before it runs a command or changes a file.
 - **Python**: a programming language, installed as a program on your laptop. The agent writes and runs small programs in it; you never open it.
-- **Library**: an add-on for Python, installed with one command. pandas, for tables, is the one the agent asks for first.
+- **Library**: an add-on for Python, installed with one command. pandas for tables, Streamlit for the app.
+- **Streamlit**: a Python library that turns a program into a web page served by your own laptop.
+- **localhost**: your own laptop, as an address in the browser. A page there is visible to you only.
 - **CSV**: a plain-text table; each line is a row, commas separate the columns. Excel opens it.
 
 ## Homework
 
-Keep the dashboard and the CSV together and bring them on Monday. See [homework](homework.md).
+Finish the app if class ended first, then ask for one change. See [homework](homework.md).
