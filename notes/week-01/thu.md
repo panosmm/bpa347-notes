@@ -1,10 +1,11 @@
 # Week 1 · Thursday: Your first agent
 
-Install the tools, then use an agent on a data file that is too big for a chat window.
+Install the tools, then put an agent to work on your laptop and on a data file.
 
 ## Before class
 
 - Claude Pro active on your account (or ChatGPT Plus, if you are using Codex)
+- Python installed (steps in the homework)
 - Windows only: the Git for Windows installer downloaded, not yet run (link in the homework)
 - Laptop charged
 
@@ -12,15 +13,16 @@ Install the tools, then use an agent on a data file that is too big for a chat w
 
 - Installing the tools
 - The course kit
-- A chat window and a large file
-- What an agent does differently
+- What an agent does that a chat window cannot
 - The permission prompt
-- Your first task: a dashboard
+- Your laptop, seen by the agent
+- Your first build: a dashboard
 
 ## 1. Installing the tools
 
 - Windows: Git for Windows, then Claude Code, then log in. Mac: Claude Code, then log in. Exact steps under In class below.
 - Git for Windows: Claude Code needs it; you will never open it yourself.
+- Python: installed at home before class. The agent writes and runs small programs with it; you will never open it yourself either.
 - Codex: same steps, different command.
 
 > [!WARNING]
@@ -30,27 +32,21 @@ Install the tools, then use an agent on a data file that is too big for a chat w
 
 - A small zip file on the course website: the data file and two text files for the agent.
 - You do not download it. The agent does, into your working folder, from one pasted line. Exact steps under In class below.
-- `AGENTS.md`: a briefing the agent reads every time it starts in this folder. What it says is Monday's topic.
-- Claude Code: `CLAUDE.md` is one line that points to `AGENTS.md`, and `.claude/settings.json` holds rules the agent cannot break in this folder, for example no installing and no deleting. Codex: reads `AGENTS.md` directly and has its own rules; it ignores the settings file.
+- `AGENTS.md`: a briefing the agent reads every time it starts in this folder. Who you are, how to talk to you, two things it may not do, and what is in the data file. Why a text file changes the agent is next Thursday's topic.
+- Claude Code: `CLAUDE.md` is one line that points to `AGENTS.md`, and `.claude/settings.json` holds rules the agent cannot break in this folder: no deleting, no installing programs. Codex: reads `AGENTS.md` directly and has its own rules; it ignores the settings file.
 - The agent reads the briefing and the rules when it starts, so after the download you restart it.
 
-## 3. A chat window and a large file
+## 3. What an agent does that a chat window cannot
 
-- The data file in the kit, `online_retail.csv`: every transaction of a UK online gift retailer from December 2024 to December 2025, 541,909 rows, 47 MB. The dates were moved forward 14 years from the original data. Source: [Online Retail, UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/352/online+retail), licence CC BY 4.0.
-- Task: upload it to the chat website (claude.ai or chatgpt.com) and ask a simple question about it.
-- Expected result: it refuses, or uses only part of the file, or answers about data it never read.
-- Reason: a chat window can only work with text that fits inside its window. The rest of the file does not exist for it.
-
-## 4. What an agent does differently
-
-- Same model, in a terminal, started inside the folder that holds the file.
-- It does not read the whole file either. It looks at the first lines, writes a small program that does the work, runs it, checks the result, and gives you a file.
-- That is the difference: an agent has tools (read a file, write a file, run a program) and repeats until the job is done.
+- Same models as the chat website. The difference is where it runs and what it can reach.
+- A chat window works on what you upload, in a sandbox on the company's servers. An agent runs on your laptop and can use what is there: your folders, your programs, your Python.
+- Today you will see it do three things a chat window cannot: look at a folder on your laptop, install a Python library for itself, and leave its work as files in your folder.
+- It works in a loop: looks, runs a command or a program, reads the result, tries again until the job is done. You watch every step.
 
 > [!IMPORTANT]
-> **KEY POINT:** The agent did not "read" the 47 MB file; it wrote a program that did. An agent's advantage over a chatbot is tools and a loop, not a bigger memory.
+> **KEY POINT:** An agent is the same model with hands. It runs on your computer and can use what is on it; a chat window has never seen your computer.
 
-## 5. The permission prompt
+## 4. The permission prompt
 
 - Before the agent runs a command or changes a file, it stops and asks you.
 - Read what it wants to do. Approve what you understand. Ask it to explain what you do not.
@@ -59,17 +55,28 @@ Install the tools, then use an agent on a data file that is too big for a chat w
 > [!TIP]
 > **Try it.** When the first permission prompt appears, before answering, type: *"Explain what this command does and why you need it."* Then decide.
 
-## 6. Your first task: a dashboard
+## 5. Your laptop, seen by the agent
 
-- Ask for an interactive dashboard as a single HTML file that opens in a browser and takes the CSV by drag-and-drop.
-- Why this form: the browser is the only program on your laptop that can run code, and a single HTML file needs nothing installed.
-- Different pairs will get different dashboards from the same request. That is expected. Monday starts from them.
+- First task, before the data: ask the agent about your Downloads folder. It runs a command, reads the output, and reports back in plain words.
+- The Downloads folder is outside its working folder, so it asks permission before looking. It may look; it may not delete. The rules in the kit forbid deleting.
+- The answer is about your laptop: how many files, how much space, the biggest ones, what is safe to remove. Delete nothing today; decide at home, by hand.
+
+> [!TIP]
+> **Try it.** Ask claude.ai or chatgpt.com the same question about your Downloads folder. Compare the two answers.
+
+## 6. Your first build: a dashboard
+
+- First ask the agent whether it has what it needs to analyse the file with Python, and to install what is missing. It installs a library or two; pandas is the usual one. The rules in the kit allow Python libraries and nothing else.
+- Then ask for the facts and the dashboard: the three most important things in the file, and an interactive dashboard as a single HTML file that opens in your browser.
+- The agent does the counting in Python and puts the results in the page, or builds a page you drag the CSV into. Either is fine.
+- Want it in Excel? Ask for the same dashboard as an Excel workbook, one sheet per chart. It writes the file into the folder; double-click it.
+- Different students will get different dashboards from the same request. That is expected. Monday starts from them.
 
 > [!WARNING]
-> **PLEASE NOTE:** A page opened from your disk cannot open other files on your disk by itself. If your dashboard opens blank, that is why. Tell the agent: *"it opens blank; I need to drag the CSV into the page instead."*
+> **PLEASE NOTE:** A page opened from your disk cannot open other files on your disk by itself. If your dashboard opens blank, tell the agent: *"it opens blank"*. It will put the numbers inside the page or add a place to drag the CSV into.
 
 > [!CAUTION]
-> **Cost.** Claude Code: stay on Sonnet, the Pro default; Opus and Fable use up your weekly limit faster and this task does not need them. `/usage` shows how much of your week is used. Codex: keep the default model. Both: the 47 MB file costs almost nothing, the agent reads its first lines and writes a program for the rest.
+> **Cost.** Claude Code: stay on Sonnet, the Pro default; Opus and Fable use up your weekly limit faster and this task does not need them. `/usage` shows how much of your week is used. Codex: keep the default model. Both: the 47 MB file costs almost nothing; the agent reads its first lines and writes a program for the rest.
 
 ## In class
 
@@ -94,18 +101,25 @@ Install the tools, then use an agent on a data file that is too big for a chat w
    ```prompt
    Download https://bpa347-notes.vercel.app/kit.zip into this folder and unpack it here.
    ```
-7. In the browser, open claude.ai (or chatgpt.com), upload the CSV from the `bpa347` folder and ask a question about it. Note what happens. Back to the terminal.
-8. Restart the agent so it reads the kit: type `/exit`, then start it again as in step 4.
-9. Claude Code: check the model. It should say Sonnet; if not, set it. Codex: skip this step.
+7. Restart the agent so it reads the kit: type `/exit`, then start it again as in step 4.
+8. Claude Code: check the model. It should say Sonnet; if not, set it. Codex: skip this step.
    ```prompt
    /model sonnet
    ```
-10. Ask for the dashboard:
+9. Your laptop. Read the permission prompt, then approve it.
+   ```prompt
+   How many files are in my Downloads folder, how much space do they take, which are the ten biggest, and what could I safely delete? Do not delete anything.
+   ```
+10. The power-up. Approve the install.
     ```prompt
-    Look at the CSV file in this folder. Build me an interactive dashboard as a single HTML file that I can open in my browser and drag the CSV into. No installs.
+    Do you have what you need to analyse the CSV file in this folder with Python? Install what is missing.
     ```
-11. Answer the permission prompts. Read each one first.
-12. Double-click the HTML file it made. Drag the CSV onto it. Ask the agent for one change.
+11. The dashboard:
+    ```prompt
+    Look at the CSV file in this folder. Tell me the three most important facts in it, then build me an interactive dashboard as a single HTML file that I can open in my browser.
+    ```
+12. Answer the permission prompts. Read each one first.
+13. Double-click the HTML file it made. If it asks for the CSV, drag it in. Ask the agent for one change.
 
 ### Mac
 
@@ -127,18 +141,25 @@ Install the tools, then use an agent on a data file that is too big for a chat w
    ```prompt
    Download https://bpa347-notes.vercel.app/kit.zip into this folder and unpack it here.
    ```
-6. In the browser, open claude.ai (or chatgpt.com), upload the CSV from the `bpa347` folder and ask a question about it. Note what happens. Back to the terminal.
-7. Restart the agent so it reads the kit: type `/exit`, then start it again as in step 3.
-8. Claude Code: check the model. It should say Sonnet; if not, set it. Codex: skip this step.
+6. Restart the agent so it reads the kit: type `/exit`, then start it again as in step 3.
+7. Claude Code: check the model. It should say Sonnet; if not, set it. Codex: skip this step.
    ```prompt
    /model sonnet
    ```
-9. Ask for the dashboard:
+8. Your laptop. Read the permission prompt, then approve it.
    ```prompt
-   Look at the CSV file in this folder. Build me an interactive dashboard as a single HTML file that I can open in my browser and drag the CSV into. No installs.
+   How many files are in my Downloads folder, how much space do they take, which are the ten biggest, and what could I safely delete? Do not delete anything.
    ```
-10. Answer the permission prompts. Read each one first.
-11. Double-click the HTML file it made. Drag the CSV onto it. Ask the agent for one change.
+9. The power-up. Approve the install.
+    ```prompt
+    Do you have what you need to analyse the CSV file in this folder with Python? Install what is missing.
+    ```
+10. The dashboard:
+    ```prompt
+    Look at the CSV file in this folder. Tell me the three most important facts in it, then build me an interactive dashboard as a single HTML file that I can open in my browser.
+    ```
+11. Answer the permission prompts. Read each one first.
+12. Double-click the HTML file it made. If it asks for the CSV, drag it in. Ask the agent for one change.
 
 ## Terms
 
@@ -149,6 +170,8 @@ Install the tools, then use an agent on a data file that is too big for a chat w
 - **Settings file**: Claude Code only. `.claude/settings.json`, rules enforced before the agent acts; unlike the briefing, the agent cannot argue with it.
 - **Permission prompt**: the agent's request for your approval before it runs a command or changes a file.
 - **Tool**: something an agent can do besides write text: read a file, write a file, run a program.
+- **Python**: a programming language, installed as a program on your laptop. The agent writes and runs small programs in it; you never open it.
+- **Library**: an add-on for Python, installed with one command. pandas, for tables, is the one the agent asks for first.
 - **Git for Windows**: Windows only. Software Claude Code needs to run commands. Installed once, never opened.
 - **PowerShell**: Windows only. The command window, used here only to run the installer.
 - **CSV**: a plain-text table; each line is a row, commas separate the columns. Excel opens it.

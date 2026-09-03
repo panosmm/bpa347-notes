@@ -66,4 +66,4 @@ What the course covers, what you must buy and install before Thursday. Grading a
 
 ## Homework
 
-Before Thursday: account, subscription, two downloads, the dataset. See [homework](homework.md).
+Before Thursday: account, subscription, Python, and on Windows the Git installer. See [homework](homework.md).

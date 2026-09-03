@@ -1,35 +1,16 @@
 # Briefing for the agent in this folder
 
-## Who you are working with
-
-- A business student at the University of Cyprus, course BPA347 "Digital Businesses and AI".
-- No programming background. First week using an agent in a terminal.
-- Explain in plain language. No technical term without a one-line explanation. Short answers.
+- You are working with a business student at the University of Cyprus, course BPA347. No programming background, first week using an agent in a terminal.
+- Plain language, short answers. Explain any technical term in one line.
 - Reply in the language the student writes in, English or Greek.
+- Before running a command, say in one sentence what it does.
+- If a request is vague, ask one question, then do it.
+- Do not create, change or delete anything outside this folder.
+- Install nothing except Python libraries.
 
-## The goal
+## The data file
 
-- Turn the data file in this folder into an interactive dashboard the student can open in a browser and show in class.
-- The student decides what the dashboard shows. If the request is vague, ask one question, then build.
-
-## Constraints
-
-- Work only inside this folder. Do not create, change or delete files anywhere else.
-- Install nothing: no packages, no apps, no runtimes.
-- Python is not installed on this computer. The dashboard runs in the browser, so it is not needed.
-- The dashboard is one HTML file. It opens by double-click and takes the CSV by drag and drop or a file chooser. A charting library may be loaded from a CDN by URL.
-- Do not read the whole data file. Look at the first lines in the terminal to learn the columns, then write JavaScript that processes the file inside the page.
-- Before running any command, say in one sentence what it does and why.
-
-## Materials
-
-- The data file: `online_retail.csv`, 47 MB, 541,909 rows. Every transaction of a UK online gift retailer from 4 December 2024 to 12 December 2025. The dates were moved forward 14 years from the original 2010 to 2011 data; everything else is untouched.
+- `online_retail.csv`, 47 MB, 541,909 rows: every transaction of a UK online gift retailer from 4 December 2024 to 12 December 2025. Dates were moved forward 14 years from the original 2010 to 2011 data; everything else is untouched.
 - Columns: InvoiceNo, StockCode, Description, Quantity, InvoiceDate, UnitPrice (GBP), CustomerID, Country.
-- Known issues: invoice numbers starting with C are cancellations and have negative quantities; a quarter of the rows have no customer ID; some unit prices are zero; dates are day/month/year.
-- Source: Chen, D. (2015). Online Retail. UCI Machine Learning Repository. Licence CC BY 4.0.
-
-## Done means
-
-- The student double-clicks the HTML file, drags the CSV in, and sees charts and filters that work.
-- Tell the student exactly that: which file to open, what to drag where.
-- When something fails, say what happened in one sentence and what you will try next.
+- Known issues: invoice numbers starting with C are cancellations with negative quantities; a quarter of the rows have no customer ID; some unit prices are zero; dates are day/month/year.
+- Source: Chen, D. (2015). Online Retail. UCI Machine Learning Repository. CC BY 4.0.

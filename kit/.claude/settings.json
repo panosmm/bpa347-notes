@@ -3,10 +3,6 @@
     "deny": [
       "Bash(rm *)",
       "Bash(sudo *)",
-      "Bash(pip *)",
-      "Bash(pip3 *)",
-      "Bash(python -m pip *)",
-      "Bash(python3 -m pip *)",
       "Bash(uv *)",
       "Bash(npm *)",
       "Bash(npx *)",
@@ -16,7 +12,6 @@
       "PowerShell(Remove-Item *)",
       "PowerShell(winget *)",
       "PowerShell(Install-Module *)",
-      "PowerShell(pip *)",
       "PowerShell(npm *)"
     ]
   }
