@@ -28,16 +28,15 @@ Everything the model knows about you arrives through the window, every time. Wha
 
 - This is requirements elicitation, with you as the stakeholder. A briefing that would brief a new colleague briefs the agent.
 
-## 3. Four places to put it
+## 3. Where to put what it should know
 
-| Place | Lasts | Cost |
+| Place | How long it lasts | What it costs |
 |---|---|---|
-| This message | One answer | Re-sent with every message |
+| Your message | This one answer | Sent once |
 | This conversation | Until you exit | Re-sent with every message |
-| Files in the folder | For good | Read when needed |
-| The briefing file, `CLAUDE.md` | Every start in this folder | Read at start |
+| Files in the folder | Until you delete them | Read when the agent needs them |
+| `CLAUDE.md` | Every session in this folder | Read once, at the start |
 
-- The conversation is rented: re-sent every time, gone at exit. Files are owned: kept for free, read when needed.
 - `CLAUDE.md` holds what you would otherwise repeat every session. Five lines about formatting change every answer from then on. Edits take effect at the next start.
 - It is instructions, not enforcement. The kit's settings file is enforcement: rules the program applies whatever the agent decides.
 - Selection beats volume: irrelevant material makes answers worse. Attaching a document is the small version of retrieval, week 5.
@@ -47,7 +46,7 @@ Everything the model knows about you arrives through the window, every time. Wha
 ![Three ways: a subagent reads in its own window and sends back a report; a handoff writes a file that a fresh session reads; compact replaces the conversation with a summary in place.](img/three-ways.png)
 
 - **Subagent**: a second copy of the model with its own window, started by the agent for one task. Only its report comes back. Ask in plain words: "use a subagent to".
-- **Handoff**: the agent writes a file with what was done, what was decided, what is next. Exit, start fresh, point the agent at the file. Rented becomes owned.
+- **Handoff**: the agent writes a file with what was done, what was decided, what is next. Exit, start fresh, point the agent at the file. The conversation becomes a file you can read and fix.
 - **Compact**: `/compact` summarises the conversation in place. Lossy, and you do not choose what survives. The handoff file you can read and fix.
 
 ## In class
