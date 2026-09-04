@@ -6,7 +6,6 @@ Install the agent, let it look at your laptop, then have it build an app.
 
 - Claude Pro active on your account (or ChatGPT Plus, if you are using Codex)
 - Python installed (steps in the homework)
-- Windows: the Git for Windows installer downloaded, not yet run (link in the homework)
 - Laptop charged
 
 ## 1. What happens today
@@ -28,8 +27,7 @@ Install the agent, let it look at your laptop, then have it build an app.
 
 ## In class
 
-1. Windows: run the Git for Windows installer. Accept every default, Next until Finish.
-2. Install the agent. Paste the command, press Enter, wait for it to finish, then close the window.
+1. Install the agent. Paste the command, press Enter, wait for it to finish, then close the window.
    Windows, in PowerShell (the one called "PowerShell", not "PowerShell (x86)"):
    ```bash
    irm https://claude.ai/install.ps1 | iex
@@ -39,34 +37,34 @@ Install the agent, let it look at your laptop, then have it build an app.
    curl -fsSL https://claude.ai/install.sh | bash
    ```
    Codex: Windows `irm https://chatgpt.com/codex/install.ps1 | iex`, Mac `curl -fsSL https://chatgpt.com/codex/install.sh | sh`.
-3. Make a folder named `bpa347` on the Desktop and open a terminal in it. Windows: open the folder, right-click on empty space, **Open in Terminal**. Mac: right-click the folder in Finder, **New Terminal at Folder**; if it is not there, open Terminal, type `cd ` with a space, drag the folder into the window, press Enter.
-4. Start the agent. Codex: type `codex` instead.
+2. Make a folder named `bpa347` on the Desktop and open a terminal in it. Windows: open the folder, right-click on empty space, **Open in Terminal**. Mac: right-click the folder in Finder, **New Terminal at Folder**; if it is not there, open Terminal, type `cd ` with a space, drag the folder into the window, press Enter.
+3. Start the agent. Codex: type `codex` instead.
    ```bash
    claude
    ```
-5. A browser tab opens: log in with the account that has Pro. Back in the terminal, answer yes if it asks whether you trust the folder.
-6. Fetch the course kit. Read the permission prompt, then approve it.
+4. A browser tab opens: log in with the account that has Pro. Back in the terminal, answer yes if it asks whether you trust the folder.
+5. Fetch the course kit. Read the permission prompt, then approve it.
    ```prompt
    Download https://bpa347-notes.vercel.app/kit.zip into this folder and unpack it here.
    ```
-7. Restart the agent so it reads the kit: type `/exit`, then start it again as in step 4.
-8. Claude Code: check the model. Codex: skip this step.
+6. Restart the agent so it reads the kit: type `/exit`, then start it again as in step 3.
+7. Claude Code: check the model. Codex: skip this step.
    ```prompt
    /model sonnet
    ```
-9. Your laptop. Read the permission prompt, then approve it.
+8. Your laptop. Read the permission prompt, then approve it.
    ```prompt
    How many files are in my Downloads folder, how much space do they take, which are the ten biggest, and what could I safely delete? Do not delete anything.
    ```
-10. The tools. Approve the install.
+9. The tools. Approve the install.
     ```prompt
     Do you have what you need to analyse the CSV file in this folder with Python? Install what is missing.
     ```
-11. The app. Approve the prompts; the Streamlit install takes a few minutes.
+10. The app. Approve the prompts; the Streamlit install takes a few minutes.
     ```prompt
     Look at the CSV file in this folder. Tell me the three most important facts in it. Then build me a Streamlit app that runs on my laptop: I pick a country and a month, and I see revenue, number of orders and the ten best-selling products. Start it and give me the address.
     ```
-12. Open the address in your browser. Try the pickers. Ask the agent for one change, then reload the page.
+11. Open the address in your browser. Try the pickers. Ask the agent for one change, then reload the page.
 
 ## Terms
 

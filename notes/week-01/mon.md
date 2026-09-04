@@ -31,4 +31,4 @@ What to buy, what not to buy, and the tools. Grading and rules are in the syllab
 
 ## Homework
 
-Before Thursday: account, subscription, Python, and on Windows the Git installer. See [homework](homework.md).
+Before Thursday: account, subscription, Python. See [homework](homework.md).
