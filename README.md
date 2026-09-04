@@ -18,4 +18,5 @@ The agent reads the files on demand. No setup file is needed; the folder and fil
 
 - `notes/` — the content. `kit/` — the day-2 course kit (briefing, settings, data file), packed into `kit.zip` on every build with the files at the archive root. Everything else is site plumbing.
 - `NOTES-STYLE.md` — the element vocabulary and file structure every note follows. Read it before writing or editing a note.
-- Build: `npm install` once, then `npm run build` (output in `_site/`) or `npm run serve` for live preview.
+- `drafts/` — staging. Same layout as `notes/` (`drafts/week-NN/thu.md`). A page there is built only by `BUILD_DRAFTS=1 npm run build` (the local preview, marked *(draft)* in the index); the live site ignores it. To publish: `git mv drafts/week-NN/x.md notes/week-NN/x.md`, commit, push.
+- Build: `npm install` once, then `npm run build` (output in `_site/`, live pages only) or `BUILD_DRAFTS=1 npm run build` for the preview with drafts.

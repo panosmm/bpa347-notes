@@ -12,7 +12,7 @@ permalink: /index.html
 <tr>
   <td>{{ w.week | replace("week-", "") }}</td>
   {% for slug in ["mon", "thu", "homework"] %}
-  <td>{% for p in w.pages %}{% if p.fileSlug == slug %}<a href="{{ p.url }}">{{ p.data.title | replace(r/^Week \d+ · \w+: /, "") }}</a>{% endif %}{% endfor %}</td>
+  <td>{% for p in w.pages %}{% if p.fileSlug == slug %}<a href="{{ p.url }}">{{ p.data.title | replace(r/^Week \d+ · \w+: /, "") }}</a>{% if p.data.draft %} <em>(draft)</em>{% endif %}{% endif %}{% endfor %}</td>
   {% endfor %}
 </tr>
 {% endfor %}

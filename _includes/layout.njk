@@ -12,9 +12,9 @@
   <a class="download" href="/notes.zip">Download notes (zip)</a>
   {% if week %}<nav>
     <span class="week">{{ week | replace("week-", "Week ") }}</span>
-    <a href="/{{ week }}/mon/">Mon</a>
-    <a href="/{{ week }}/thu/">Thu</a>
-    <a href="/{{ week }}/homework/">Homework</a>
+    {% if collections.all | hasPage("/" ~ week ~ "/mon/") %}<a href="/{{ week }}/mon/">Mon</a>{% endif %}
+    {% if collections.all | hasPage("/" ~ week ~ "/thu/") %}<a href="/{{ week }}/thu/">Thu</a>{% endif %}
+    {% if collections.all | hasPage("/" ~ week ~ "/homework/") %}<a href="/{{ week }}/homework/">Homework</a>{% endif %}
   </nav>{% endif %}
 </header>
 <main>
