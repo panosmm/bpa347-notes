@@ -5,7 +5,7 @@ What to buy, what not to buy, and the tools. Grading and rules are in the syllab
 ## 1. What you must buy
 
 - **Claude Pro**, monthly billing, about €20 a month for September and October. Not annual, not Max. Active before Thursday.
-- ChatGPT Plus subscribers: keep it and use **Codex CLI** instead, until it runs out. Condition: Codex must install in class on Thursday within the time allowed; if not, buy Claude Pro that evening.
+- ChatGPT Plus subscribers: keep it and use **Codex CLI** instead, until it runs out. Condition: Codex installed and running before Thursday's class; if not, buy Claude Pro.
 - Gemini does not qualify. No API key is needed. GitHub and Vercel are free.
 - Cancel in November unless you want to keep it.
 
@@ -15,7 +15,7 @@ What to buy, what not to buy, and the tools. Grading and rules are in the syllab
 ## 2. The tools we use
 
 - **Claude Code**: the agent. Runs in a terminal on your laptop. Included in Claude Pro; no free version.
-- **Codex CLI**: OpenAI's equivalent, for ChatGPT Plus subscribers only. Help in class is limited to Thursday's installation.
+- **Codex CLI**: OpenAI's equivalent, for ChatGPT Plus subscribers only. Help with it is limited to Wednesday's office hours.
 - **GitHub** and **Vercel**: storing and publishing work, from week 6. Free accounts.
 - Nothing else is supported in class.
 - Opening a terminal in a folder. Windows: open the folder, right-click on empty space, **Open in Terminal**. Mac: right-click the folder in Finder, **New Terminal at Folder**.
@@ -31,4 +31,4 @@ What to buy, what not to buy, and the tools. Grading and rules are in the syllab
 
 ## Homework
 
-Before Thursday: account, subscription, Python. See [homework](homework.md).
+Before Thursday: account, subscription, Python, the agent installed and logged in. See [homework](homework.md).
