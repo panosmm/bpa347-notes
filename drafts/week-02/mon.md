@@ -25,10 +25,12 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 - Re-sent in full with every message. A long conversation costs more each time and answers worse.
 - The same request gives different answers on purpose: the model picks among likely continuations at random. One request, a different app on every laptop.
 
-## 3. Model and agent
+## 3. Model, chatbot, agent
 
-- The model reads and writes text, nothing else. Claude Code wraps it in a loop with tools: read a file, run a command, write a file. Each result goes back into the window. The wrapping is the harness.
-- Thursday's agent never read your 541,909 rows. It wrote a program, ran it, and read the program's output.
+- The model alone: text in, text out. Nothing else.
+- A chatbot: the model plus a few fixed tools at the vendor: web search, file upload, a code runner, memory. Today's news comes in through a search, into the window.
+- An agent: the model plus tools on your machine, in a loop. It adds tools on demand: writes a program, installs a library. The wrapping is the harness.
+- In the lab the agent never read your 541,909 rows. It wrote a program, ran it, and read the program's output.
 - claude.ai, the desktop app and Claude Code: same model, different harness, different results.
 
 ## 4. Reading your own usage
@@ -81,7 +83,7 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 - **Token**: the unit the model reads and writes; about three quarters of an English word.
 - **Context window**: everything the model can see when it answers. Fixed size; re-sent in full with every message.
 - **Hallucination**: a fluent, specific, wrong statement, produced the same way as a right one.
-- **Harness**: the program around the model: the tools, the loop, the permission prompts. Claude Code is one; the chat website is another.
+- **Harness**: the program around the model: its tools, the loop, the permission prompts. A chat website is a small one; Claude Code is a large one on your machine.
 - **Effort level**: how long the model thinks before answering. Higher costs more.
 
 ## Homework
