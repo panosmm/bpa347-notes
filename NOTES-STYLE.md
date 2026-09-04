@@ -16,8 +16,7 @@ Every file under `notes/` follows this. Nothing else is used. Read this before w
 One line: what the session covers.
 
 ## Before class          (optional) bullets: what to have done / bring
-## Big picture           (omit with fewer than 3 topics) 3–6 bullets, topic names only
-## 1. Topic              numbered H2s, one per topic; bullets only, one fact per bullet
+## 1. Topic              numbered H2s, one per topic; at most 4 bullets, one fact per bullet; a table, a diagram or one callout where it replaces bullets
 ## 2. Topic
 ## In class              (optional) numbered steps; every command and prompt in a code block
 ## Terms                 one line each: **Term**: definition
@@ -47,7 +46,7 @@ Sections may be omitted where marked optional, never renamed or reordered. No ot
 | Italic | `*word*` | emphasis, sparingly; titles of things |
 | Inline code | `` `/statusline` `` | commands, filenames, keys, anything literal |
 | Link | `[text](url)` | descriptive text; never a bare URL, never "here" |
-| Image | `![alt](img/name.png)` | screenshots in `week-NN/img/`; alt says what it shows |
+| Image | `![alt](img/name.png)` | diagrams and screenshots in `week-NN/img/`; alt says what it shows; diagrams in the deck's palette, PNG at 2x |
 
 ## Callouts: five types, one role each
 
@@ -72,6 +71,8 @@ The role is the first bold word inside, always. A callout is 1–3 sentences; lo
 
 ## Writing rules
 
+- **Length: a session page has at most 400 words outside the In class steps.** Students do not read more. Slides carry the lecture; the page carries what they redo at home and what they are examined on.
+- Blocks over prose: a table for anything with two or more columns of facts, a diagram (`img/`) for anything with a flow or layers, a callout for the one sentence to remember. Bullets for the rest.
 - Facts only. Every bullet is something a student can act on, check, or be examined on.
 - Write for a reader with zero context: no course-internal shorthand, no instructor jokes, no metaphors that need the lecture to decode.
 - Say it once. No restating, no summaries.

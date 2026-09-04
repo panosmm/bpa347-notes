@@ -1,7 +1,7 @@
 import markdownIt from "markdown-it";
 import MarkdownItGitHubAlerts from "markdown-it-github-alerts";
 import AdmZip from "adm-zip";
-import { mkdirSync, cpSync } from "node:fs";
+import { mkdirSync, cpSync, existsSync, readdirSync } from "node:fs";
 
 // Staging: pages under drafts/ are built only when BUILD_DRAFTS is set (the local
 // preview). Vercel builds without it, so a draft never reaches the live site.
@@ -13,7 +13,6 @@ export default function (eleventyConfig) {
   eleventyConfig.setLibrary("md", md);
 
   eleventyConfig.addPassthroughCopy("assets");
-  eleventyConfig.addPassthroughCopy("notes/**/img/*");
   eleventyConfig.addPassthroughCopy("notes/**/*.md"); // raw markdown stays reachable at /notes/week-NN/*.md
   eleventyConfig.ignores.add("README.md");
   eleventyConfig.ignores.add("NOTES-STYLE.md");
@@ -41,9 +40,10 @@ export default function (eleventyConfig) {
 
   // In the markdown, notes link to each other as plain files (homework.md) so the links also
   // work on GitHub and on disk. On the site, /week-NN/thu/ + homework.md must become ../homework/.
+  // Images sit in week-NN/img/ next to the markdown; on the site the page is one level deeper.
   eleventyConfig.addTransform("mdlinks", (content, outputPath) =>
     outputPath && outputPath.endsWith(".html")
-      ? content.replace(/href="(mon|thu|homework)\.md"/g, 'href="../$1/"')
+      ? content.replace(/href="(mon|thu|homework)\.md"/g, 'href="../$1/"').replace(/src="img\//g, 'src="../img/')
       : content,
   );
 
@@ -56,6 +56,15 @@ export default function (eleventyConfig) {
   //    so each file is readable in the browser.
   eleventyConfig.on("eleventy.after", ({ dir }) => {
     mkdirSync(dir.output, { recursive: true });
+
+    // week-NN/img/ folders go to _site/week-NN/img/ (drafts too, in the preview build)
+    for (const root of withDrafts ? ["notes", "drafts"] : ["notes"]) {
+      if (!existsSync(root)) continue;
+      for (const week of readdirSync(root).filter((d) => d.startsWith("week-"))) {
+        const img = `${root}/${week}/img`;
+        if (existsSync(img)) cpSync(img, `${dir.output}/${week}/img`, { recursive: true, filter: keep });
+      }
+    }
 
     const notes = new AdmZip();
     notes.addLocalFolder("notes", "notes", keep);

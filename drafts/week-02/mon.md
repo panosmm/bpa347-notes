@@ -2,52 +2,41 @@
 
 What the model behind the agent is, why it sounds sure when it is wrong, and how to read your own usage.
 
-## Big picture
+## 1. The model
 
-- How the model was made
-- Why it sounds confident
-- The context window
-- Model and agent
-- Reading your own usage
-
-## 1. How the model was made
-
-- A language model is a program that predicts the next piece of a text, trained on a large part of the internet.
-- Training ends at a date, the cutoff. The model knows nothing after it, nothing about you, and keeps nothing between conversations.
-- What it holds is a compressed recollection of what it read: patterns, not a copy. It cannot look anything up by itself.
-
-## 2. Why it sounds confident
-
-- After the first training, the model is trained again on human ratings of its answers. Answers people liked were rewarded.
-- People like fluent, specific, confident answers. Confidence was trained in; it is not a sign that the model knows.
-- Hallucination: a fluent, specific, wrong statement. Not a malfunction: the model produces plausible text, it does not check facts.
-- Pushed with evidence, it often reverses itself just as confidently. Neither answer was knowledge.
+- It predicts the next piece of text. Trained on a large part of the internet, up to a cutoff date.
+- It knows nothing after the cutoff, nothing about you, nothing from your last conversation.
+- Then it was trained on human ratings. People like fluent, specific, confident answers, so that is what it produces, right or wrong.
 
 > [!IMPORTANT]
-> **KEY POINT:** Tone tells you nothing. Every number, name, date and source needs checking. Week 3 shows how.
+> **KEY POINT:** Tone tells you nothing. A hallucination is a fluent, specific, wrong statement, produced the same way as a right one. Every number, name, date and source needs checking.
 
-## 3. The context window
+## 2. The context window
 
-- Token: the unit the model reads and writes, about three quarters of an English word. Greek takes more tokens per word than English.
-- Context window: everything the model can see when it answers: the instructions, the briefing files, the conversation so far, the files it has read, your message. Its working memory and its whole world for that answer.
-- The window has a fixed size. From today a bar at the bottom of your terminal shows how full it is.
-- On every message the whole conversation is sent to the model again. A long conversation costs more with every message and answers worse, because irrelevant material dilutes.
-- The same request twice gives two different answers. The model picks among likely continuations at random, on purpose. That is why one request produced a different app on every laptop.
+![The context window: system instructions, briefing files, the conversation so far, files the agent has read and your message go to the model, which returns an answer. Fixed size, re-sent in full with every message.](img/context-window.png)
 
-## 4. Model and agent
+- Everything the model can see when it answers. Nothing else exists for it.
+- Fixed size, measured in tokens: about three quarters of an English word. Greek costs more tokens per word.
+- Re-sent in full with every message. A long conversation costs more each time and answers worse.
+- The same request gives different answers on purpose: the model picks among likely continuations at random. One request, a different app on every laptop.
 
-- The model reads and writes text, nothing else. Claude Code wraps it in a loop with tools: read a file, run a command, write a file, and feeds each result back into the window. The wrapping is called the harness.
-- On Thursday the agent did not read your CSV. It read the first lines, wrote a Python program, ran it, and read the program's output. The window held a few hundred lines, never 541,909.
-- claude.ai, the desktop app and Claude Code use the same models. Same model, different harness, different results.
+## 3. Model and agent
 
-## 5. Reading your own usage
+- The model reads and writes text, nothing else. Claude Code wraps it in a loop with tools: read a file, run a command, write a file. Each result goes back into the window. The wrapping is the harness.
+- Thursday's agent never read your 541,909 rows. It wrote a program, ran it, and read the program's output.
+- claude.ai, the desktop app and Claude Code: same model, different harness, different results.
 
-- Claude Pro has usage limits. `/usage` shows how much is used and when it resets.
-- Claude Code keeps a copy of your conversation ready for one hour after your last message. Within the hour, the next message is cheap. After it, the next message pays for the whole conversation again.
-- Rule: short conversations, one task each. Never leave a long one for the next day; Thursday shows the handoff.
-- The status line: a bar at the bottom of the terminal, set up by the agent itself, showing the model, the folder and how full the window is.
-- `/context`: what is filling the window right now: system instructions, tools, briefing files, the conversation.
-- `/model`: which model answers. Sonnet is the default; larger models use more of your limit per message. The left and right arrows set the effort level, how long the model thinks before answering. `/effort` does the same.
+## 4. Reading your own usage
+
+| Command | What it does |
+|---|---|
+| `/usage` | How much of your Pro limit is used, and when it resets |
+| `/context` | What fills the window right now |
+| `/statusline` | Sets up the bar at the bottom: model, folder, how full the window is |
+| `/model` | Which model answers. Left and right arrows set the effort level |
+
+- Claude Code keeps your conversation ready for one hour after your last message. Within the hour the next message is cheap. After it, the whole conversation is paid for again.
+- Rule: short conversations, one task each. Never leave a long one for tomorrow. Thursday shows the handoff.
 
 > [!CAUTION]
 > **Cost.** Stay on Sonnet at the default effort until week 7, when you can measure what the others cost.
@@ -82,12 +71,10 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 
 ## Terms
 
-- **Language model**: a program that predicts the next piece of text, trained on a large part of the internet.
 - **Token**: the unit the model reads and writes; about three quarters of an English word.
 - **Context window**: everything the model can see when it answers. Fixed size; re-sent in full with every message.
 - **Hallucination**: a fluent, specific, wrong statement, produced the same way as a right one.
 - **Harness**: the program around the model: the tools, the loop, the permission prompts. Claude Code is one; the chat website is another.
-- **Status line**: the bar at the bottom of the terminal showing model, folder and how full the window is.
 - **Effort level**: how long the model thinks before answering. Higher costs more.
 
 ## Homework

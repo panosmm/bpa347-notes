@@ -1,68 +1,54 @@
 # Week 2 · Thursday: Context Engineering
 
-Everything the model knows about you arrives through the window, every time. What to put there, and three ways to control it.
+Everything the model knows about you arrives through the window, every time. What to put there, and three ways to keep it small.
 
 ## Before class
 
 - Your homework question and its answer, ready to show
 - Your laptop, with the folder from week 1
 
-## Big picture
-
-- What the model needs from you
-- The anatomy of a briefing
-- Context in layers
-- A briefing file of your own
-- A subagent
-- The handoff
-
 ## 1. What the model needs from you
 
-- Every conversation starts with a model that knows nothing about you, your company, your data or your last conversation. What it should know must be in the window.
-- Vague in, average out. Where the request leaves a gap, the model fills it with the most typical assumption in its training. The result is not wrong; it is average.
-- Trained to please, it rarely says your request was vague. It answers anyway.
-- The [briefing in the week 1 kit](https://bpa347-notes.vercel.app/kit/AGENTS.md) is why every agent in the room behaved alike: who you are, how to talk, two rules, the data. The agent read it before your first word.
+- Every conversation starts from zero: nothing about you, your company, your data, your last conversation. What it should know must be in the window.
+- Vague in, average out. Every gap in the request is filled with the most typical assumption from training. Trained to please, it answers anyway.
+- The [briefing in the week 1 kit](https://bpa347-notes.vercel.app/kit/AGENTS.md) is why every agent in the room behaved alike. It was read before your first word.
 
 > [!IMPORTANT]
-> **KEY POINT:** The answer is only as good as what is in the window when the model answers. Putting the right things there is your job; nobody else can do it.
+> **KEY POINT:** The answer is only as good as what is in the window when the model answers. Putting the right things there is your job.
 
-## 2. The anatomy of a briefing
+## 2. A briefing has five parts
 
-- Role and audience: who is asking, who reads the result.
-- Goal and decision: what the result is for, what will be decided with it.
-- Constraints and format: length, language, units, layout, what to leave out.
-- Materials and examples: the files, the data, an example of what good looks like.
-- Success criteria: how you will judge the result.
+| Part | Says |
+|---|---|
+| Role and audience | Who is asking, who reads the result |
+| Goal and decision | What the result is for, what will be decided with it |
+| Constraints and format | Length, language, units, layout, what to leave out |
+| Materials and examples | The files, the data, an example of what good looks like |
+| Success criteria | How you will judge the result |
+
 - This is requirements elicitation, with you as the stakeholder. A briefing that would brief a new colleague briefs the agent.
 
-## 3. Context in layers
+## 3. Four places to put it
 
-- Four layers, from one-off to standing: this message; this conversation; the files the agent reads; the briefing file it reads at every start.
-- The conversation is rented: re-sent with every message, gone when the session ends. Files are owned: kept for free, read when needed.
-- The briefing file holds what you would otherwise repeat every session. Not procedures, not everything you know.
-- Attaching a document to a chat is the small version of what companies do with their whole knowledge base: retrieval, week 5.
-- Selection beats volume. The window is finite and irrelevant material makes answers worse. Put in what the task needs, not everything you have.
+| Place | Lasts | Cost |
+|---|---|---|
+| This message | One answer | Re-sent with every message |
+| This conversation | Until you exit | Re-sent with every message |
+| Files in the folder | For good | Read when needed |
+| The briefing file, `CLAUDE.md` | Every start in this folder | Read at start |
 
-## 4. A briefing file of your own
+- The conversation is rented: re-sent every time, gone at exit. Files are owned: kept for free, read when needed.
+- `CLAUDE.md` holds what you would otherwise repeat every session. Five lines about formatting change every answer from then on. Edits take effect at the next start.
+- It is instructions, not enforcement. The kit's settings file is enforcement: rules the program applies whatever the agent decides.
+- Selection beats volume: irrelevant material makes answers worse. Attaching a document is the small version of retrieval, week 5.
 
-- `CLAUDE.md`: a text file in the working folder; the agent reads it at every start. Same idea as the kit's `AGENTS.md`. Claude Code reads `CLAUDE.md`, Codex reads `AGENTS.md`.
-- Five lines about formatting change every answer from then on. Today you write them, ask the same question before and after, and keep the file.
-- Edits take effect at the next start. Restart after changing it.
-- `/context` lists the briefing files that loaded, under Memory files.
-- A briefing file is instructions, not enforcement: the agent follows it the way a colleague follows a memo. The settings file in the kit's `.claude` folder is enforcement: rules the program applies whatever the agent decides.
+## 4. Three ways to keep the window small
 
-## 5. A subagent
+![Three ways: a subagent reads in its own window and sends back a report; a handoff writes a file that a fresh session reads; compact replaces the conversation with a summary in place.](img/three-ways.png)
 
-- A subagent: a second copy of the model with its own window, started by the agent for one task. It reads what it needs; only its report comes back into your window.
-- Use it when a task means reading a lot: checking a file, going through a folder of documents. Your window stays small.
-- Ask for it in plain words: "use a subagent to".
-
-## 6. The handoff
-
-- A long conversation costs more with every message and answers worse. It also holds everything you decided.
-- The handoff: ask the agent to write a file with what was done, what was decided, what is next. Exit. Start fresh and point the agent at the file. The knowledge moves from the rented layer to the owned one.
-- The status line shows the window before and after.
-- `/compact`: the automatic version. The agent summarises the conversation in place. Lossy, and you do not choose what survives. The handoff file you can read and fix.
+- **Subagent**: a second copy of the model with its own window, started by the agent for one task. Only its report comes back. Ask in plain words: "use a subagent to".
+- **Handoff**: the agent writes a file with what was done, what was decided, what is next. Exit, start fresh, point the agent at the file. Rented becomes owned.
+- **Compact**: `/compact` summarises the conversation in place. Lossy, and you do not choose what survives. The handoff file you can read and fix.
 
 ## In class
 
@@ -109,7 +95,6 @@ Everything the model knows about you arrives through the window, every time. Wha
 - **Retrieval**: fetching the relevant parts of a large document collection into the window before the model answers. Week 5.
 - **Subagent**: a second copy of the model with its own window, started by the agent for one task. Only its report comes back.
 - **Handoff**: a file that carries what was done and decided from one conversation to the next.
-- **Compact**: the agent's automatic summary of the conversation, replacing it in the window. Lossy.
 
 ## Homework
 
