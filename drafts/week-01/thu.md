@@ -8,23 +8,6 @@ Install the agent, let it look at your laptop, then have it build an app.
 - Python installed (steps in the homework)
 - Laptop charged
 
-## 1. What happens today
-
-- The agent is the chat model with hands. It runs on your laptop and can use what is on it. A chat window has never seen your computer.
-- Before it runs a command or changes a file, it asks you. Read the request. Approve what you understand; ask it to explain the rest. You are responsible for what you approve.
-- Today it does three things a chat window cannot: look at your Downloads folder, install Python libraries for itself, and build an app that runs on your laptop.
-- The app runs only while the agent's terminal window is open, and only on your laptop. After every change you ask for, reload the page.
-- Different students get different apps from the same request. That is expected.
-
-> [!TIP]
-> **Try it.** At the first permission prompt, before answering, type: *"Explain what this command does and why you need it."* Then decide.
-
-> [!WARNING]
-> **PLEASE NOTE:** Windows may ask whether to allow Python through the firewall: either answer works. If the terminal asks for an email address, press Enter. If the app's address does not open, tell the agent: *"the page does not load"*.
-
-> [!CAUTION]
-> **Cost.** Claude Code: stay on Sonnet, the Pro default. Codex: keep the default model.
-
 ## In class
 
 1. Install the agent. Paste the command, press Enter, wait for it to finish, then close the window.
@@ -66,12 +49,16 @@ Install the agent, let it look at your laptop, then have it build an app.
     ```
 11. Open the address in your browser. Try the pickers. Ask the agent for one change, then reload the page.
 
+> [!WARNING]
+> **PLEASE NOTE:** Windows may ask whether to allow Python through the firewall: either answer works. If the terminal asks for an email address, press Enter. If the app's address does not open, tell the agent: *"the page does not load"*.
+
+> [!CAUTION]
+> **Cost.** Claude Code: stay on Sonnet, the Pro default. Codex: keep the default model.
+
 ## Terms
 
 - **Working folder**: the folder the agent was started in. It sees the files there; anywhere else, it asks first.
-- **Briefing**: `AGENTS.md` in the kit. The agent reads it every time it starts in the folder: who you are, how to talk to you, what it may not do, what is in the data file.
 - **Permission prompt**: the agent's request for your approval before it runs a command or changes a file.
-- **Library**: an add-on for Python, installed with one command. pandas for tables, Streamlit for the app.
 - **localhost**: your own laptop as an address in the browser. A page there is visible to you only.
 
 ## Homework
