@@ -28,14 +28,12 @@ Everything the model knows about you arrives through the window, every time. Wha
 
 - This is requirements elicitation, with you as the stakeholder. A briefing that would brief a new colleague briefs the agent.
 
-## 3. Where to put what it should know
+## 3. Two places to put what it should know
 
 | Place | How long it lasts | What it costs |
 |---|---|---|
-| Your message | This one answer | Sent once |
-| This conversation | Until you exit | Re-sent with every message |
-| Files in the folder | Until you delete them | Read when the agent needs them |
-| `CLAUDE.md` | Every session in this folder | Read once, at the start |
+| The conversation: what you type and what it answers | Until you exit | Re-sent with every message |
+| Files in the folder, `CLAUDE.md` among them | Until you delete them | Read into the window when needed; `CLAUDE.md` at every start |
 
 - `CLAUDE.md` holds what you would otherwise repeat every session. Five lines about formatting change every answer from then on. Edits take effect at the next start.
 - It is instructions, not enforcement. The kit's settings file is enforcement: rules the program applies whatever the agent decides.
@@ -48,6 +46,7 @@ Everything the model knows about you arrives through the window, every time. Wha
 - **Subagent**: a second copy of the model with its own window, started by the agent for one task. Only its report comes back. Ask in plain words: "use a subagent to".
 - **Handoff**: the agent writes a file with what was done, what was decided, what is next. Exit, start fresh, point the agent at the file. The conversation becomes a file you can read and fix.
 - **Compact**: `/compact` summarises the conversation in place. Lossy, and you do not choose what survives. The handoff file you can read and fix.
+- Summarising is one way to make a lot of text small. Selecting is the other: an index of your documents, built from embeddings, picks the parts that matter. Week 5.
 
 ## In class
 
@@ -92,6 +91,7 @@ Everything the model knows about you arrives through the window, every time. Wha
 - **Briefing file**: a text file the agent reads at every start in a folder. `CLAUDE.md` for Claude Code, `AGENTS.md` for Codex.
 - **Requirements elicitation**: finding out and writing down what a result must do before anyone builds it.
 - **Retrieval**: fetching the relevant parts of a large document collection into the window before the model answers. Week 5.
+- **Embeddings**: numbers that stand for the meaning of a piece of text, so that similar pieces can be found. The index behind retrieval. Week 5.
 - **Subagent**: a second copy of the model with its own window, started by the agent for one task. Only its report comes back.
 - **Handoff**: a file that carries what was done and decided from one conversation to the next.
 
