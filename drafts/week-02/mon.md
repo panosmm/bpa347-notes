@@ -2,11 +2,16 @@
 
 What the model behind the agent is, why it sounds sure when it is wrong, and how to read your own usage.
 
-## 1. The model
+## 1. How the model was made
 
-- It predicts the next piece of text. Trained on a large part of the internet, up to a cutoff date.
-- It knows nothing after the cutoff, nothing about you, nothing from your last conversation.
-- Then it was trained on human ratings. People like fluent, specific, confident answers, so that is what it produces, right or wrong.
+| Stage | What happens | What it leaves behind |
+|---|---|---|
+| Pre-training | Reads a large part of the internet, learns to predict the next word | Knows a lot, up to a cutoff date. Nothing about you |
+| Post-training | Taught to be an assistant from example conversations | Answers questions, follows instructions, applies the vendor's rules |
+| Human ratings | Answers raters prefer are rewarded | Fluent, specific, confident, right or wrong |
+| In use | System prompt, harness, your briefing, your message | The context window: the only stage you touch |
+
+- The first three happened once, at the vendor, and are frozen. Everything you can change arrives through the window.
 
 > [!IMPORTANT]
 > **KEY POINT:** Tone tells you nothing. A hallucination is a fluent, specific, wrong statement, produced the same way as a right one. Every number, name, date and source needs checking.
@@ -71,6 +76,8 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 
 ## Terms
 
+- **Pre-training**: the first stage, learning to predict the next word from a large part of the internet.
+- **Post-training**: the later stages that turn the predictor into an assistant: example conversations, then human ratings (RLHF).
 - **Token**: the unit the model reads and writes; about three quarters of an English word.
 - **Context window**: everything the model can see when it answers. Fixed size; re-sent in full with every message.
 - **Hallucination**: a fluent, specific, wrong statement, produced the same way as a right one.
