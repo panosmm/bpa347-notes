@@ -7,4 +7,15 @@
 
 ## Before Monday 21 September
 
-1. In Thursday's folder, work with the agent on the data for a while, then do the handoff: ask for the file, exit, start again from the file. Screenshot the status line before and after. Bring both.
+1. In Thursday's folder, work with the agent on the data for a while. Then hand off, as in Thursday's steps 8 and 9:
+   - Screenshot the status line.
+   - Ask for the file:
+     ```prompt
+     Write a file named HANDOFF.md: what we did today, what we decided, what is next. Short.
+     ```
+   - Type `/exit`, then start `claude` again in the same folder.
+   - Continue from the file:
+     ```prompt
+     Read HANDOFF.md and tell me where we are.
+     ```
+   - Screenshot the status line again. Bring both screenshots.
