@@ -16,7 +16,15 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 > [!IMPORTANT]
 > **KEY POINT:** Tone tells you nothing. A hallucination is a fluent, specific, wrong statement, produced the same way as a right one. Every number, name, date and source needs checking.
 
-## 2. The context window
+## 2. Model, chatbot, agent
+
+- The model alone: text in, text out. Nothing else.
+- A chatbot: the model plus a few fixed tools at the vendor: web search, file upload, a code runner, memory. Today's news comes in through a search, into the window.
+- An agent: the model plus tools on your machine, in a loop. It adds tools on demand: writes a program, installs a library. The wrapping is the harness.
+- In the lab the agent never read your 541,909 rows. It wrote a program, ran it, and read the program's output.
+- claude.ai, the desktop app and Claude Code: same model, different harness, different results.
+
+## 3. The context window
 
 ![The context window: system instructions, briefing files, the conversation so far, files the agent has read and your message go to the model, which returns an answer. Fixed size, re-sent in full with every message.](img/context-window.png)
 
@@ -24,14 +32,6 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 - Fixed size, measured in tokens: about three quarters of an English word. Greek costs more tokens per word.
 - Re-sent in full with every message. A long conversation costs more each time and answers worse.
 - The same request gives different answers on purpose: the model picks among likely continuations at random. One request, a different app on every laptop.
-
-## 3. Model, chatbot, agent
-
-- The model alone: text in, text out. Nothing else.
-- A chatbot: the model plus a few fixed tools at the vendor: web search, file upload, a code runner, memory. Today's news comes in through a search, into the window.
-- An agent: the model plus tools on your machine, in a loop. It adds tools on demand: writes a program, installs a library. The wrapping is the harness.
-- In the lab the agent never read your 541,909 rows. It wrote a program, ran it, and read the program's output.
-- claude.ai, the desktop app and Claude Code: same model, different harness, different results.
 
 ## 4. Reading your own usage
 
