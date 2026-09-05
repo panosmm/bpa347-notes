@@ -17,6 +17,8 @@ export default function (eleventyConfig) {
   eleventyConfig.ignores.add("README.md");
   eleventyConfig.ignores.add("NOTES-STYLE.md");
   eleventyConfig.ignores.add("kit/**"); // kit files are copied as-is below, never rendered as pages
+  eleventyConfig.ignores.add("notes/**/files/**"); // week-NN/files/ = material for download, copied as-is below
+  eleventyConfig.ignores.add("drafts/**/files/**");
   if (!withDrafts) eleventyConfig.ignores.add("drafts/**");
 
   const order = { mon: 0, thu: 1, homework: 2 };
@@ -57,12 +59,14 @@ export default function (eleventyConfig) {
   eleventyConfig.on("eleventy.after", ({ dir }) => {
     mkdirSync(dir.output, { recursive: true });
 
-    // week-NN/img/ folders go to _site/week-NN/img/ (drafts too, in the preview build)
+    // week-NN/img/ and week-NN/files/ go to _site/week-NN/img/ and /files/ (drafts too, in the preview build)
     for (const root of withDrafts ? ["notes", "drafts"] : ["notes"]) {
       if (!existsSync(root)) continue;
       for (const week of readdirSync(root).filter((d) => d.startsWith("week-"))) {
-        const img = `${root}/${week}/img`;
-        if (existsSync(img)) cpSync(img, `${dir.output}/${week}/img`, { recursive: true, filter: keep });
+        for (const sub of ["img", "files"]) {
+          const from = `${root}/${week}/${sub}`;
+          if (existsSync(from)) cpSync(from, `${dir.output}/${week}/${sub}`, { recursive: true, filter: keep });
+        }
       }
     }
 

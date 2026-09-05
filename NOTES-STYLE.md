@@ -4,7 +4,7 @@ Every file under `notes/` follows this. Nothing else is used. Read this before w
 
 ## Files
 
-- `notes/week-NN/mon.md`, `thu.md`: session notes. `homework.md`: the week's homework. `img/`: screenshots, if any.
+- `notes/week-NN/mon.md`, `thu.md`: session notes. `homework.md`: the week's homework. `img/`: screenshots, if any. `files/`: material for download (a memo, a report), linked from the page by its site URL.
 - Filenames in English. Content in English; Greek appears only in the Terms list, in italics, where the classroom word differs.
 - No front matter. The first line is the H1; the site takes its title from it.
 
