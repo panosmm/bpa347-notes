@@ -6,46 +6,33 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 
 | Stage | What happens | What it leaves behind |
 |---|---|---|
-| Pre-training | Reads a large part of the internet, learns to predict the next word | A vague recollection of what it read, up to a cutoff date; it misremembers. Nothing about you |
-| Post-training | Taught to be an assistant from example conversations | Answers questions, follows instructions, applies the vendor's rules |
-| Human ratings | Answers raters prefer are rewarded | Fluent, specific, confident, right or wrong |
-| In use | System prompt, harness, your briefing, your message | The context window: the only stage you touch |
+| Pre-training | Reads a large part of the internet, learns to predict the next word | A vague recollection, up to a cutoff date. Nothing about you |
+| Post-training | Taught to be an assistant from example conversations | Follows instructions |
+| Human ratings | Answers raters prefer are rewarded | Fluent and confident, right or wrong |
 
-- The first three happened once, at the vendor, and are frozen. Everything you can change arrives through the context window.
-- The same request gives different answers on purpose: the model picks among likely continuations at random. The same request on two laptops gives two different results.
+- All three happened once, at the company that made the model, and are frozen. What you can change reaches the model through the context window.
 
 > [!IMPORTANT]
-> **KEY POINT:** Tone tells you nothing. A hallucination is a fluent, specific, wrong statement, produced the same way as a right one. Every number, name, date and source needs checking.
+> **KEY POINT:** Tone tells you nothing. A hallucination is a fluent, specific, wrong statement, produced the same way as a right one. Check every number, name, date and source.
 
 ## 2. The harness
 
-- Researchers at the vendor talk to the model directly. Programmers reach it through the API and build a harness of their own. Everyone else uses a ready-made harness: the program around the model, with its own instructions, tools, a loop and permission prompts.
-
-| Harness | Examples | Who uses it mostly |
-|---|---|---|
-| Chat websites and apps | claude.ai, ChatGPT, Gemini, Copilot | Everyone; for most people the only contact with a model |
-| Agents on your machine | Claude Code, Codex, Antigravity, OpenCode in a terminal; Claude Cowork, the Codex app as desktop apps | Programmers so far; the apps bring the same thing to everyone else |
-| Inside other software | Copilot in Excel, Word and Outlook; Cursor | Office workers, inside the tools they already use |
-| Built to order, on the API | A company's chatbot or agent, written by its programmers | Customers and staff, often without knowing a model is behind it |
+- The program around the model: its own instructions, tools, a loop and permission prompts. Almost nobody talks to a model directly.
+- Chat websites, agents on your machine, Copilot inside Excel, a company's own chatbot: all harnesses around the same few models. Same model, different harness, different results.
 
 ## 3. Model, chatbot, agent
 
-- The model alone: text in, text out. Nothing else.
-- A chatbot: the model plus a few fixed tools at the vendor: web search, file upload, a code runner, memory. Today's news comes in through a search, into the context window.
-- An agent: the model plus tools on your machine, in a loop. It adds tools on demand: writes a program, installs a library. The wrapping is the harness.
-- Asked how much a shop sold in one month, from a file of 541,909 rows, the agent wrote a program, ran it, and read the program's twenty lines of output. The file itself never entered the context window.
-- Autonomy: none, one message and one answer; a little, it decides when to search or run code; a lot, step after step until the task is done. Permissions set how far it goes alone.
-- claude.ai, the desktop app and Claude Code: same model, different harness, different results.
+- The model alone: text in, text out.
+- A chatbot: the model plus a few fixed tools: web search, file upload, a code runner, memory.
+- An agent: the model plus tools on your machine, in a loop until the task is done. It adds tools as needed. Permissions set how far it goes alone.
 
 ## 4. The context window
 
-![The context window: the harness's instructions, files read at every start, the conversation so far, files the agent has read and your message go to the model, which returns an answer. Fixed size, re-sent in full with every message.](img/context-window.png)
+![The context window: system instructions, files read at every start, the conversation, files the agent has read and your message all go to the model, which returns an answer.](img/context-window.png)
 
 - Everything the model can see when it answers. Nothing else exists for it.
-- Fixed size, measured in tokens: about three quarters of an English word. Greek costs more tokens per word.
-- Re-sent in full with every message. A long conversation costs more each time and answers worse.
-- Prices, September 2026, per million tokens: Sonnet 5 $2 in and $10 out; Fable 5.1 and GPT-6 Astra $10 and $50. A message sent from a fresh copy of the context costs a tenth of that or less.
-- The limit is not the target: the frontier models all offer a million tokens, and answers get worse long before it is full. The best results come from a small context.
+- Fixed size, in tokens: about three quarters of an English word. Greek costs more tokens per word.
+- Re-sent in full with every message. A long conversation costs more and answers worse. The limit is not the target.
 
 ## 5. Reading your own usage
 
@@ -56,20 +43,16 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 | `/statusline` | Sets up the bar at the bottom: model, folder, how full the context window is |
 | `/model` | Which model answers. Left and right arrows set the effort level |
 
-- Claude Code keeps your conversation ready for one hour after your last message. Within the hour the next message is cheap. After it, the whole conversation is paid for again.
-- Rule: short conversations, one task each. Never leave a long one for tomorrow. Thursday shows the handoff.
-
-> [!CAUTION]
-> **Cost.** Stay on Sonnet at the default effort until week 7, when you can measure what the others cost.
+- After an hour without a message, the whole conversation is paid for again. Short conversations, one task each.
 
 ## In class
 
-1. Open a terminal in Thursday's folder (`bpa347` on the Desktop) and start the agent.
-2. Set up the status line. It asks permission to write its settings file in your home folder: approve. The bar appears at the bottom after a moment.
+1. Open a terminal in the `bpa347` folder on the Desktop and start the agent.
+2. Set up the status line. Approve the write to its settings file. The bar appears at the bottom.
    ```prompt
    /statusline show the model, the folder I am in, and how full the context window is, as a percentage
    ```
-3. Look at what is in the context window before you have asked anything. Note the total.
+3. Look at the context window before you have asked anything. Note the total.
    ```prompt
    /context
    ```
@@ -77,11 +60,11 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
    ```prompt
    Which five countries outside the UK had the highest revenue in November 2025?
    ```
-5. Look at the context window again and compare with step 3.
+5. Look again and compare with step 3.
    ```prompt
    /context
    ```
-6. Check the model. Sonnet should be selected. Move the arrows to see the effort levels, leave the default, press Escape.
+6. Check the model. Left and right arrows show the effort levels. Escape closes it.
    ```prompt
    /model
    ```
@@ -92,13 +75,10 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 
 ## Terms
 
-- **Pre-training**: the first stage, learning to predict the next word from a large part of the internet.
-- **Post-training**: the later stages that turn the predictor into an assistant: example conversations, then human ratings (RLHF).
 - **Token**: the unit the model reads and writes; about three quarters of an English word.
 - **Context window**: everything the model can see when it answers. Fixed size; re-sent in full with every message.
 - **Hallucination**: a fluent, specific, wrong statement, produced the same way as a right one.
-- **Harness**: the program around the model: its tools, the loop, the permission prompts. A chat website is a small one; Claude Code is a large one on your machine.
-- **Effort level**: how long the model thinks before answering. Higher costs more.
+- **Harness**: the program around the model: its tools, the loop, the permission prompts.
 
 ## Homework
 
