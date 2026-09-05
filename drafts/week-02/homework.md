@@ -11,7 +11,7 @@
    - Screenshot the status line.
    - Ask for the file:
      ```prompt
-     Write a file named HANDOFF.md: what we did today, what we decided, what is next. Short.
+     Write a file named HANDOFF.md: what we did today, what we decided, what is next, and anything you would want to remember in a fresh session on this project. Short.
      ```
    - Type `/exit`, then start `claude` again in the same folder.
    - Continue from the file:

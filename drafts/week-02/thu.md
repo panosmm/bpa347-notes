@@ -79,7 +79,7 @@ Everything the model knows about you arrives through the window, every time. Wha
    ```
 8. The handoff. Note the percentage on the status line, then exit.
    ```prompt
-   Write a file named HANDOFF.md: what we did today, what we decided, what is next. Short.
+   Write a file named HANDOFF.md: what we did today, what we decided, what is next, and anything you would want to remember in a fresh session on this project. Short.
    ```
 9. Start the agent again and continue from the file. Note the percentage and compare with step 8.
    ```prompt
