@@ -11,7 +11,7 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 | Human ratings | Answers raters prefer are rewarded | Fluent, specific, confident, right or wrong |
 | In use | System prompt, harness, your briefing, your message | The context window: the only stage you touch |
 
-- The first three happened once, at the vendor, and are frozen. Everything you can change arrives through the window.
+- The first three happened once, at the vendor, and are frozen. Everything you can change arrives through the context window.
 
 > [!IMPORTANT]
 > **KEY POINT:** Tone tells you nothing. A hallucination is a fluent, specific, wrong statement, produced the same way as a right one. Every number, name, date and source needs checking.
@@ -19,9 +19,9 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 ## 2. Model, chatbot, agent
 
 - The model alone: text in, text out. Nothing else.
-- A chatbot: the model plus a few fixed tools at the vendor: web search, file upload, a code runner, memory. Today's news comes in through a search, into the window.
+- A chatbot: the model plus a few fixed tools at the vendor: web search, file upload, a code runner, memory. Today's news comes in through a search, into the context window.
 - An agent: the model plus tools on your machine, in a loop. It adds tools on demand: writes a program, installs a library. The wrapping is the harness.
-- In the lab the agent never read your 541,909 rows. It wrote a program, ran it, and read the program's output.
+- Asked how much a shop sold in one month, from a file of 541,909 rows, the agent wrote a program, ran it, and read the program's twenty lines of output. The file itself never entered the context window.
 - claude.ai, the desktop app and Claude Code: same model, different harness, different results.
 
 ## 3. The context window
@@ -31,15 +31,15 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 - Everything the model can see when it answers. Nothing else exists for it.
 - Fixed size, measured in tokens: about three quarters of an English word. Greek costs more tokens per word.
 - Re-sent in full with every message. A long conversation costs more each time and answers worse.
-- The same request gives different answers on purpose: the model picks among likely continuations at random. One request, a different app on every laptop.
+- The same request gives different answers on purpose: the model picks among likely continuations at random. The same request on two laptops gives two different results.
 
 ## 4. Reading your own usage
 
 | Command | What it does |
 |---|---|
 | `/usage` | How much of your Pro limit is used, and when it resets |
-| `/context` | What fills the window right now |
-| `/statusline` | Sets up the bar at the bottom: model, folder, how full the window is |
+| `/context` | What fills the context window right now |
+| `/statusline` | Sets up the bar at the bottom: model, folder, how full the context window is |
 | `/model` | Which model answers. Left and right arrows set the effort level |
 
 - Claude Code keeps your conversation ready for one hour after your last message. Within the hour the next message is cheap. After it, the whole conversation is paid for again.
@@ -55,7 +55,7 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
    ```prompt
    /statusline show the model, the folder I am in, and how full the context window is, as a percentage
    ```
-3. Look at what is in the window before you have asked anything. Note the total.
+3. Look at what is in the context window before you have asked anything. Note the total.
    ```prompt
    /context
    ```
@@ -63,7 +63,7 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
    ```prompt
    Which five countries outside the UK had the highest revenue in November 2025?
    ```
-5. Look at the window again and compare with step 3.
+5. Look at the context window again and compare with step 3.
    ```prompt
    /context
    ```
