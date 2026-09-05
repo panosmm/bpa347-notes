@@ -71,7 +71,7 @@ Everything the model knows about you arrives through the context window. What to
    /context
    ```
 6. Ask the question from step 3 again, word for word. Compare.
-7. The subagent. Watch the status line.
+7. The subagent. Watch the status line: the context window grows very little or not at all, because the subagent does the work in a context window of its own and returns only its answer.
    ```prompt
    Use a subagent to check the CSV for data problems and report back in ten lines.
    ```
