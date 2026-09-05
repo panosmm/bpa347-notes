@@ -37,9 +37,9 @@ Everything the model knows about you arrives through the context window, every t
 | Its own notes | The agent, as it works | Until you or it edits them; the index is read at every start |
 
 - `CLAUDE.md` holds what you would otherwise repeat every session. A few lines about formatting change every answer from then on. Edits take effect at the next start.
-- It is instructions, not enforcement. The kit's settings file is enforcement: rules the program applies whatever the agent decides.
+- Instructions, not enforcement: the kit's settings file is what actually blocks a command.
 - The agent's own notes: what you corrected, what you prefer, what the project is. Plain text in a folder of its own, on by default; `/memory` opens it, and you can edit or delete anything there.
-- Put in what matters, leave out the rest: irrelevant material makes answers worse. Attaching a document is the small version of retrieval, week 5.
+- Put in what matters, leave out the rest: irrelevant material makes answers worse.
 
 ## 4. Three ways to keep the context window small
 
@@ -94,7 +94,6 @@ All three take text out of the context window and keep what matters somewhere el
 
 - **Briefing file**: a text file the agent reads at every start in a folder. `CLAUDE.md` for Claude Code, `AGENTS.md` for Codex.
 - **Auto memory**: notes the agent writes for itself about you and the project, read at every start. `/memory` opens them.
-- **Retrieval**: fetching the relevant parts of a large document collection into the context window before the model answers. Week 5.
 - **Embeddings**: numbers that stand for the meaning of a piece of text, so that similar pieces can be found. The index behind retrieval. Week 5.
 - **Subagent**: a second copy of the model with its own window, started by the agent for one task. Only its report comes back.
 - **Handoff**: a file that carries what was done and decided from one conversation to the next.
