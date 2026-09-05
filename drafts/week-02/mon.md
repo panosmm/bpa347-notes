@@ -13,7 +13,7 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 - All three happened once, at the company that made the model, and are frozen. What you can change reaches the model through the context window.
 
 > [!IMPORTANT]
-> **KEY POINT:** Tone tells you nothing. A hallucination is a fluent, specific, wrong statement, produced the same way as a right one. Check every number, name, date and source.
+> **KEY POINT:** Whether the model sounds confident tells you nothing. A hallucination is a fluent, specific, wrong statement, produced the same way as a right one. Check every number, name, date and source.
 
 ## 2. The harness
 
