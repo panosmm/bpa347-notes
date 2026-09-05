@@ -6,34 +6,48 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 
 | Stage | What happens | What it leaves behind |
 |---|---|---|
-| Pre-training | Reads a large part of the internet, learns to predict the next word | Knows a lot, up to a cutoff date. Nothing about you |
+| Pre-training | Reads a large part of the internet, learns to predict the next word | A vague recollection of what it read, up to a cutoff date; it misremembers. Nothing about you |
 | Post-training | Taught to be an assistant from example conversations | Answers questions, follows instructions, applies the vendor's rules |
 | Human ratings | Answers raters prefer are rewarded | Fluent, specific, confident, right or wrong |
 | In use | System prompt, harness, your briefing, your message | The context window: the only stage you touch |
 
 - The first three happened once, at the vendor, and are frozen. Everything you can change arrives through the context window.
+- The same request gives different answers on purpose: the model picks among likely continuations at random. The same request on two laptops gives two different results.
 
 > [!IMPORTANT]
 > **KEY POINT:** Tone tells you nothing. A hallucination is a fluent, specific, wrong statement, produced the same way as a right one. Every number, name, date and source needs checking.
 
-## 2. Model, chatbot, agent
+## 2. The harness
+
+- Researchers at the vendor talk to the model directly. Programmers reach it through the API and build a harness of their own. Everyone else uses a ready-made harness: the program around the model, with its own instructions, tools, a loop and permission prompts.
+
+| Harness | Examples | Who uses it mostly |
+|---|---|---|
+| Chat websites and apps | claude.ai, ChatGPT, Gemini, Copilot | Everyone; for most people the only contact with a model |
+| Agents on your machine | Claude Code, Codex, Antigravity, OpenCode in a terminal; Claude Cowork, the Codex app as desktop apps | Programmers so far; the apps bring the same thing to everyone else |
+| Inside other software | Copilot in Excel, Word and Outlook; Cursor | Office workers, inside the tools they already use |
+| Built to order, on the API | A company's chatbot or agent, written by its programmers | Customers and staff, often without knowing a model is behind it |
+
+## 3. Model, chatbot, agent
 
 - The model alone: text in, text out. Nothing else.
 - A chatbot: the model plus a few fixed tools at the vendor: web search, file upload, a code runner, memory. Today's news comes in through a search, into the context window.
 - An agent: the model plus tools on your machine, in a loop. It adds tools on demand: writes a program, installs a library. The wrapping is the harness.
 - Asked how much a shop sold in one month, from a file of 541,909 rows, the agent wrote a program, ran it, and read the program's twenty lines of output. The file itself never entered the context window.
+- Autonomy: none, one message and one answer; a little, it decides when to search or run code; a lot, step after step until the task is done. Permissions set how far it goes alone.
 - claude.ai, the desktop app and Claude Code: same model, different harness, different results.
 
-## 3. The context window
+## 4. The context window
 
-![The context window: system instructions, briefing files, the conversation so far, files the agent has read and your message go to the model, which returns an answer. Fixed size, re-sent in full with every message.](img/context-window.png)
+![The context window: the harness's instructions, files read at every start, the conversation so far, files the agent has read and your message go to the model, which returns an answer. Fixed size, re-sent in full with every message.](img/context-window.png)
 
 - Everything the model can see when it answers. Nothing else exists for it.
 - Fixed size, measured in tokens: about three quarters of an English word. Greek costs more tokens per word.
 - Re-sent in full with every message. A long conversation costs more each time and answers worse.
-- The same request gives different answers on purpose: the model picks among likely continuations at random. The same request on two laptops gives two different results.
+- Prices, September 2026, per million tokens: Sonnet 5 $2 in and $10 out; Fable 5.1 and GPT-6 Astra $10 and $50. A message sent from a fresh copy of the context costs a tenth of that or less.
+- The limit is not the target: the frontier models all offer a million tokens, and answers get worse long before it is full. The best results come from a small context.
 
-## 4. Reading your own usage
+## 5. Reading your own usage
 
 | Command | What it does |
 |---|---|
