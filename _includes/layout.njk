@@ -9,6 +9,7 @@
 <body>
 <header class="top">
   <a class="brand" href="/">BPA347 · Digital Businesses and AI</a>
+  {% if page.url != "/" %}<a class="home" href="/">Home</a>{% endif %}
   <a class="download" href="/notes.zip">Download notes (zip)</a>
   {% if week %}<nav>
     <span class="week">{{ week | replace("week-", "Week ") }}</span>

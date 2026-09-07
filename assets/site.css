@@ -27,6 +27,7 @@ body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.55 -appl
 a { color: var(--link); }
 header.top { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; align-items: baseline; padding: .8rem 1.25rem; border-bottom: 1px solid var(--line); font-size: .9rem; }
 header.top .brand { font-weight: 600; text-decoration: none; color: var(--fg); }
+header.top .home { margin-left: .5rem; }
 header.top nav a { margin-left: .9rem; }
 header.top .week { color: var(--muted); }
 header.top .download { margin-left: auto; }
