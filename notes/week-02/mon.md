@@ -17,7 +17,8 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 
 ## 2. The harness
 
-- The program around the model: its own instructions, tools, a loop and permission prompts. Almost nobody talks to a model directly.
+- The program around the model. Almost nobody talks to a model directly.
+- The harness gives the model what it does not have on its own: a place to run things (a computer, a code runner), memory between conversations, and a context window that the harness fills, with its own instructions, your files and the results of tools.
 - Chat websites, agents on your machine, Copilot inside Excel, a company's own chatbot: all harnesses around the same few models. Same model, different harness, different results.
 
 ## 3. Model, chatbot, agent
@@ -78,7 +79,7 @@ What the model behind the agent is, why it sounds sure when it is wrong, and how
 - **Token**: the unit the model reads and writes; about three quarters of an English word.
 - **Context window**: everything the model can see when it answers. Fixed size; re-sent in full with every message.
 - **Hallucination**: a fluent, specific, wrong statement, produced the same way as a right one.
-- **Harness**: the program around the model: its tools, the loop, the permission prompts.
+- **Harness**: the program around the model: a place to run things, memory, and the context window it fills for the model.
 
 ## Homework
 
