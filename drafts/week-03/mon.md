@@ -1,18 +1,23 @@
 # Week 3 · Monday: Verifying AI Output
 
-A polished answer can be wrong. Two kinds of check, three verdicts, and what to do with a report too big to check.
+What it takes to be sure of one sentence, two kinds of check, three verdicts, and what to do with a report too big to check.
 
 ## Before class
 
 - Your laptop, with the `bpa347` folder from week 1
 
-## 1. Fluent is not right
+## 1. What it takes to be sure of one sentence
 
-- Three kinds of error: invented facts (numbers, sources, quotes, names, dates); wrong reasoning on right facts; a right answer to a question you did not ask.
-- Errors hide in anything specific. The tone never changes: right and wrong read exactly alike.
+| Kind of sentence | Example | The check |
+|---|---|---|
+| A fact with a source | a ratio, with a link | Open the link, find the sentence |
+| A fact without one | a count, no link | Find a source |
+| A reading | why a series jumped | Nothing to open. Do the numbers force it? |
+| A comparison | a salary here against one abroad | Both numbers hold. Is it the comparison the reader needs? |
+| A negative | "nobody publishes the waiting time" | No page proves an absence. Search again from zero |
 
 > [!IMPORTANT]
-> **KEY POINT:** Only a check tells right from wrong. You sign what you hand over, so hand over only what you have checked.
+> **KEY POINT:** Right and wrong read exactly alike. Only a check tells them apart.
 
 ## 2. Two kinds of check
 
@@ -23,20 +28,13 @@ A polished answer can be wrong. Two kinds of check, three verdicts, and what to 
 | Does the arithmetic add up? | Would I sign this? |
 | Are the dates in range? | |
 
-## 3. Three verdicts
+## 3. To check it all, you redo it
 
-| Verdict | Meaning |
-|---|---|
-| Holds | The source exists and says it |
-| Does not hold | The source says otherwise, or nothing says it |
-| Cannot tell | The source will not open; nobody can prove a negative; the writer's own reading |
+- Every link, every number, every reading, again. For a report of 31,000 words and 279 links: about four hours and 4.6 million tokens.
+- That covers only what is on the page. Readings, comparisons and what the report never found are on no page.
+- So you check portions, as deep as it matters, and say which.
 
-- Most of a real report holds. The work is in the third row.
-- A grey area the report names is not a failure. One it hides is.
-
-## 4. Checking a big report
-
-- To check it all, you redo it. Otherwise you check portions, and say what you did not check.
+## 4. What you can do
 
 | Check | What it takes |
 |---|---|
@@ -45,7 +43,19 @@ A polished answer can be wrong. Two kinds of check, three verdicts, and what to 
 | Claims to the source | One portion, every claim, the three verdicts |
 | Completeness | One question researched again from zero |
 
-## 5. Data discipline
+- What you did not check is not checked. Say so.
+
+## 5. Three verdicts
+
+| Verdict | Meaning |
+|---|---|
+| Holds | The source exists and says it |
+| Does not hold | The source says otherwise, or nothing says it |
+| Cannot tell | The source will not open; nobody can prove a negative; the writer's own reading |
+
+- A grey area the report names is not a failure. One it hides is.
+
+## 6. Data discipline
 
 - Every number you hand over carries three things: computed by a program, not typed by the model; its source; what was left out, noted under the table.
 - Personal and confidential data never go into a chat window. GDPR applies to you.
@@ -84,6 +94,7 @@ A polished answer can be wrong. Two kinds of check, three verdicts, and what to 
 ## Terms
 
 - **Mechanical check**: a check with a yes or no answer that a program or an agent can make: the link opens, the quote is on the page, the sum is right.
+- **Reading**: the writer's own explanation of the facts. A source confirms facts, not readings.
 - **Completeness**: whether a report found what there was to find. It cannot list what it missed, so the only check is researching the question again.
 - **GDPR**: the EU law on personal data. It covers what you paste into a chat window.
 
