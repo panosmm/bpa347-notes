@@ -51,7 +51,7 @@ A report goes out under your name. How to check it, and what to do when it is to
    ```prompt
    Pick twenty links from dossier/dossier.md at random. For each, open the page and check whether it contains the number or the phrase the report attributes to it. Table: link, what the report says, found or not found.
    ```
-8. The report is cut into parts. Check just one part, every claim in it, to see how much work checking is. Pick any `portion-NN.md` file and put its name in the prompt, here and in step 9.
+8. The report is cut into parts. Check just one part, every claim in it, to see how much work checking is. Pick any `portion-NN.md` file and put its name in the prompt, here and in steps 9 and 10.
    ```prompt
    For every claim in dossier/portion-NN.md that carries a number or a source: does the source exist, does it say what the file says, and is the claim a fact from the source or the writer's own reading? Answer as a table: claim, what the source says, verdict (holds / does not hold / cannot tell). Then two or three sentences on what you could not check and why.
    ```
@@ -59,12 +59,10 @@ A report goes out under your name. How to check it, and what to do when it is to
    ```prompt
    What question does dossier/portion-NN.md answer? Research that question again from zero on the web, without starting from the file's own sources, and tell me what you find that the file does not mention.
    ```
-10. The cost. Note how long steps 6 to 9 took and how many tokens they used, from `/context`. Multiply both by the number of portions in `dossier/INDEX.md`: that is what checking the whole report once would cost.
-
-## Terms
-
-- **Reading**: the writer's own explanation of the facts. A source can confirm a fact, not an explanation.
-- **Completeness**: whether the report found everything there was to find. The report cannot list what it missed, so the only check is to research the question again.
+10. What would it cost to check the whole report? Ask the agent for an estimate.
+   ```prompt
+   Estimate how much time and how many tokens the checks of dossier/portion-NN.md took. Multiply both by the number of parts listed in dossier/INDEX.md. That is what checking the whole report once would cost.
+   ```
 
 ## Homework
 
