@@ -34,7 +34,7 @@ A report goes out under your name. How to check it, and what to do when it is to
    ```prompt
    Download https://bpa347-notes.vercel.app/week-03/files/memo.md into this folder.
    ```
-3. Read the memo: one page on the shop's November results, written from the data file. Then ask the agent, in your own words, to check it against the data. Write down your request, word for word.
+3. Read the memo: one page on the shop's November results, written from the data file. Then ask the agent, in your own words, to check it against the data. Read what it found.
 4. Make a folder on the Desktop named `bpa347-week3`, open a terminal there and start the agent.
 5. Download the report: 31,000 words and 279 links, in Greek, on the teaching profession in Greece. The zip holds the whole text and the same text cut into portions, listed in `dossier/INDEX.md`.
    ```prompt
