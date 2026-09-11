@@ -51,7 +51,7 @@ A report goes out under your name. How to check it, and what to do when it is to
    ```prompt
    Pick twenty links from dossier/dossier.md at random. For each, open the page and check whether it contains the number or the phrase the report attributes to it. Table: link, what the report says, found or not found.
    ```
-8. Every claim in one portion. Pick any `portion-NN.md` file and put its name in the prompt, here and in step 9.
+8. The report is cut into parts. Check just one part, every claim in it, to see how much work checking is. Pick any `portion-NN.md` file and put its name in the prompt, here and in step 9.
    ```prompt
    For every claim in dossier/portion-NN.md that carries a number or a source: does the source exist, does it say what the file says, and is the claim a fact from the source or the writer's own reading? Answer as a table: claim, what the source says, verdict (holds / does not hold / cannot tell). Then two or three sentences on what you could not check and why.
    ```
