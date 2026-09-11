@@ -63,4 +63,4 @@ A report goes out under your name. How to check it, and what to do when it is to
 
 ## Homework
 
-Before Thursday, in groups: one deep research run from the brief. See [homework](homework.md).
+Before Thursday, in groups: one deep research. Deep research is a mode of claude.ai and chatgpt.com: you ask a question, the model searches the web for some minutes, reads the pages it finds and writes a report with links to its sources. See [homework](homework.md).
