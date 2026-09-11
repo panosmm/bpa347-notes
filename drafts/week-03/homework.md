@@ -16,14 +16,8 @@ TODO: confirm the brief.
 
 ## Before Monday 28 September
 
-In groups.
-
-1. Audit the report your group chose, with the agent in the `bpa347-week3` folder. Put the file name in place of `report2.md`.
+1. Audit the report you chose, with the agent in the `bpa347-week3` folder. Put the file name in place of `report2.md`.
    ```prompt
    For every claim in report2.md that carries a number or a source: does the source exist, does it say what the report says, and is the claim a fact from the source or the writer's own reading? Answer as a table: claim, what the source says, verdict (holds / does not hold / cannot tell). Then two or three sentences on what you could not check and why.
    ```
 2. Bring the tally: how many claims hold, do not hold, cannot tell, and the report's grey areas.
-
-## Groups
-
-- Groups of 4 or 5. The same group continues into the project.
