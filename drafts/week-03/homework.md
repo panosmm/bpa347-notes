@@ -2,7 +2,7 @@
 
 ## Before Thursday 24 September
 
-In groups: one run per group.
+On your own: one run each.
 
 TODO: confirm the brief.
 
