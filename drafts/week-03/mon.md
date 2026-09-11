@@ -25,7 +25,6 @@ A report goes out under your name. How to check it, and what to do when it is to
 ## 3. Your own numbers
 
 - For every number in your report, say three things: a program computed it, the model did not type it; where the data came from; what you left out, in a note under the table.
-- Never paste personal or confidential data into a chat window. GDPR applies to you.
 
 ## In class
 
@@ -52,7 +51,7 @@ A report goes out under your name. How to check it, and what to do when it is to
    ```prompt
    Pick twenty links from dossier/dossier.md at random. For each, open the page and check whether it contains the number or the phrase the report attributes to it. Table: link, what the report says, found or not found.
    ```
-8. Every claim in your team's portion. Put its file name in place of `portion-NN.md`.
+8. Every claim in one portion. Pick any `portion-NN.md` file and put its name in the prompt, here and in step 9.
    ```prompt
    For every claim in dossier/portion-NN.md that carries a number or a source: does the source exist, does it say what the file says, and is the claim a fact from the source or the writer's own reading? Answer as a table: claim, what the source says, verdict (holds / does not hold / cannot tell). Then two or three sentences on what you could not check and why.
    ```
@@ -66,7 +65,6 @@ A report goes out under your name. How to check it, and what to do when it is to
 
 - **Reading**: the writer's own explanation of the facts. A source can confirm a fact, not an explanation.
 - **Completeness**: whether the report found everything there was to find. The report cannot list what it missed, so the only check is to research the question again.
-- **GDPR**: the EU law on personal data. It covers what you paste into a chat window.
 
 ## Homework
 
