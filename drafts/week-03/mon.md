@@ -63,4 +63,4 @@ A report goes out under your name. How to check it, and what to do when it is to
 
 ## Homework
 
-Before Thursday, on your own: one deep research. Deep research is a mode of claude.ai and chatgpt.com: you ask a question, the model searches the web for some minutes, reads the pages it finds and writes a report with links to its sources. See [homework](homework.md).
+Before Thursday, on your own: one deep research. Deep research is a mode of claude.ai and chatgpt.com: you ask a question, the model searches the web for some minutes, reads the pages it finds and writes a report with links to its sources. A harder question, given to Claude Code or Codex, can take many hours, especially when the agent checks and double-checks its sources and its conclusions. See [homework](homework.md).
