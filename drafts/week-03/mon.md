@@ -34,15 +34,19 @@ A report goes out under your name. How to check it, and what to do when it is to
    ```prompt
    Download https://bpa347-notes.vercel.app/week-03/files/memo.md into this folder.
    ```
-3. Read the memo: one page on the shop's November results, written from the data file. Then ask the agent, in your own words, to check it against the data. Read what it found.
+3. Read the memo: one page on the shop's November results, written from the data file in this folder. Then ask the agent, in your own words, whether the memo is right.
+
+   > [!WARNING]
+   > **PLEASE NOTE:** Files ending in `.md` are plain text. Right-click the file, choose Open with, then Notepad (Windows) or TextEdit (Mac). Or ask the agent: *"Show me memo.md"*.
+
 4. Make a folder on the Desktop named `bpa347-week3`, open a terminal there and start the agent.
-5. Download the report: 31,000 words and 279 links, in Greek, on the teaching profession in Greece. The zip holds the whole text and the same text cut into portions, listed in `dossier/INDEX.md`.
+5. Download the report. The zip unpacks into a folder named `dossier`. In it, `dossier.md` is the whole report: 31,000 words and 279 links, in Greek, on the teaching profession in Greece. The `portion-NN.md` files are the same text cut into pieces, listed in `INDEX.md`.
    ```prompt
    Download https://bpa347-notes.vercel.app/week-03/files/dossier.zip into this folder and unpack it.
    ```
 6. Do the links open?
    ```prompt
-   Write and run a script that tries every web link in dossier/dossier.md. Report how many open and list the ones that do not.
+   Try every web link in dossier/dossier.md. How many open? List the ones that do not.
    ```
 7. Twenty links: does the page say what the report says?
    ```prompt
