@@ -4,7 +4,7 @@ What a research agent does, why its citations need checking, and how to get a re
 
 ## Before class
 
-- Your group's report from the homework, as `report1.md` in the `bpa347-week3` folder
+- Your report from the homework, as `report1.md` in the `bpa347-week3` folder
 - Your laptop
 
 ## 1. A research agent
@@ -63,4 +63,4 @@ What a research agent does, why its citations need checking, and how to get a re
 
 ## Homework
 
-Before Monday, in groups: audit your own report, bring the tally. See [homework](homework.md).
+Before Monday, on your own: audit your report, bring the tally. See [homework](homework.md).
