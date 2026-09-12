@@ -4,15 +4,18 @@
 
 On your own: one run each.
 
+> [!WARNING]
+> **PLEASE NOTE:** Steps 1 to 3 happen in your web browser, on the claude.ai website (Codex: the chatgpt.com website). Not in Claude Code, not in the terminal. Only step 4 uses Claude Code.
+
 TODO: confirm the question.
 
 1. The question, exactly as written, nothing added:
    ```prompt
    Write a report on the future of tourism in Cyprus.
    ```
-2. On claude.ai, start a new chat. Click the `+` button at the bottom left and choose **Research**. Paste the question and send it. Codex: on chatgpt.com, click `+` and choose **Deep research**. Before it starts, it will probably ask you what exactly you want. If it does, reply "You decide, go ahead." This first report has to come from the question alone. It runs for some minutes. Wait for it to finish.
+2. Open your web browser and go to claude.ai. Start a new chat. Click the `+` button at the bottom left and choose **Research**. Paste the question and send it. Codex: in the browser, on chatgpt.com, click `+` and choose **Deep research**. Before it starts, it will probably ask you what exactly you want. If it does, reply "You decide, go ahead." This first report has to come from the question alone. It runs for some minutes. Wait for it to finish.
 3. Save the report as `report1.md` in the `bpa347-week3` folder on the Desktop. Click **Copy** under the report. Windows: open Notepad and paste. **File**, **Save as**. Under "Save as type" choose "All files". File name `report1.md`, folder `Desktop\bpa347-week3`, **Save**. Mac: open TextEdit, new document. **Format**, **Make Plain Text**. Paste. **File**, **Save**. Name `report1.md`, folder `Desktop/bpa347-week3`, **Save**. If it asks about the extension, choose **Use .md**. Codex: on chatgpt.com click the share icon above the report, then **Download**, then **Markdown**. Move the file from Downloads into the folder and rename it `report1.md`.
-4. Open a terminal in the `bpa347-week3` folder, start the agent and ask it:
+4. Now Claude Code. Open a terminal in the `bpa347-week3` folder, start the agent and ask it:
    ```prompt
    List every place in report1.md where the report says it could not find something, or is not sure.
    ```
