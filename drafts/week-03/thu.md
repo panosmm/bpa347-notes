@@ -4,7 +4,7 @@ What a research agent does, how to ask it for the report you need, and how to ch
 
 ## Before class
 
-- Your report from the homework, as `report1.md` in the `bpa347-week3` folder
+- Your report from the homework, as `report1.md` in the `bpa347-week3` folder, and the list of what it could not find
 - Your laptop
 
 ## 1. A research agent
