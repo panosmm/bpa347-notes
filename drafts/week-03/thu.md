@@ -1,6 +1,6 @@
 # Week 3 · Thursday: Deep Research Agents
 
-What a research agent does, how to ask it for the report you need, and how to check the report before you hand it in.
+What a research agent does, how to ask it for the report you need, and how to check the report before you use it.
 
 ## Before class
 
@@ -15,12 +15,12 @@ What a research agent does, how to ask it for the report you need, and how to ch
 
 ## 2. The report answers the question you asked
 
-- A one-line question leaves everything else to the agent: for whom, for what decision, which years, which sources, how long. What comes back is a general report, the same for everyone who asks.
+- A short request leaves everything else to the agent: which days, from where, where you sleep, how you move around, what you want to see, what the report is for. What comes back is a general plan, much the same for everyone who asks.
 - Let the agent interview you before it searches. Answer its questions, take the request it writes, then run that.
 - These are the same five parts as a briefing file: role and audience, goal and decision, constraints and format, materials, success criteria.
 
 > [!IMPORTANT]
-> **KEY POINT:** Hand your boss the report you have checked, not the one that reads best.
+> **KEY POINT:** Use the report you have checked, not the one that reads best.
 
 ## 3. Checking your own report
 
@@ -32,12 +32,16 @@ What a research agent does, how to ask it for the report you need, and how to ch
 
 1. The interview. In claude.ai (Codex: chatgpt.com), start a new chat.
    ```prompt
-   Before you research, interview me. Ask me one question at a time, everything you need to know, to write the full request for a deep research run on this: Write a report on the future of tourism in Cyprus. When you have enough, write the full request.
+   Before you research, interview me. Ask me one question at a time, everything you need to know, to write the full request for a deep research run on this: Plan a budget trip to Rome for me and a friend, 4 or 5 days in the week before Christmas. We have 600 euros each for everything. Decide everything else yourself. When you have enough, write the full request.
    ```
 2. Answer its questions. Start a research run with the request it wrote: click `+`, choose **Research** (Codex: **Deep research**), paste the request, send it. It runs for some minutes.
 3. When it finishes, save the report as `report2.md` in the `bpa347-week3` folder, next to `report1.md`, the same way as `report1.md`.
-4. Read both. Which one would you hand your boss? The prompts below say `report2.md`; put the name of the file you chose.
-5. Two agents. Open two terminals in the `bpa347-week3` folder and start the agent in each, with a name. In the first:
+4. Save the request the interview wrote as `request.md` in the same folder, the same way. Then open a terminal in the `bpa347-week3` folder, start the agent and ask it:
+   ```prompt
+   Read request.md, report1.md and report2.md. Which report answers the request, and where does each one fall short of it? Where does each one say it could not find something? Which one would you use to book the trip, and why?
+   ```
+   Read both reports yourself. Do you agree with the agent? The prompts below say `report2.md`; put the name of the file you chose.
+5. Two agents. Type `/exit`, then open a second terminal in the `bpa347-week3` folder. Start the agent in each terminal, with a name. In the first:
    ```bash
    claude --name author
    ```
@@ -51,7 +55,7 @@ What a research agent does, how to ask it for the report you need, and how to ch
    ```
 7. In the second terminal, the auditor.
    ```prompt
-   Audit report2.md: open every cited link and check that it exists and says what the report says; check every number. Then send all your objections in one message to the session named author and wait for its answers. Give me a table: objection, the author's answer, your verdict (holds / does not hold / cannot tell).
+   Audit report2.md: open every cited link and check that it exists and says what the report says; check every price, time and date. Then send all your objections in one message to the session named author and wait for its answers. Give me a table: objection, the author's answer, your verdict (holds / does not hold / cannot tell).
    ```
 8. Read the messages. A message from the other session shows as one line; press `Ctrl+O` to see the whole message. Where the author agrees with an objection, correct the report. Where the two disagree, you decide.
 
