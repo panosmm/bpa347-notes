@@ -18,6 +18,7 @@ What a research agent does, how to ask it for the report you need, and how to ch
 - A short request leaves everything else to the agent: which days, from where, where you sleep, how you move around, what you want to see, what the report is for. What comes back is a general plan, much the same for everyone who asks.
 - Let the agent interview you before it searches. Answer its questions, take the request it writes, then run that.
 - These are the same five parts as a briefing file: role and audience, goal and decision, constraints and format, materials, success criteria.
+- An example, the same agent on the same trip: [report 1](https://bpa347-notes.vercel.app/week-03/files/rome-report-1.pdf) from the short request, [report 2](https://bpa347-notes.vercel.app/week-03/files/rome-report-2.pdf) from the request an interview wrote, and [the two reports compared](https://bpa347-notes.vercel.app/week-03/files/rome-comparison.pdf) by Claude Code.
 
 > [!IMPORTANT]
 > **KEY POINT:** Use the report you have checked, not the one that reads best.
