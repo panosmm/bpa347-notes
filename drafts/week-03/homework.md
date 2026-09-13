@@ -21,5 +21,5 @@
 
 ## Before Monday 28 September
 
-1. Finish the check of your report if class ended before it did: the steps are in Thursday's notes.
+1. Finish the check of your report: the steps are in Thursday's notes.
 2. From the table, count the verdicts: how many claims hold, how many do not hold, how many the agent could not tell. Bring the three numbers to class.
