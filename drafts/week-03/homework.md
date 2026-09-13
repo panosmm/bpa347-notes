@@ -5,7 +5,7 @@
 On your own: one run each.
 
 > [!WARNING]
-> **PLEASE NOTE:** Steps 1 to 3 happen in your web browser, on the claude.ai website (Codex: the chatgpt.com website). Not in Claude Code, not in the terminal. Only step 4 uses Claude Code.
+> **PLEASE NOTE:** All three steps happen in your web browser, on the claude.ai website (Codex: the chatgpt.com website). Not in Claude Code, not in the terminal.
 
 1. The request, exactly as written, nothing added:
    ```prompt
@@ -19,12 +19,6 @@ On your own: one run each.
    Mac: open TextEdit and click **New Document**. Click **Format**, then **Make Plain Text**. Paste. Click **File**, then **Save**. In the box "Save As" type `report1.md`. Go to the `bpa347-week3` folder on the Desktop. Click **Save**. If it asks which extension to use, click **Use .md**.
 
    Codex: on chatgpt.com click the share icon above the report, then **Download**, then **Markdown**. The file lands in your Downloads folder. Move it into the `bpa347-week3` folder on the Desktop and rename it `report1.md`.
-
-4. Now Claude Code. Open a terminal in the `bpa347-week3` folder, start the agent and ask it:
-   ```prompt
-   List every place in report1.md where the report says it could not find a price, a time or a source, or that something is not yet published.
-   ```
-   Bring the list.
 
 ## Before Monday 28 September
 

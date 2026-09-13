@@ -4,7 +4,7 @@ How to ask a research agent for the report you need, and how to check the report
 
 ## Before class
 
-- Your report from the homework, as `report1.md` in the `bpa347-week3` folder, and the list of what it could not find
+- Your report from the homework, as `report1.md` in the `bpa347-week3` folder
 - Your laptop
 
 ## 1. The report answers the request you wrote
