@@ -31,7 +31,7 @@ How to ask a research agent for the report you need, and how to check the report
 3. When it finishes, save the report as `report2.md` in the `bpa347-week3` folder, next to `report1.md`, the same way you saved `report1.md`: **Copy** under the report, then Notepad or TextEdit, save as `report2.md` (Codex: **Download**, **Markdown**, move and rename).
 4. Save the request the interview wrote as `request.md` in the same folder, the same way. Then open a terminal in the `bpa347-week3` folder, start the agent and paste this:
    ```prompt
-   Read request.md, report1.md and report2.md. Which report answers the request, and where does each one fall short of it? Where does each one say it could not find something? Which one would you use to book the trip, and why?
+   Read request.md, report1.md and report2.md. Which of the two reports answers the request in request.md, and where does each one fall short of it? Where does each one say it could not find something? Which one would you use to book the trip, and why?
    ```
    Read both reports yourself and decide which one you will use. The agent's answer is advice, not the decision. The prompts in steps 6 and 7 say `report2.md`. If you chose report 1, type `report1.md` instead.
 5. Two agents. Type `/exit` to close the agent. Open a second terminal in the `bpa347-week3` folder, so you have two terminals side by side. Start the agent in each one, with a name. In the first:
