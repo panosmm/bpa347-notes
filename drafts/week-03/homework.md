@@ -9,7 +9,7 @@
    ```prompt
    Plan a budget trip to Rome for me and a friend, 4 or 5 days in the week before Christmas. We have 600 euros each for everything. Decide everything else yourself.
    ```
-2. The website will probably ask you questions before it starts. For this first report you give no more information: reply "You decide, go ahead." The research runs for some minutes. Wait for it to finish.
+2. The research agent will probably ask you questions before it starts. For this first report you give no more information: reply "You decide, go ahead." It runs for some minutes. Wait for it to finish.
 3. Save the report as a file named `report1.md` in the `bpa347-week3` folder on the Desktop. If you do not have that folder, make it. On claude.ai, click **Copy** under the report, then:
 
    Windows: open Notepad and paste. Click **File**, then **Save as**. Under "Save as type" choose **All files**. Under "File name" type `report1.md`. Go to the `bpa347-week3` folder on the Desktop and click **Save**.
@@ -21,8 +21,5 @@
 
 ## Before Monday 28 September
 
-1. Check the report you would use to book the trip, `report1.md` or `report2.md`. Open a terminal in the `bpa347-week3` folder, start the agent and paste this. The prompt says `report2.md`; if you are checking report 1, type `report1.md` instead.
-   ```prompt
-   For every claim in report2.md that carries a number, a date or a source: does the source exist, does it say what the report says, and is the claim a fact from the source or the writer's own explanation? Answer as a table: claim, what the source says, verdict (holds / does not hold / cannot tell). Then two or three sentences on what you could not check and why.
-   ```
-2. Count the verdicts: how many claims hold, how many do not hold, how many the agent could not tell. Bring the three numbers to class.
+1. Finish the check of your report if class ended before it did: the steps are in Thursday's notes.
+2. From the table, count the verdicts: how many claims hold, how many do not hold, how many the agent could not tell. Bring the three numbers to class.
