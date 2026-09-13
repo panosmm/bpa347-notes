@@ -1,33 +1,26 @@
 # Week 3 · Thursday: Deep Research Agents
 
-What a research agent does, how to ask it for the report you need, and how to check the report before you use it.
+How to ask a research agent for the report you need, and how to check the report before you use it.
 
 ## Before class
 
 - Your report from the homework, as `report1.md` in the `bpa347-week3` folder, and the list of what it could not find
 - Your laptop
 
-## 1. A research agent
+## 1. The report answers the request you wrote
 
-- The model in a loop: it searches the web, reads the pages it finds, takes notes, and searches again for what is still missing. Minutes for a short question, hours for a long report.
-- What comes back is a report with citations. Every citation is a link.
-- Whether the page says what the report says, you still have to check.
-
-## 2. The report answers the question you asked
-
-- A short request leaves everything else to the agent: which days, from where, where you sleep, how you move around, what you want to see, what the report is for. What comes back is a general plan, much the same for everyone who asks.
-- Let the agent interview you before it searches. Answer its questions, take the request it writes, then run that.
-- These are the same five parts as a briefing file: role and audience, goal and decision, constraints and format, materials, success criteria.
+- A short request leaves everything else to the agent: which days, from which airport, where you sleep, how you move around, what you want to see, what the report is for. Everyone who sends the same short request gets much the same plan.
+- Let the agent interview you before it searches. Answer its questions, take the request it writes, then run that request.
 - An example, the same agent on the same trip: [report 1](https://bpa347-notes.vercel.app/week-03/files/rome-report-1.pdf) from the short request, [report 2](https://bpa347-notes.vercel.app/week-03/files/rome-report-2.pdf) from the request an interview wrote, and [the two reports compared](https://bpa347-notes.vercel.app/week-03/files/rome-comparison.pdf) by Claude Code.
 
 > [!IMPORTANT]
-> **KEY POINT:** Use the report you have checked, not the one that reads best.
+> **KEY POINT:** A report that sounds good can still be wrong. Check it before you use it.
 
-## 3. Checking your own report
+## 2. Checking your own report
 
-- The same check as for a report you were handed: does every source exist, does it say what the report says, is the claim a fact or the writer's own reading.
+- The same check as for a report you were handed: does every source exist, does it say what the report says, is the claim a fact from the source or the writer's own explanation.
 - A second agent can do the checking and send its objections to the first, which answers from the report and its sources. Where the two disagree, you decide.
-- A report that says what it could not find can be used. One that hides it cannot.
+- A good report says what it could not find, so you know what is still open. A report that says nothing about this looks complete and is not.
 
 ## In class
 
