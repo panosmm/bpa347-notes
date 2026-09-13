@@ -8,7 +8,7 @@ How to ask a research agent for the report you need, and how to check the report
 
 ## 1. The report answers the request you wrote
 
-- A short request leaves everything else to the agent: which days, from which airport, where you sleep, how you move around, what you want to see, what the report is for. Everyone who sends the same short request gets much the same plan.
+- Your `report1.md` came from a short request: a city, a budget, roughly when, and "decide everything else yourself". A short request leaves everything else to the agent: which days, from which airport, where you sleep, how you move around, what you want to see, what the report is for. Everyone who sends the same short request gets much the same plan.
 - Let the agent interview you before it searches. Answer its questions, take the request it writes, then run that request.
 - An example, the same agent on the same trip: [report 1](https://bpa347-notes.vercel.app/week-03/files/rome-report-1.pdf) from the short request, [report 2](https://bpa347-notes.vercel.app/week-03/files/rome-report-2.pdf) from the request an interview wrote, and [the two reports compared](https://bpa347-notes.vercel.app/week-03/files/rome-comparison.pdf) by Claude Code.
 
