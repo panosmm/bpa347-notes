@@ -29,13 +29,7 @@ How to ask a research agent for the report you need, and how to check the report
    I am going to give a research agent this request: "Plan a budget trip to Rome for me and a friend, 4 or 5 days in the week before Christmas. We have 600 euros each for everything. Decide everything else yourself." Before I do, interview me instead: ask me one question at a time, and keep asking until you have covered everything that needs to be taken into account when planning this trip. Then write the full request as one message, ready to paste.
    ```
 2. Answer the questions as yourself: your real dates, your airport, your budget, what you want to see. When it writes the full request, copy it. Start a new chat, click the `+` in the box where you type and choose **Research** (Codex: **Deep research**), paste the request and send it. If it asks questions before it starts, answer them. It then searches for some minutes.
-3. When it finishes, save the report as `report2.md` in the `bpa347-week3` folder, next to `report1.md`. Under the report, point at the row of small icons and click the one that says **Copy**. Then:
-
-   Windows: open Notepad and paste. Click **File**, then **Save as**. Under "Save as type" choose **All files**. Under "File name" type `report2.md`. On the left click **Desktop**, open the `bpa347-week3` folder, and click **Save**.
-
-   Mac: open TextEdit and click **New Document**. Click **Format**, then **Make Plain Text**. Paste. Click **File**, then **Save**. Type `report2.md` as the name, choose **Desktop** under Where, and click **Save**. When it asks which extension to use, click **Use .md**. Then drag `report2.md` from the Desktop into the `bpa347-week3` folder.
-
-   Codex: click the share icon above the report, then **Download**, then **Markdown**. Move the file from Downloads into the `bpa347-week3` folder and rename it: on Windows type `report2` (the `.md` ending is hidden and stays), on a Mac type `report2.md`.
+3. When it finishes, save the report as a file named `report2.md` in the `bpa347-week3` folder, next to `report1.md`. If you do not know how, ask in the same chat how to save it on your laptop as a plain text file with that name, in that folder.
 4. Which report is more useful? Open a terminal in the `bpa347-week3` folder, start the agent and paste this:
    ```prompt
    Read report1.md and report2.md. Both were written for the same two people, who want to book a budget trip to Rome. Which report is more useful to the people who asked for it, and why? What is wrong or missing in each one? Where does each one say it could not find something?
