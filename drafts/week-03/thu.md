@@ -10,60 +10,47 @@ How to ask a research agent for the report you need, and how to check the report
 
 - From the homework you have `report1.md`: the research agent's report from a short request. The request said a city, a budget, roughly when, and "decide everything else yourself".
 - So the research agent decided the rest: which days, from which airport, where you sleep, how you get around, what you see. Everyone who sends that request gets much the same plan.
-- Ask the model, in an ordinary chat, to interview you before you send the request: one question at a time, and to keep asking until it has covered everything that needs to be taken into account when planning the trip. Its last message is the full request; give that to the research agent.
-- An example, the same research agent on the same trip: [report 1](https://bpa347-notes.vercel.app/week-03/files/rome-report-1.pdf) from the short request, [report 2](https://bpa347-notes.vercel.app/week-03/files/rome-report-2.pdf) from the full request written after an interview, and [the two reports compared](https://bpa347-notes.vercel.app/week-03/files/rome-comparison.pdf) by Claude Code.
+- For the second report, you first let the website interview you in an ordinary chat, without Research: it asks one question at a time, and keeps asking until it has covered everything that needs to be taken into account when planning the trip. Its last message is the full request, and that is what you give to the research agent.
+- An example, the same research agent on the same trip: [report 1](https://bpa347-notes.vercel.app/week-03/files/rome-report-1.pdf) from the short request, [report 2](https://bpa347-notes.vercel.app/week-03/files/rome-report-2.pdf) from the full request written after an interview, and [which of the two is more useful](https://bpa347-notes.vercel.app/week-03/files/rome-comparison.pdf), answered by the agent.
 
 > [!IMPORTANT]
 > **KEY POINT:** Whatever you leave out of the request, the research agent decides for you.
 
-## 2. What you do with your two reports
+## 2. Once both reports are in the folder
 
-- Ask the agent which of the two reports answers the request in `request.md`, and where each one says what it could not find. Then read both and decide which one you will use.
-- Check that one, claim by claim, the same check as for a report someone else wrote: does the source exist, does it say what the report says, is the claim a fact from the source or the writer's own explanation. Verdict: holds, does not hold, cannot tell.
-- Two agents do the check: the auditor checks every claim and sends the ones that fail to the author; the author answers from the report and its sources. You read the table. Where the two disagree, you decide.
+- Ask the agent, in the terminal, which report is more useful to the people who asked for it, and why. The agent decides; you read parts of both reports so that you know what it is talking about.
+- Check the report the agent picked, claim by claim, the same check as for a report someone else wrote: does the source exist, does it say what the report says, is the claim a fact from the source or the writer's own explanation. Verdict: holds, does not hold, cannot tell.
 - Count the verdicts: how many claims hold, how many do not hold, how many the agent could not tell. Bring the three numbers on Monday.
 
 ## In class
 
-1. The interview. Open claude.ai (Codex: chatgpt.com), start a new chat and paste this:
+1. The interview. Open claude.ai (Codex: chatgpt.com), start a new chat without Research, and paste this:
    ```prompt
    I am going to give a research agent this request: "Plan a budget trip to Rome for me and a friend, 4 or 5 days in the week before Christmas. We have 600 euros each for everything. Decide everything else yourself." Before I do, interview me instead: ask me one question at a time, and keep asking until you have covered everything that needs to be taken into account when planning this trip. Then write the full request as one message, ready to paste.
    ```
-2. Answer the questions. When the model writes the full request, copy it. Start a new chat, click `+` and choose **Research** (Codex: **Deep research**), paste the request and send it. The research agent runs for some minutes.
-3. While it runs, save the request. Go back to the interview chat and click **Copy** under the model's last message. Save it as `request.md` in the `bpa347-week3` folder. Windows: paste into Notepad, click **File**, then **Save as**, choose **All files** under "Save as type", type `request.md` as the file name, go to the folder and click **Save**. Mac: open TextEdit, click **Format**, then **Make Plain Text**, paste, click **File**, then **Save**, type `request.md` as the name, go to the folder, click **Save**, then **Use .md**.
-4. When the research agent finishes, save the report as `report2.md` in the same folder, the same way. Codex: click the share icon above the report, then **Download**, then **Markdown**; move the file from Downloads into the folder and rename it `report2.md`.
-5. Which report answers the request? Open a terminal in the `bpa347-week3` folder, start the agent and paste this:
+2. Answer the questions as yourself: your real dates, your airport, your budget, what you want to see. When it writes the full request, copy it. Start a new chat, click the `+` in the box where you type and choose **Research** (Codex: **Deep research**), paste the request and send it. If it asks questions before it starts, answer them. It then searches for some minutes.
+3. When it finishes, save the report as `report2.md` in the `bpa347-week3` folder, next to `report1.md`. Under the report, point at the row of small icons and click the one that says **Copy**. Then:
+
+   Windows: open Notepad and paste. Click **File**, then **Save as**. Under "Save as type" choose **All files**. Under "File name" type `report2.md`. On the left click **Desktop**, open the `bpa347-week3` folder, and click **Save**.
+
+   Mac: open TextEdit and click **New Document**. Click **Format**, then **Make Plain Text**. Paste. Click **File**, then **Save**. Type `report2.md` as the name, choose **Desktop** under Where, and click **Save**. When it asks which extension to use, click **Use .md**. Then drag `report2.md` from the Desktop into the `bpa347-week3` folder.
+
+   Codex: click the share icon above the report, then **Download**, then **Markdown**. Move the file from Downloads into the `bpa347-week3` folder and rename it: on Windows type `report2` (the `.md` ending is hidden and stays), on a Mac type `report2.md`.
+4. Which report is more useful? Open a terminal in the `bpa347-week3` folder, start the agent and paste this:
    ```prompt
-   Read request.md, report1.md and report2.md. Which of the two reports answers the request in request.md, and where does each one fall short of it? Where does each one say it could not find something? Which one would you use to book the trip, and why?
+   Read report1.md and report2.md. Both were written for the same two people, who want to book a budget trip to Rome. Which report is more useful to the people who asked for it, and why? What is wrong or missing in each one? Where does each one say it could not find something?
    ```
-   Then read both reports yourself and decide which one you will use. The agent's answer is advice. The prompts below say `report2.md`; if you chose report 1, type `report1.md` instead.
-6. Two agents. Type `/exit`. Open a second terminal in the same folder. Start the agent in the first terminal with the name author, and in the second with the name auditor:
-   ```bash
-   claude --name author
-   ```
-   ```bash
-   claude --name auditor
-   ```
-   Codex: the exchange between two sessions is for Claude Code. Start `codex` in one terminal and paste this:
+   While the agent works, read parts of both reports for a few minutes. The prompt in step 5 says `report2.md`; if the agent picked report 1, type `report1.md` instead.
+5. Check that report. Paste this, then read the table:
    ```prompt
    For every claim in report2.md that carries a number, a date or a source: does the source exist, does it say what the report says, and is the claim a fact from the source or the writer's own explanation? Answer as a table: claim, what the source says, verdict (holds / does not hold / cannot tell). Then two or three sentences on what you could not check and why.
    ```
-7. In the author's terminal, paste this:
-   ```prompt
-   Read report2.md. You are its author. A session on this laptop named auditor will send you the claims it thinks do not hold. Answer each one from the report and its sources, say plainly when the auditor is right, and send your answers to the auditor in one message.
-   ```
-8. In the auditor's terminal, paste this:
-   ```prompt
-   For every claim in report2.md that carries a number, a date or a source: does the source exist, does it say what the report says, and is the claim a fact from the source or the writer's own explanation? Send every claim that does not hold, or that you cannot tell, to the session named author in one message and wait for its answers. Then give me a table: claim, what the source says, the author's answer, verdict (holds / does not hold / cannot tell). Then two or three sentences on what you could not check and why.
-   ```
-9. Read the auditor's table. In the author's terminal, a message from the auditor shows as one line; press `Ctrl+O` to see it in full. Where the author agreed that a claim does not hold, ask the author to correct the report. Where the two disagree, you decide.
 
 ## Terms
 
-- **Research agent**: Research on claude.ai, Deep research on chatgpt.com. The model searches the web for some minutes, reads the pages it finds and writes a report with citations.
-- **Citation**: the web page a claim points to, as a link. Two checks: does the link open, and does the page say what the report says.
-- **Session name**: a name you give a Claude Code session when you start it, with `--name`, so that another session on the same laptop can send it messages. `/list-agents` shows the sessions running on your laptop.
+- **Research agent**: what claude.ai calls Research and chatgpt.com calls Deep research. The model searches the web for some minutes, reads the pages it finds and writes a report with links to its sources.
+- **Citation**: the report's word for a source: the web page a claim points to, as a link.
 
 ## Homework
 
-Before Monday, on your own: finish the check of your report, count the verdicts, bring the three numbers. See [homework](homework.md).
+Before Monday, on your own: the agent's table for the report it picked, complete; count the verdicts; bring the three numbers. See [homework](homework.md).
