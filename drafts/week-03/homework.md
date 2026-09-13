@@ -2,12 +2,12 @@
 
 ## Before Thursday 24 September
 
-On your own: one run each.
+Each student does this alone.
 
 > [!WARNING]
 > **PLEASE NOTE:** All three steps happen in your web browser, on the claude.ai website (Codex: the chatgpt.com website). Not in Claude Code, not in the terminal.
 
-1. The request, exactly as written, nothing added:
+1. This is the request. You will paste it exactly as it is here, with nothing added:
    ```prompt
    Plan a budget trip to Rome for me and a friend, 4 or 5 days in the week before Christmas. We have 600 euros each for everything. Decide everything else yourself.
    ```
@@ -22,8 +22,8 @@ On your own: one run each.
 
 ## Before Monday 28 September
 
-1. Check the report you chose on Thursday, with the agent in the `bpa347-week3` folder. Put its file name in place of `report2.md`.
+1. On Thursday you chose one of your two reports. Check that one. Open a terminal in the `bpa347-week3` folder, start the agent and paste this. If you chose report 1, type `report1.md` instead of `report2.md`.
    ```prompt
-   For every claim in report2.md that carries a number, a date or a source: does the source exist, does it say what the report says, and is the claim a fact from the source or the writer's own reading? Answer as a table: claim, what the source says, verdict (holds / does not hold / cannot tell). Then two or three sentences on what you could not check and why.
+   For every claim in report2.md that carries a number, a date or a source: does the source exist, does it say what the report says, and is the claim a fact from the source or the writer's own explanation? Answer as a table: claim, what the source says, verdict (holds / does not hold / cannot tell). Then two or three sentences on what you could not check and why.
    ```
-2. Write down the counts: how many claims hold, how many do not, how many the agent could not tell. And the places where the report says it could not find something.
+2. Write down three numbers: how many claims hold, how many do not hold, how many the agent could not tell. Bring them to class.

@@ -18,9 +18,9 @@ How to ask a research agent for the report you need, and how to check the report
 
 ## 2. Checking your own report
 
-- The same check as for a report you were handed: does every source exist, does it say what the report says, is the claim a fact from the source or the writer's own explanation.
-- A second agent can do the checking and send its objections to the first, which answers from the report and its sources. Where the two disagree, you decide.
-- A good report says what it could not find, so you know what is still open. A report that says nothing about this looks complete and is not.
+- The same check as for a report someone gave you: does every source exist, does it say what the report says, is the claim a fact from the source or the writer's own explanation.
+- A second agent can do the checking. It sends its objections to the first agent, which answers from the report and its sources. Where the two disagree, you decide.
+- A good report says what it could not find, so you know what you still have to find out yourself. A report that says nothing about this looks complete and is not.
 
 ## In class
 
@@ -28,14 +28,14 @@ How to ask a research agent for the report you need, and how to check the report
    ```prompt
    Before you research, interview me. Ask me one question at a time, everything you need to know, to write the full request for a deep research run on this: Plan a budget trip to Rome for me and a friend, 4 or 5 days in the week before Christmas. We have 600 euros each for everything. Decide everything else yourself. When you have enough, write the full request.
    ```
-2. Answer its questions. Start a research run with the request it wrote: click `+`, choose **Research** (Codex: **Deep research**), paste the request, send it. It runs for some minutes.
-3. When it finishes, save the report as `report2.md` in the `bpa347-week3` folder, next to `report1.md`, the same way as `report1.md`.
-4. Save the request the interview wrote as `request.md` in the same folder, the same way. Then open a terminal in the `bpa347-week3` folder, start the agent and ask it:
+2. Answer its questions. When it writes the full request, copy that request. Start a new chat, click `+`, choose **Research** (Codex: **Deep research**), paste the request, send it. It runs for some minutes.
+3. When it finishes, save the report as `report2.md` in the `bpa347-week3` folder, next to `report1.md`, the same way you saved `report1.md`: **Copy** under the report, then Notepad or TextEdit, save as `report2.md` (Codex: **Download**, **Markdown**, move and rename).
+4. Save the request the interview wrote as `request.md` in the same folder, the same way. Then open a terminal in the `bpa347-week3` folder, start the agent and paste this:
    ```prompt
    Read request.md, report1.md and report2.md. Which report answers the request, and where does each one fall short of it? Where does each one say it could not find something? Which one would you use to book the trip, and why?
    ```
-   Read both reports yourself. Do you agree with the agent? The prompts below say `report2.md`; put the name of the file you chose.
-5. Two agents. Type `/exit`, then open a second terminal in the `bpa347-week3` folder. Start the agent in each terminal, with a name. In the first:
+   Read both reports yourself and decide which one you will use. The agent's answer is advice, not the decision. The prompts in steps 6 and 7 say `report2.md`. If you chose report 1, type `report1.md` instead.
+5. Two agents. Type `/exit` to close the agent. Open a second terminal in the `bpa347-week3` folder, so you have two terminals side by side. Start the agent in each one, with a name. In the first:
    ```bash
    claude --name author
    ```
@@ -43,22 +43,22 @@ How to ask a research agent for the report you need, and how to check the report
    ```bash
    claude --name auditor
    ```
-6. In the first terminal, the author.
+6. In the first terminal, the author, paste this:
    ```prompt
    Read report2.md. You are its author. A session on this laptop named auditor will send you objections. Answer each one from the report and its sources, and say plainly when an objection is right.
    ```
-7. In the second terminal, the auditor.
+7. In the second terminal, the auditor, paste this:
    ```prompt
-   Audit report2.md: open every cited link and check that it exists and says what the report says; check every price, time and date. Then send all your objections in one message to the session named author and wait for its answers. Give me a table: objection, the author's answer, your verdict (holds / does not hold / cannot tell).
+   Check report2.md: open every cited link and check that it exists and says what the report says; check every price, time and date. Then send all your objections in one message to the session named author and wait for its answers. Give me a table: objection, the author's answer, your verdict (holds / does not hold / cannot tell).
    ```
-8. Read the messages. A message from the other session shows as one line; press `Ctrl+O` to see the whole message. Where the author agrees with an objection, correct the report. Where the two disagree, you decide.
+8. Read the auditor's table. In the author's terminal, a message from the auditor shows as one line; press `Ctrl+O` to see it in full. Where the author agreed with an objection, ask the author to correct the report. Where the two disagree, you decide.
 
 ## Terms
 
 - **Research mode**: the setting in claude.ai or chatgpt.com that makes the model search the web and write a report with citations.
 - **Citation**: the web page a claim points to, as a link. Two checks: does the link open, and does the page say what the report says.
-- **Session name**: the name a Claude Code session answers to, set with `--name`. `/list-agents` shows the sessions running on your laptop.
+- **Session name**: a name you give a Claude Code session when you start it, with `--name`, so another session on the same laptop can send it messages. `/list-agents` shows the sessions running on your laptop.
 
 ## Homework
 
-Before Monday, on your own: check your report, bring the counts. See [homework](homework.md).
+Before Monday, on your own: check the report you chose, bring the three counts. See [homework](homework.md).
