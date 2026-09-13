@@ -9,6 +9,7 @@
 
    > [!WARNING]
    > **PLEASE NOTE:** Claude Code is not the Claude app. Do not download anything from claude.ai. Open a terminal and paste the command below into it.
+
    Windows:
    ```bash
    irm https://claude.ai/install.ps1 | iex
