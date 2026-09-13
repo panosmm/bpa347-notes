@@ -11,8 +11,15 @@ On your own: one run each.
    ```prompt
    Plan a budget trip to Rome for me and a friend, 4 or 5 days in the week before Christmas. We have 600 euros each for everything. Decide everything else yourself.
    ```
-2. Open your web browser and go to claude.ai. Start a new chat. Click the `+` button at the bottom left and choose **Research**. Paste the request and send it. Codex: in the browser, on chatgpt.com, click `+` and choose **Deep research**. If it asks you anything before it starts, reply "You decide, go ahead." This first report has to come from the request alone. It runs for some minutes. Wait for it to finish.
-3. Save the report as `report1.md` in the `bpa347-week3` folder on the Desktop. Click **Copy** under the report. Windows: open Notepad and paste. **File**, **Save as**. Under "Save as type" choose "All files". File name `report1.md`, folder `Desktop\bpa347-week3`, **Save**. Mac: open TextEdit, new document. **Format**, **Make Plain Text**. Paste. **File**, **Save**. Name `report1.md`, folder `Desktop/bpa347-week3`, **Save**. If it asks about the extension, choose **Use .md**. Codex: on chatgpt.com click the share icon above the report, then **Download**, then **Markdown**. Move the file from Downloads into the folder and rename it `report1.md`.
+2. Open your web browser and go to claude.ai. Start a new chat. Click the `+` button at the bottom left and choose **Research**. Paste the request and send it. Codex: in the browser, on chatgpt.com, click `+` and choose **Deep research**. The website will probably ask you questions before it starts. For this first report you give no more information: reply "You decide, go ahead." It runs for some minutes. Wait for it to finish.
+3. Save the report as a file named `report1.md` in the `bpa347-week3` folder on the Desktop. Click **Copy** under the report, then:
+
+   Windows: open Notepad and paste. Click **File**, then **Save as**. In the box "Save as type" choose **All files**. In the box "File name" type `report1.md`. Go to the `bpa347-week3` folder on the Desktop. Click **Save**.
+
+   Mac: open TextEdit and click **New Document**. Click **Format**, then **Make Plain Text**. Paste. Click **File**, then **Save**. In the box "Save As" type `report1.md`. Go to the `bpa347-week3` folder on the Desktop. Click **Save**. If it asks which extension to use, click **Use .md**.
+
+   Codex: on chatgpt.com click the share icon above the report, then **Download**, then **Markdown**. The file lands in your Downloads folder. Move it into the `bpa347-week3` folder on the Desktop and rename it `report1.md`.
+
 4. Now Claude Code. Open a terminal in the `bpa347-week3` folder, start the agent and ask it:
    ```prompt
    List every place in report1.md where the report says it could not find a price, a time or a source, or that something is not yet published.
