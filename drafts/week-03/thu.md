@@ -6,9 +6,10 @@ How to ask a research agent for the report you need, and how to check the report
 
 - Your report from the homework, as `report1.md` in the `bpa347-week3` folder
 
-## 1. The report answers the request you wrote
+## 1. From a short request to a full request
 
-- The homework request was short: a city, a budget, roughly when, and "decide everything else yourself". So the research agent decided the rest: which days, from which airport, where you sleep, how you get around, what you see. Everyone who sends that request gets much the same plan.
+- From the homework you have `report1.md`: the research agent's report from a short request. The request said a city, a budget, roughly when, and "decide everything else yourself".
+- So the research agent decided the rest: which days, from which airport, where you sleep, how you get around, what you see. Everyone who sends that request gets much the same plan.
 - In an ordinary chat, the model can interview you first: it asks what it needs to know, one question at a time, then writes the full request as its last message. You copy that request and give it to the research agent.
 - An example, the same research agent on the same trip: [report 1](https://bpa347-notes.vercel.app/week-03/files/rome-report-1.pdf) from the short request, [report 2](https://bpa347-notes.vercel.app/week-03/files/rome-report-2.pdf) from the full request written after an interview, and [the two reports compared](https://bpa347-notes.vercel.app/week-03/files/rome-comparison.pdf) by Claude Code.
 
