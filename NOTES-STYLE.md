@@ -10,20 +10,23 @@ Every file under `notes/` follows this. Nothing else is used. Read this before w
 
 ## Session file: fixed section order
 
+The page is read from the top, in the order the student lives it. Nothing above the steps may read as an instruction.
+
 ```
 # Week N · Monday: Title
 
 One line: what the session covers.
 
-## Before class          (optional) bullets: what to have done / bring
-## 1. Topic              numbered H2s, one per topic; at most 4 bullets, one fact per bullet; a table, a diagram or one callout where it replaces bullets
+## Before class          (optional) bullets: where the student should be (what the homework left in the folder), and "do the homework first" if not
+## In class              numbered steps, held by the hand; every command and prompt in a code block; the only place that says what to do
+## 1. Topic              numbered H2s, after the steps: what the steps taught, as facts; at most 4 bullets, one fact per bullet; a table, a diagram or one callout where it replaces bullets
 ## 2. Topic
-## In class              (optional) numbered steps; every command and prompt in a code block
 ## Terms                 one line each: **Term**: definition
 ## Homework              one line + link to homework.md
+## Example               (optional, last) our own worked files, linked by site URL, one bullet
 ```
 
-Sections may be omitted where marked optional, never renamed or reordered. No other H2 names exist.
+Sections may be omitted where marked optional, never renamed or reordered. No other H2 names exist. (Until 13 Sep 2026 the topics came before In class; weeks 1 and 2 keep that order, live.)
 
 `homework.md`: `# Week N · Homework` → `## Before Thursday D Month` / `## Before Monday D Month` (numbered lists; the deadline, always with the date) → `## Groups` (when it applies). No "what to bring" section: laptops are assumed.
 
@@ -74,6 +77,7 @@ The role is the first bold word inside, always. A callout is 1–3 sentences; lo
 - **Length: a session page has at most 400 words outside the In class steps.** Students do not read more. Slides carry the lecture; the page carries what they redo at home and what they are examined on.
 - Blocks over prose: a table for anything with two or more columns of facts, a diagram (`img/`) for anything with a flow or layers, a callout for the one sentence to remember. Bullets for the rest.
 - Facts only. Every bullet is something a student can act on, check, or be examined on.
+- A topic bullet never tells the student to do something; it states what is so. Anything to do is a numbered step, and a topic that touches what happens in class points to the step ("step 4 below").
 - Write for a reader with zero context: no course-internal shorthand, no instructor jokes, no metaphors that need the lecture to decode.
 - Say it once. No restating, no summaries.
 - No classroom logistics: pairing, timing, what to do if stuck, room practicalities. Those are handled in the room. Smaller handouts get read.
