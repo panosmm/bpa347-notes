@@ -16,11 +16,12 @@ How to ask a research agent for the report you need, and how to check the report
 > [!IMPORTANT]
 > **KEY POINT:** Whatever you leave out of the request, the research agent decides for you.
 
-## 2. Checking your own report
+## 2. What you do with your two reports
 
-- The check is the same as for a report someone else wrote. For every claim: does the source exist, does it say what the report says, and is the claim a fact from the source or the writer's own explanation. The verdict is holds, does not hold or cannot tell.
-- A second agent can do the check. It sends the claims that fail to the first agent, which answers from the report and its sources. Where the two disagree, you decide.
-- A good report says what it could not find, so you know what you still have to find out yourself. A report that never says this also has things it could not find; you just do not know which.
+- Ask the agent which of the two reports answers the request in `request.md`, and where each one says what it could not find. Then read both and decide which one you will use.
+- Check that one, claim by claim, the same check as for a report someone else wrote: does the source exist, does it say what the report says, is the claim a fact from the source or the writer's own explanation. Verdict: holds, does not hold, cannot tell.
+- Two agents do the check: the auditor checks every claim and sends the ones that fail to the author; the author answers from the report and its sources. You read the table. Where the two disagree, you decide.
+- Count the verdicts: how many claims hold, how many do not hold, how many the agent could not tell. Bring the three numbers on Monday.
 
 ## In class
 
