@@ -9,8 +9,8 @@ How to ask a research agent for the report you need, and how to check the report
 ## 1. The report answers the request you wrote
 
 - Your `report1.md` came from a short request: a city, a budget, roughly when, and "decide everything else yourself". A short request leaves everything else to the agent: which days, from which airport, where you sleep, how you move around, what you want to see, what the report is for. Everyone who sends the same short request gets much the same plan.
-- Let the agent interview you before it searches. Answer its questions, take the request it writes, then run that request.
-- An example, the same agent on the same trip: [report 1](https://bpa347-notes.vercel.app/week-03/files/rome-report-1.pdf) from the short request, [report 2](https://bpa347-notes.vercel.app/week-03/files/rome-report-2.pdf) from the request an interview wrote, and [the two reports compared](https://bpa347-notes.vercel.app/week-03/files/rome-comparison.pdf) by Claude Code.
+- Let the agent interview you before it searches: it asks you the questions above, one at a time, and at the end it writes the full request as its last message. Copy that request and run it.
+- An example, the same agent on the same trip: [report 1](https://bpa347-notes.vercel.app/week-03/files/rome-report-1.pdf) from the short request, [report 2](https://bpa347-notes.vercel.app/week-03/files/rome-report-2.pdf) from the full request the agent wrote after asking its questions, and [the two reports compared](https://bpa347-notes.vercel.app/week-03/files/rome-comparison.pdf) by Claude Code.
 
 > [!IMPORTANT]
 > **KEY POINT:** A report that sounds good can still be wrong. Check it before you use it.
@@ -29,7 +29,7 @@ How to ask a research agent for the report you need, and how to check the report
    ```
 2. Answer its questions. When it writes the full request, copy that request. Start a new chat, click `+`, choose **Research** (Codex: **Deep research**), paste the request, send it. It runs for some minutes.
 3. When it finishes, save the report as `report2.md` in the `bpa347-week3` folder, next to `report1.md`, the same way you saved `report1.md`: **Copy** under the report, then Notepad or TextEdit, save as `report2.md` (Codex: **Download**, **Markdown**, move and rename).
-4. Save the request the interview wrote as `request.md` in the same folder, the same way. Then open a terminal in the `bpa347-week3` folder, start the agent and paste this:
+4. Go back to the interview chat and copy the full request, the agent's last message. Save it as `request.md` in the same folder, the same way. Then open a terminal in the `bpa347-week3` folder, start the agent and paste this:
    ```prompt
    Read request.md, report1.md and report2.md. Which of the two reports answers the request in request.md, and where does each one fall short of it? Where does each one say it could not find something? Which one would you use to book the trip, and why?
    ```
