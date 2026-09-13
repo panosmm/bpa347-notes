@@ -10,17 +10,11 @@ How to ask a research agent for the report you need, and how to check the report
 
 - From the homework you have `report1.md`: the research agent's report from a short request. The request said a city, a budget, roughly when, and "decide everything else yourself".
 - So the research agent decided the rest: which days, from which airport, where you sleep, how you get around, what you see. Everyone who sends that request gets much the same plan.
-- Your second report comes from a full request. In an ordinary chat, without Research, you let the website interview you: it asks one question at a time, and keeps asking until it has covered everything that needs to be taken into account when planning the trip. Its last message is the full request. You give that to the research agent, and its report is `report2.md`.
+- A full request says those things. The interview in step 1 below produces one: the website asks until everything that matters for the trip is covered, then writes the request. Steps 2 to 5 make the second report from it, ask which of the two is more useful, and check the one the agent picks.
 - An example, the same research agent on the same trip: [report 1](https://bpa347-notes.vercel.app/week-03/files/rome-report-1.pdf) from the short request, [report 2](https://bpa347-notes.vercel.app/week-03/files/rome-report-2.pdf) from the full request written after an interview, and [which of the two is more useful](https://bpa347-notes.vercel.app/week-03/files/rome-comparison.pdf), answered by the agent.
 
 > [!IMPORTANT]
 > **KEY POINT:** Whatever you leave out of the request, the research agent decides for you.
-
-## 2. With both reports in the folder
-
-- Ask the agent, in the terminal, which report is more useful to the people who asked for it, and why. The agent decides; you read parts of both reports so that you know what it is talking about.
-- Check the report the agent picked, claim by claim, the same check as for a report someone else wrote: does the source exist, does it say what the report says, is the claim a fact from the source or the writer's own explanation. Verdict: holds, does not hold, cannot tell.
-- Count the verdicts: how many claims hold, how many do not hold, how many the agent could not tell. Bring the three numbers on Monday.
 
 ## In class
 
