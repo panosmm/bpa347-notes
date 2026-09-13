@@ -9,6 +9,9 @@
    ```prompt
    Plan a budget trip to Rome for me and a friend, 4 or 5 days in the week before Christmas. We have 600 euros each for everything. Decide everything else yourself.
    ```
+   > [!CAUTION]
+   > **Cost.** A research run uses up a lot of your subscription. Before you send it, click the model name next to the box where you type and choose **Sonnet** (Codex: a **Terra** model). The bigger models run through your weekly limit many times faster, and you need the subscription again on Thursday.
+
 2. It may start at once, or it may ask you questions first. If it asks, give no more information: reply "You decide, go ahead." It then searches for some minutes. Wait for it to finish.
 3. Save the report as a file named `report1.md` in the `bpa347-week3` folder on the Desktop, with the web addresses of its sources inside. If you do not know how, ask in the same chat (Mac: write "I use a Mac" instead):
    ```prompt
