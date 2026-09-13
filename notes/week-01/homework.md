@@ -6,6 +6,9 @@
 2. Subscribe to **Claude Pro**, monthly. ChatGPT Plus subscribers: keep it and install Codex instead (Monday's notes, section 2).
 3. Install Python. Windows: [Python 3.13 in the Microsoft Store](https://apps.microsoft.com/detail/9PNRBTZXMB4Z), click Install. Mac: [python.org downloads](https://www.python.org/downloads/), the yellow Download button, then run the installer.
 4. Install the agent. Paste the command into a terminal, press Enter, wait for it to finish, then close the window. Windows: PowerShell, the one called "PowerShell", not "PowerShell (x86)". Mac: Terminal (Cmd-Space, type "Terminal", Enter).
+
+   > [!WARNING]
+   > **PLEASE NOTE:** Claude Code is not the Claude app. Do not download anything from claude.ai. Open a terminal and paste the command below into it.
    Windows:
    ```bash
    irm https://claude.ai/install.ps1 | iex
