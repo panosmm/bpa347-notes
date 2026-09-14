@@ -24,7 +24,8 @@ Ask the agent to explain something complicated, read the answer in the terminal,
    ```
    The agent asks for permission to publish the page on claude.ai, private to you: answer yes. It prints a link, and your browser opens the page. If the browser does not open, copy the link into it. If the agent writes a file instead of giving you a link, artifacts are not available in your session: ask it to open the file in your browser, and go on.
 
-   Codex: the terminal cannot publish a page. Ask instead for one single file called `explanation.html` in this folder, with everything inside that one file, then ask the agent to open it in your browser. To share it, send the file.
+   > [!WARNING]
+   > **PLEASE NOTE:** On Codex, the terminal cannot publish a page. Ask instead for one single file called `explanation.html` in this folder, with everything inside that one file, then ask the agent to open it in your browser. In step 4, reload the file after the change. In step 5, send the file itself. Step 6 does not exist on Codex.
 4. Read the page and ask for one change in your own words: something that is missing, too small, or in the wrong order. The agent publishes the page again at the same link. The page in your browser updates by itself; if it does not, reload it.
 5. Share it. At the top of the page, click **Share**, choose to share the link publicly, and copy it. Anyone with the link can open the page, on a phone too, without a claude.ai account. Send the link to someone.
 6. Close the browser tab. In the terminal, type `/artifacts`: it lists every page you have published. Press `o` to open one, `c` to copy its link. The same list is on the web, at [your artifacts on claude.ai](https://claude.ai/code/artifacts).
