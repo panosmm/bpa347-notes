@@ -18,3 +18,12 @@ permalink: /index.html
 {% endfor %}
 </tbody>
 </table>
+{% if collections.extras.length %}
+<h2>Extra activities</h2>
+<p>Optional. Do one when you have finished the steps for the session.</p>
+<ul>
+{% for p in collections.extras %}
+  <li><a href="{{ p.url }}">{{ p.data.title | replace("Extra activity · ", "") }}</a>{% if p.data.draft %} <em>(draft)</em>{% endif %}</li>
+{% endfor %}
+</ul>
+{% endif %}

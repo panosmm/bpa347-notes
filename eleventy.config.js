@@ -37,6 +37,11 @@ export default function (eleventyConfig) {
       }));
   });
 
+  // Extra activities: optional pages outside the week table, listed on their own on the index.
+  eleventyConfig.addCollection("extras", (api) =>
+    api.getFilteredByGlob(["notes/extra/*.md", "drafts/extra/*.md"]).sort((a, b) => a.url.localeCompare(b.url)),
+  );
+
   // Does a page with this URL exist in this build? Used by the header nav so it never links to a 404.
   eleventyConfig.addFilter("hasPage", (all, url) => all.some((p) => p.url === url));
 

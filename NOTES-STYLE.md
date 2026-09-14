@@ -4,6 +4,7 @@ Every file under `notes/` follows this. Nothing else is used. Read this before w
 
 ## Files
 
+- `notes/extra/*.md`: an extra activity, optional work for a student who has finished the session steps. Outside the week table, listed on its own on the index.
 - `notes/week-NN/mon.md`, `thu.md`: session notes. `homework.md`: the week's homework. `img/`: screenshots, if any. `files/`: material for download (a memo, a report), linked from the page by its site URL.
 - Filenames in English. Content in English; Greek appears only in the Terms list, in italics, where the classroom word differs.
 - No front matter. The first line is the H1; the site takes its title from it.
@@ -29,6 +30,19 @@ One line: what the session covers.
 Sections may be omitted where marked optional, never renamed or reordered. No other H2 names exist. (Until 13 Sep 2026 the topics came before In class; weeks 1 and 2 keep that order, live.)
 
 `homework.md`: `# Week N · Homework` → `## Before Thursday D Month` / `## Before Monday D Month` (numbered lists; the deadline, always with the date) → `## Groups` (when it applies). No "what to bring" section: laptops are assumed.
+
+## Extra activity file: fixed section order
+
+```
+# Extra activity · Title
+
+One line: what you do and what you end up with.
+
+## Before you start      bullets: what must already be on the machine
+## Steps                 numbered, held by the hand; every prompt in a code block
+## 1. Topic              after the steps: what the steps taught, as facts
+## Terms                 (optional)
+```
 
 ## Elements: everything that may appear
 
