@@ -1,6 +1,6 @@
 # Extra activity · Explain it as a web page
 
-Ask the agent to explain something complicated, read the answer in the terminal, then ask for the same explanation as a web page you can open and send to someone.
+Ask the agent to explain something complicated, read the answer in the terminal, then ask for the same explanation as an artifact: a web page with a link, which you can open on any device and send to anyone.
 
 ## Before you start
 
@@ -18,29 +18,31 @@ Ask the agent to explain something complicated, read the answer in the terminal,
    I want to borrow 10,000 euros for a car, over 5 years, at 6 percent interest. Explain how the monthly payment is calculated, how each payment is split between interest and capital, how that split changes over the five years, and what I pay in total. Give the numbers.
    ```
 2. Read the answer to the end. Then answer one question from memory, without scrolling back up: for the card payment, how much of your 4 euros the shop keeps; for the car loan, how much of your first payment is interest and how much of your last one.
-3. Ask for the same explanation as a web page. Approve the write.
+3. Ask for the same explanation as an artifact.
    ```prompt
-   Explain the same thing again, this time as a web page. Write one single file called explanation.html in this folder, with everything inside that one file: no separate files for style or code, and nothing loaded from the internet. Use a diagram for the steps and a table for the numbers. Someone who has not read this conversation must be able to follow it.
+   Make an artifact that explains the same thing as a web page: a diagram for the steps, a table for the numbers. Someone who has not read this conversation must be able to follow it.
    ```
-4. Open the page. If nothing happens, open the folder and double-click `explanation.html`.
-   ```prompt
-   Open explanation.html in my browser.
-   ```
-5. Read the page and ask for one change in your own words: something that is missing, too small, or in the wrong order. The agent writes the file again. Reload the page in the browser.
-6. Move `explanation.html` to another folder and double-click it there. If it still looks right, everything is inside the one file, and it will look the same on someone else's computer. Send it to someone as an email attachment.
+   The agent asks for permission to publish the page on claude.ai, private to you: answer yes. It prints a link, and your browser opens the page. If the browser does not open, copy the link into it. If the agent writes a file instead of giving you a link, artifacts are not available in your session: ask it to open the file in your browser, and go on.
+
+   Codex: the terminal cannot publish a page. Ask instead for one single file called `explanation.html` in this folder, with everything inside that one file, then ask the agent to open it in your browser. To share it, send the file.
+4. Read the page and ask for one change in your own words: something that is missing, too small, or in the wrong order. The agent publishes the page again at the same link. The page in your browser updates by itself; if it does not, reload it.
+5. Share it. At the top of the page, click **Share**, choose to share the link publicly, and copy it. Anyone with the link can open the page, on a phone too, without a claude.ai account. Send the link to someone.
+6. Close the browser tab. In the terminal, type `/artifacts`: it lists every page you have published. Press `o` to open one, `c` to copy its link. The same list is on the web, at [your artifacts on claude.ai](https://claude.ai/code/artifacts).
 
 ## 1. The same explanation, in two shapes
 
-- The answer in the terminal and the web page say the same thing, written by the same model from the same conversation.
+- The answer in the terminal and the page say the same thing, written by the same model from the same conversation.
 - A page can show a diagram, a table, headings and colour. A terminal shows sentences, one after the other, however long the answer is.
 - Which of the two you get is something you ask for. If you do not ask, you get sentences.
+- A page costs more of your limit than the same explanation as text: the layout and the diagram are tokens too.
 
-## 2. One file, or it breaks
+## 2. An artifact is a page with a link
 
-- A web page is usually several files: the page itself, a file for the style, a file for the code, pictures. Send only the page and the other person opens it with none of that.
-- A page written as one single file, with nothing loaded from the internet, opens the same on any computer and on a phone.
-- Moving the file to another folder and opening it there is the test: if it still looks right, everything is inside it.
+- The agent writes the page and publishes it on claude.ai. You keep the link, not a file.
+- A new artifact is visible only to you. Sharing it gives a public link: anyone who has it can open the page, without an account.
+- When the agent changes the page, it publishes it again at the same link. Everyone who has the link sees the new version.
+- `/artifacts` in the terminal lists every page you have published, from any session.
 
 ## Terms
 
-- **HTML file**: a web page stored as a file on your computer. Double-clicking it opens it in your browser. Nothing is installed, and nothing is downloaded from the internet.
+- **Artifact**: a web page the agent publishes from your session to claude.ai, at a link. Private to you until you share it.
