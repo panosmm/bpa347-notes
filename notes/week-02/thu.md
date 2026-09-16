@@ -31,7 +31,7 @@ Everything the model knows about you arrives through the context window. What to
 
 | Source | Who writes it | How long it lasts |
 |---|---|---|
-| Your message and the conversation | You, every time | Gone when you exit |
+| Your message and the conversation | You and the agent | Saved locally; can be resumed |
 | Files in the folder, `CLAUDE.md` among them | You, once | Until you delete them |
 | Its own notes | The agent, as it works | Until you or it edits them |
 
@@ -71,15 +71,31 @@ Everything the model knows about you arrives through the context window. What to
    /context
    ```
 6. Ask the question from step 3 again, word for word. Compare.
-7. The subagent. Watch the status line: the context window grows very little or not at all, because the subagent does the work in a context window of its own and returns only its answer.
+7. Practise reopening the same conversation. Type `/exit`, then run the command for your tool in the terminal, in the same folder. It continues the most recent saved conversation from that folder. It does not start a fresh context window. Claude Code:
+   ```bash
+   claude -c
+   ```
+   Codex:
+   ```bash
+   codex resume --last
+   ```
+   Check that your previous messages are back. To choose an older conversation instead, Claude Code:
+   ```bash
+   claude --resume
+   ```
+   Codex:
+   ```bash
+   codex resume
+   ```
+8. The subagent. Watch the status line: the context window grows very little or not at all, because the subagent does the work in a context window of its own and returns only its answer.
    ```prompt
    Use a subagent to check the CSV for data problems and report back in ten lines.
    ```
-8. The handoff. Note the percentage on the status line, then exit.
+9. The handoff. Note the percentage on the status line, ask for the file, then type `/exit`.
    ```prompt
    Write a file named HANDOFF.md: what we did today, what we decided, what is next, and anything you would want to remember in a fresh session on this project. Short.
    ```
-9. Start the agent again and continue from the file. Compare the percentage with step 8.
+10. Start a fresh conversation with `claude` (Codex: `codex`), without the resume option. Continue from the file using the prompt below. Compare the percentage with step 9.
    ```prompt
    Read HANDOFF.md and tell me where we are.
    ```
