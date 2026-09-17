@@ -32,11 +32,12 @@ Everything the model knows about you arrives through the context window. What to
 | Source | Who writes it | How long it lasts |
 |---|---|---|
 | Your message and the conversation | You and the agent | Saved locally; can be resumed |
-| Files in the folder, `CLAUDE.md` among them | You, once | Until you delete them |
+| Files in the folder, including the briefing file | You, once | Until you delete them |
 | Its own notes | The agent, as it works | Until you or it edits them |
 
-- `CLAUDE.md`: what you would otherwise repeat every session, like the [briefing in the kit](https://bpa347-notes.vercel.app/kit/AGENTS.md). Edits apply at the next start.
-- The agent's notes: what you corrected, what you prefer, what the project is. `/memory` opens them.
+- The briefing file holds what you would otherwise repeat every session, like the [briefing in the kit](https://bpa347-notes.vercel.app/kit/AGENTS.md). Edits apply at the next start.
+- Claude Code: the briefing file is `CLAUDE.md`.
+- Codex: the briefing file is `AGENTS.md`.
 
 ## 4. Three ways to keep the context window small
 
@@ -48,7 +49,17 @@ Everything the model knows about you arrives through the context window. What to
 
 ## In class
 
-1. Make a folder on the Desktop named `bpa347-week2` and open a terminal there. Windows: right-click on empty space, **Open in Terminal**. Mac: right-click the folder, **New Terminal at Folder**. Start the agent.
+1. Make a folder on the Desktop named `bpa347-week2` and open a terminal there. Windows: right-click on empty space, **Open in Terminal**. Mac: right-click the folder, **New Terminal at Folder**. Start your agent with the command for your tool.
+
+   Claude Code:
+   ```bash
+   claude
+   ```
+
+   Codex:
+   ```bash
+   codex
+   ```
 2. Bring the data file over. Approve the read outside its folder.
    ```prompt
    Copy online_retail.csv from the bpa347 folder on my Desktop into this folder.
@@ -57,7 +68,9 @@ Everything the model knows about you arrives through the context window. What to
    ```prompt
    Revenue by month for 2025: a table, and a bar chart saved as an HTML file.
    ```
-4. Create the briefing file.
+4. Create the briefing file. Use the prompt for your tool.
+
+   Claude Code:
    ```prompt
    Create a file named CLAUDE.md in this folder with exactly these five lines:
    - Tables in markdown, with a totals row.
@@ -66,23 +79,55 @@ Everything the model knows about you arrives through the context window. What to
    - Exclude cancelled invoices (InvoiceNo starting with C) and zero prices, and say so under every table.
    - End every answer with one sentence: what I should check by hand.
    ```
-5. Restart the agent: `/exit`, then `claude`. Check that `CLAUDE.md` appears under Memory files.
+
+   Codex:
+   ```prompt
+   Create a file named AGENTS.md in this folder with exactly these five lines:
+   - Tables in markdown, with a totals row.
+   - Money in GBP with the £ sign and thousands separators, no decimals.
+   - Charts: one HTML file per chart, with a title and axis labels.
+   - Exclude cancelled invoices (InvoiceNo starting with C) and zero prices, and say so under every table.
+   - End every answer with one sentence: what I should check by hand.
+   ```
+5. Restart the agent. Type `/exit`, then run the command for your tool in the same terminal.
+
+   Claude Code:
+   ```bash
+   claude
+   ```
+   Then type the command below and check that `CLAUDE.md` appears under Memory files.
    ```prompt
    /context
    ```
+
+   Codex:
+   ```bash
+   codex
+   ```
+   Then ask which instructions it loaded.
+   ```prompt
+   Which instruction files did you load for this folder, and what rules do they contain?
+   ```
+   Check that its answer includes the five rules from `AGENTS.md`.
 6. Ask the question from step 3 again, word for word. Compare.
-7. Practise reopening the same conversation. Type `/exit`, then run the command for your tool in the terminal, in the same folder. It continues the most recent saved conversation from that folder. It does not start a fresh context window. Claude Code:
+7. Practise reopening the same conversation. Type `/exit`, then run the command for your tool in the terminal, in the same folder. It continues the most recent saved conversation from that folder. It does not start a fresh context window.
+
+   Claude Code:
    ```bash
    claude -c
    ```
+
    Codex:
    ```bash
    codex resume --last
    ```
-   Check that your previous messages are back. To choose an older conversation instead, Claude Code:
+   Check that your previous messages are back. To choose an older conversation instead, use the command for your tool below.
+
+   Claude Code:
    ```bash
    claude --resume
    ```
+
    Codex:
    ```bash
    codex resume
@@ -95,15 +140,27 @@ Everything the model knows about you arrives through the context window. What to
    ```prompt
    Write a file named HANDOFF.md: what we did today, what we decided, what is next, and anything you would want to remember in a fresh session on this project. Short.
    ```
-10. Start a fresh conversation with `claude` (Codex: `codex`), without the resume option. Continue from the file using the prompt below. Compare the percentage with step 9.
-   ```prompt
-   Read HANDOFF.md and tell me where we are.
-   ```
+10. Start a fresh conversation, without the resume option.
+
+    Claude Code:
+    ```bash
+    claude
+    ```
+
+    Codex:
+    ```bash
+    codex
+    ```
+
+    Continue from the file using the prompt below. Compare the percentage with step 9.
+    ```prompt
+    Read HANDOFF.md and tell me where we are.
+    ```
 
 ## Terms
 
 - **Briefing file**: a text file the agent reads at every start in a folder. `CLAUDE.md` for Claude Code, `AGENTS.md` for Codex.
-- **Auto memory**: notes the agent writes for itself about you and the project, read at every start. `/memory` opens them.
+- Claude Code: **Auto memory** means notes the agent writes for itself about you and the project, read at every start. `/memory` opens them.
 
 ## Homework
 
