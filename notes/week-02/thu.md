@@ -164,4 +164,4 @@ Everything the model knows about you arrives through the context window. What to
 
 ## Homework
 
-Before Monday: the handoff again at home, on a conversation of your own. See [homework](homework.md).
+Before Monday 21 September: read the notes for the continuation of Context Engineering. See [homework](homework.md).

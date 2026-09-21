@@ -2,6 +2,31 @@
 
 ## Before Thursday 24 September
 
+1. In the `bpa347-week2` folder, work with the agent on the data for a while.
+2. Screenshot the status line.
+3. Ask for the handoff file:
+   ```prompt
+   Write a file named HANDOFF.md: what we did today, what we decided, what is next, and anything you would want to remember in a fresh session on this project. Short.
+   ```
+4. Type `/exit`, then start a fresh conversation in the same folder.
+
+   Claude Code:
+   ```bash
+   claude
+   ```
+
+   Codex:
+   ```bash
+   codex
+   ```
+5. Continue from the file:
+   ```prompt
+   Read HANDOFF.md and tell me where we are.
+   ```
+6. Screenshot the status line again. Bring both screenshots.
+
+## Before Monday 28 September
+
 > [!WARNING]
 > **PLEASE NOTE:** This homework happens on the claude.ai website. Not in Claude Code, not in the terminal. Codex: you use the chatgpt.com website instead of claude.ai.
 
@@ -10,7 +35,7 @@
    Plan a budget trip to Rome for me and a friend, 4 or 5 days in the week before Christmas. We have 600 euros each for everything. Decide everything else yourself.
    ```
    > [!CAUTION]
-   > **Cost.** A research run uses up a lot of your subscription. Before you send it, click the model name next to the box where you type and choose **Sonnet** (Codex: a **Terra** model). The bigger models run through your weekly limit many times faster, and you need the subscription again on Thursday.
+   > **Cost.** A research run uses up a lot of your subscription. Before you send it, click the model name next to the box where you type and choose **Sonnet** (Codex: a **Terra** model). The bigger models run through your weekly limit many times faster, and you need the subscription again on Monday 28 September.
 
 2. It may start at once, or it may ask you questions first. If it asks, give no more information: reply "You decide, go ahead." It then searches for some minutes. Wait for it to finish.
 3. Save the report as a file named `report1.md` in the `bpa347-week3` folder on the Desktop, with the web addresses of its sources inside. If you do not know how, ask in the same chat (Mac: write "I use a Mac" instead):
@@ -18,9 +43,4 @@
    You just finished a research report. How do I save it on my laptop as a plain text file named report1.md, with the web address of every source inside, in the bpa347-week3 folder on my Desktop? I use Windows.
    ```
    Open the file (right-click, Open with, Notepad or TextEdit) and look for addresses starting with `https://`. If they are not there, ask in the same chat for every source with its full web address, and paste that list at the end of the file.
-4. Read Thursday's notes.
-
-## Before Monday 28 September
-
-1. Make sure you have the agent's table for the report it picked, with every claim checked. The prompt is in Thursday's notes.
-2. In that table, count the verdicts: how many claims hold, how many do not hold, how many the agent could not tell. Bring the three numbers to class.
+4. Read [Week 4 Monday's notes](https://bpa347-notes.vercel.app/week-04/mon/).

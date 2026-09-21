@@ -1,66 +1,166 @@
-# Week 3 · Monday: Verifying AI Output
+# Week 3 · Monday: Context Engineering
 
-A report goes out under your name. How to check it, and what to do when it is too long to check in full.
+Continue Context Engineering from Week 2 Thursday: what to put in the context window, and three ways to keep it small.
 
 ## Before class
 
 - Your laptop, with the `bpa347` folder from week 1
 
-## 1. Checking a long report
+## 1. The context window is all the model knows about you
 
-- Checking every link, every number and every explanation in a long report takes hours.
-- So you check some parts of it, as carefully as the decision needs, and you say which parts you checked and which you did not.
+- Nothing about you, your company, your data or your decision is in the context window until something puts it there.
+- When something is missing, the model guesses or asks. A guess you check afterwards. A question you answer.
 
 > [!IMPORTANT]
-> **KEY POINT:** You cannot tell a wrong claim from a right one by reading it. You tell by checking it against its source.
+> **KEY POINT:** The answer is only as good as the context window at that moment. Filling it is your job.
 
-## 2. Three verdicts
+## 2. A briefing has five parts
 
-| Verdict | Meaning |
-|---|---|
-| Holds | The source exists and says what the report says |
-| Does not hold | The source says something else, or no source says it |
-| Cannot tell | The source does not open, or no page can settle it: the report says something does not exist, or gives the writer's own explanation |
+| Part | Says | Usually in |
+|---|---|---|
+| Role and audience | Who asks, who reads the result | the file |
+| Goal and decision | What the result is for, what it decides | the message |
+| Constraints and format | Length, language, units, layout | both |
+| Materials and examples | The files, the data, what good looks like | both |
+| Success criteria | How you will judge the result | the message |
 
-## 3. Your own numbers
+- What never changes goes in the file, once. What belongs to this task goes in the message.
 
-- For every number in your report, say three things: a program computed it, the model did not type it; where the data came from; what you left out, in a note under the table.
+## 3. Three sources, read at every start
+
+| Source | Who writes it | How long it lasts |
+|---|---|---|
+| Your message and the conversation | You and the agent | Saved locally; can be resumed |
+| Files in the folder, including the briefing file | You, once | Until you delete them |
+| Its own notes | The agent, as it works | Until you or it edits them |
+
+- The briefing file holds what you would otherwise repeat every session, like the [briefing in the kit](https://bpa347-notes.vercel.app/kit/AGENTS.md). Edits apply at the next start.
+- Claude Code: the briefing file is `CLAUDE.md`.
+- Codex: the briefing file is `AGENTS.md`.
+
+## 4. Three ways to keep the context window small
+
+![Three ways: a subagent works in its own context window and sends back a report; a handoff writes a file that a fresh session reads; compact replaces the conversation with a summary.](https://bpa347-notes.vercel.app/week-02/img/three-ways.png)
+
+- **Subagent**: a second copy of the model with its own context window, doing one task. Only its report comes back. Ask in plain words: "use a subagent to".
+- **Handoff**: the agent writes a file: what was done, what was decided, what is next. Exit, start fresh, point the agent at the file.
+- **Compact**: `/compact` replaces the conversation with a summary. Detail is lost, and you do not choose what survives.
 
 ## In class
 
-1. Open a terminal in the `bpa347` folder on the Desktop and start the agent.
-2. Download the memo.
-   ```prompt
-   Download https://bpa347-notes.vercel.app/week-03/files/memo.md into this folder.
-   ```
-3. Read the memo: one page on the shop's November results, written from the data file in this folder. Then ask the agent, in your own words, whether the memo is right.
+1. Make a folder on the Desktop named `bpa347-week2` and open a terminal there. Windows: right-click on empty space, **Open in Terminal**. Mac: right-click the folder, **New Terminal at Folder**. Start your agent with the command for your tool.
 
-   > [!WARNING]
-   > **PLEASE NOTE:** Files ending in `.md` are plain text. Right-click the file, choose Open with, then Notepad (Windows) or TextEdit (Mac). Or ask the agent: *"Show me memo.md"*.
+   Claude Code:
+   ```bash
+   claude
+   ```
 
-4. Make a folder on the Desktop named `bpa347-week3`, open a terminal there and start the agent.
-5. Download the report. The zip unpacks into a folder named `dossier`. In it, `dossier.md` is the whole report: 31,000 words and 279 links, in Greek, on the teaching profession in Greece. The `portion-NN.md` files are the same text cut into pieces, listed in `INDEX.md`.
-   ```prompt
-   Download https://bpa347-notes.vercel.app/week-03/files/dossier.zip into this folder and unpack it.
+   Codex:
+   ```bash
+   codex
    ```
-6. Do the links open?
+2. Bring the data file over. Approve the read outside its folder.
    ```prompt
-   Try every web link in dossier/dossier.md. How many open? List the ones that do not.
+   Copy online_retail.csv from the bpa347 folder on my Desktop into this folder.
    ```
-7. Twenty links: does the page say what the report says?
+3. Ask the question. Look at how the table and the chart come out.
    ```prompt
-   Pick twenty links from dossier/dossier.md at random. For each, open the page and check whether it contains the number or the phrase the report attributes to it. Table: link, what the report says, found or not found.
+   Revenue by month for 2025: a table, and a bar chart saved as an HTML file.
    ```
-8. The report is cut into parts. Check just one part, every claim in it, to see how much work checking is. Pick any `portion-NN.md` file and put its name in the prompt, here and in step 9.
+4. Create the briefing file. Use the prompt for your tool.
+
+   Claude Code:
    ```prompt
-   For every claim in dossier/portion-NN.md that carries a number or a source: does the source exist, does it say what the file says, and is the claim a fact from the source or the writer's own explanation? Answer as a table: claim, what the source says, verdict (holds / does not hold / cannot tell). Then two or three sentences on what you could not check and why.
+   Create a file named CLAUDE.md in this folder with exactly these five lines:
+   - Tables in markdown, with a totals row.
+   - Money in GBP with the £ sign and thousands separators, no decimals.
+   - Charts: one HTML file per chart, with a title and axis labels.
+   - Exclude cancelled invoices (InvoiceNo starting with C) and zero prices, and say so under every table.
+   - End every answer with one sentence: what I should check by hand.
    ```
-9. What did the report miss?
+
+   Codex:
    ```prompt
-   What question does dossier/portion-NN.md answer? Research that question again from zero on the web, without starting from the file's own sources, and tell me what you find that the file does not mention.
+   Create a file named AGENTS.md in this folder with exactly these five lines:
+   - Tables in markdown, with a totals row.
+   - Money in GBP with the £ sign and thousands separators, no decimals.
+   - Charts: one HTML file per chart, with a title and axis labels.
+   - Exclude cancelled invoices (InvoiceNo starting with C) and zero prices, and say so under every table.
+   - End every answer with one sentence: what I should check by hand.
    ```
-10. The cost. Note how long steps 6 to 9 took and how many tokens they used, from `/context`. Multiply both by the number of parts in `dossier/INDEX.md`: that is what checking the whole report once would cost. Or ask the agent to estimate it for you.
+5. Restart the agent. Type `/exit`, then run the command for your tool in the same terminal.
+
+   Claude Code:
+   ```bash
+   claude
+   ```
+   Then type the command below and check that `CLAUDE.md` appears under Memory files.
+   ```prompt
+   /context
+   ```
+
+   Codex:
+   ```bash
+   codex
+   ```
+   Then ask which instructions it loaded.
+   ```prompt
+   Which instruction files did you load for this folder, and what rules do they contain?
+   ```
+   Check that its answer includes the five rules from `AGENTS.md`.
+6. Ask the question from step 3 again, word for word. Compare.
+7. Practise reopening the same conversation. Type `/exit`, then run the command for your tool in the terminal, in the same folder. It continues the most recent saved conversation from that folder. It does not start a fresh context window.
+
+   Claude Code:
+   ```bash
+   claude -c
+   ```
+
+   Codex:
+   ```bash
+   codex resume --last
+   ```
+   Check that your previous messages are back. To choose an older conversation instead, use the command for your tool below.
+
+   Claude Code:
+   ```bash
+   claude --resume
+   ```
+
+   Codex:
+   ```bash
+   codex resume
+   ```
+8. The subagent. Watch the status line: the context window grows very little or not at all, because the subagent does the work in a context window of its own and returns only its answer.
+   ```prompt
+   Use a subagent to check the CSV for data problems and report back in ten lines.
+   ```
+9. The handoff. Note the percentage on the status line, ask for the file, then type `/exit`.
+   ```prompt
+   Write a file named HANDOFF.md: what we did today, what we decided, what is next, and anything you would want to remember in a fresh session on this project. Short.
+   ```
+10. Start a fresh conversation, without the resume option.
+
+    Claude Code:
+    ```bash
+    claude
+    ```
+
+    Codex:
+    ```bash
+    codex
+    ```
+
+    Continue from the file using the prompt below. Compare the percentage with step 9.
+    ```prompt
+    Read HANDOFF.md and tell me where we are.
+    ```
+
+## Terms
+
+- **Briefing file**: a text file the agent reads at every start in a folder. `CLAUDE.md` for Claude Code, `AGENTS.md` for Codex.
+- Claude Code: **Auto memory** means notes the agent writes for itself about you and the project, read at every start. `/memory` opens them.
 
 ## Homework
 
-Before Thursday, on your own: one deep research, on the website. Deep research is a mode of claude.ai (there it is called Research) and of chatgpt.com (Deep research): you ask a question, the model searches the web for some minutes, reads the pages it finds and writes a report with links to its sources. The same kind of research can also be given to Claude Code or Codex in the terminal; a harder question there can take many hours, especially when the agent checks and double-checks its sources and its conclusions. See [homework](homework.md).
+Before Thursday 24 September: practise the handoff at home, on a conversation of your own. See [homework](homework.md).

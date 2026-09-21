@@ -1,48 +1,66 @@
-# Week 3 · Thursday: Deep Research Agents
+# Week 3 · Thursday: Verifying AI Output
 
-How to ask a research agent for the report you need, and how to check the report before you use it.
+A report goes out under your name. How to check it, and what to do when it is too long to check in full.
 
 ## Before class
 
-- From the homework you have `report1.md` in the `bpa347-week3` folder on the Desktop: a research agent's report on the Rome trip, written from the short request, with the web addresses of its sources inside.
-- If you do not have it, do the [homework](homework.md) first.
+- Your laptop, with the `bpa347` folder from week 1
+
+## 1. Checking a long report
+
+- Checking every link, every number and every explanation in a long report takes hours.
+- So you check some parts of it, as carefully as the decision needs, and you say which parts you checked and which you did not.
+
+> [!IMPORTANT]
+> **KEY POINT:** You cannot tell a wrong claim from a right one by reading it. You tell by checking it against its source.
+
+## 2. Three verdicts
+
+| Verdict | Meaning |
+|---|---|
+| Holds | The source exists and says what the report says |
+| Does not hold | The source says something else, or no source says it |
+| Cannot tell | The source does not open, or no page can settle it: the report says something does not exist, or gives the writer's own explanation |
+
+## 3. Your own numbers
+
+- For every number in your report, say three things: a program computed it, the model did not type it; where the data came from; what you left out, in a note under the table.
 
 ## In class
 
-1. The interview. Open claude.ai (Codex: chatgpt.com), start a new chat without Research, and paste this:
+1. Open a terminal in the `bpa347` folder on the Desktop and start the agent.
+2. Download the memo.
    ```prompt
-   I am going to give a research agent this request: "Plan a budget trip to Rome for me and a friend, 4 or 5 days in the week before Christmas. We have 600 euros each for everything. Decide everything else yourself." Before I do, interview me instead: ask me one question at a time, and keep asking until you have covered everything that needs to be taken into account when planning this trip. Then write the full request as one message, ready to paste.
+   Download https://bpa347-notes.vercel.app/week-03/files/memo.md into this folder.
    ```
-2. Answer the questions as yourself: your real dates, your airport, your budget, what you want to see. If it asks several questions at once, answer them all. If it writes the request before it has asked about something that matters for the trip, tell it, and let it write the request again. When you have the full request, copy it. Start a new chat, choose the **Sonnet** model as in the homework (Codex: a **Terra** model), click the `+` in the box where you type and choose **Research** (Codex: **Deep research**), paste the request and send it. If it asks questions before it starts, answer them. It then searches for some minutes.
-3. When it finishes, save the report as a file named `report2.md` in the `bpa347-week3` folder, next to `report1.md`, with the web addresses of its sources inside, as you did for `report1.md`: if you do not know how, ask in the same chat; open the file and look for `https://`; if the addresses are missing, ask for the list of sources and paste it at the end.
-4. Which report is more useful? Open a terminal in the `bpa347-week3` folder, start the agent and paste this:
+3. Read the memo: one page on the shop's November results, written from the data file in this folder. Then ask the agent, in your own words, whether the memo is right.
+
+   > [!WARNING]
+   > **PLEASE NOTE:** Files ending in `.md` are plain text. Right-click the file, choose Open with, then Notepad (Windows) or TextEdit (Mac). Or ask the agent: *"Show me memo.md"*.
+
+4. Make a folder on the Desktop named `bpa347-week3`, open a terminal there and start the agent.
+5. Download the report. The zip unpacks into a folder named `dossier`. In it, `dossier.md` is the whole report: 31,000 words and 279 links, in Greek, on the teaching profession in Greece. The `portion-NN.md` files are the same text cut into pieces, listed in `INDEX.md`.
    ```prompt
-   Read report1.md and report2.md. Both were written for the same two people, who want to book a budget trip to Rome. Which report is more useful to the people who asked for it, and why? What is wrong or missing in each one? Where does each one say it could not find something?
+   Download https://bpa347-notes.vercel.app/week-03/files/dossier.zip into this folder and unpack it.
    ```
-   While the agent works, read parts of both reports for a few minutes. The prompt in step 5 says `report2.md`; if the agent picked report 1, type `report1.md` instead.
-5. Check that report. Paste this, then read the table:
+6. Do the links open?
    ```prompt
-   For every claim in report2.md that carries a number, a date or a source: does the source exist, does it say what the report says, and is the claim a fact from the source or the writer's own explanation? Answer as a table: claim, what the source says, verdict (holds / does not hold / cannot tell). Then two or three sentences on what you could not check and why.
+   Try every web link in dossier/dossier.md. How many open? List the ones that do not.
    ```
-
-## 1. From a short request to a full request
-
-- The homework request was short: a city, a budget, roughly when, and "decide everything else yourself". So the research agent decided the rest: which days, from which airport, where you sleep, how you get around, what you see. Everyone who sends that request gets much the same plan.
-- The full request said those things, because the interview asked you about them. So the second report is about your trip, not about a trip.
-- The check is the same for a report you asked for and for one someone handed you: every claim against its source, three verdicts. A report that says what it could not find tells you what you still have to find out yourself.
-
-> [!IMPORTANT]
-> **KEY POINT:** Whatever you leave out of the request, the research agent decides for you.
-
-## Terms
-
-- **Research agent**: what claude.ai calls Research and chatgpt.com calls Deep research. The model searches the web for some minutes, reads the pages it finds and writes a report with links to its sources.
-- **Citation**: the report's word for a source: the web page a claim points to, as a link.
+7. Twenty links: does the page say what the report says?
+   ```prompt
+   Pick twenty links from dossier/dossier.md at random. For each, open the page and check whether it contains the number or the phrase the report attributes to it. Table: link, what the report says, found or not found.
+   ```
+8. The report is cut into parts. Check just one part, every claim in it, to see how much work checking is. Pick any `portion-NN.md` file and put its name in the prompt, here and in step 9.
+   ```prompt
+   For every claim in dossier/portion-NN.md that carries a number or a source: does the source exist, does it say what the file says, and is the claim a fact from the source or the writer's own explanation? Answer as a table: claim, what the source says, verdict (holds / does not hold / cannot tell). Then two or three sentences on what you could not check and why.
+   ```
+9. What did the report miss?
+   ```prompt
+   What question does dossier/portion-NN.md answer? Research that question again from zero on the web, without starting from the file's own sources, and tell me what you find that the file does not mention.
+   ```
+10. The cost. Note how long steps 6 to 9 took and how many tokens they used, from `/context`. Multiply both by the number of parts in `dossier/INDEX.md`: that is what checking the whole report once would cost. Or ask the agent to estimate it for you.
 
 ## Homework
 
-Before Monday, on your own: the agent's table for the report it picked, complete; count the verdicts; bring the three numbers. See [homework](homework.md).
-
-## Example
-
-- The same research agent on the same trip: [report 1](https://bpa347-notes.vercel.app/week-03/files/rome-report-1.pdf) from the short request, [report 2](https://bpa347-notes.vercel.app/week-03/files/rome-report-2.pdf) from the full request written after an interview, and [which of the two is more useful](https://bpa347-notes.vercel.app/week-03/files/rome-comparison.pdf), answered by the agent with the prompt of step 4.
+Before Monday 28 September, on your own: one deep research, on the website. Deep research is a mode of claude.ai (there it is called Research) and of chatgpt.com (Deep research): you ask a question, the model searches the web for some minutes, reads the pages it finds and writes a report with links to its sources. The same kind of research can also be given to Claude Code or Codex in the terminal; a harder question there can take many hours, especially when the agent checks and double-checks its sources and its conclusions. See [homework](homework.md).

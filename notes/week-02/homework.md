@@ -7,15 +7,4 @@
 
 ## Before Monday 21 September
 
-1. In the `bpa347-week2` folder, work with the agent on the data for a while.
-2. Screenshot the status line.
-3. Ask for the handoff file:
-   ```prompt
-   Write a file named HANDOFF.md: what we did today, what we decided, what is next, and anything you would want to remember in a fresh session on this project. Short.
-   ```
-4. Type `/exit`, then start `claude` again in the same folder.
-5. Continue from the file:
-   ```prompt
-   Read HANDOFF.md and tell me where we are.
-   ```
-6. Screenshot the status line again. Bring both screenshots.
+1. Read [Week 3 Monday's notes](https://bpa347-notes.vercel.app/week-03/mon/). We will continue the Context Engineering activity in class.
