@@ -1,4 +1,4 @@
-# Week 2 · Monday: How Language Models Work
+# Week 2 · Monday: How Language Models Work (14/9)
 
 What the model behind the agent is, why it sounds sure when it is wrong, and how to read your own usage.
 

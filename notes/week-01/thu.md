@@ -1,4 +1,4 @@
-# Week 1 · Thursday: Your first agent
+# Week 1 · Thursday: Your first agent (10/9)
 
 Install the agent, let it look at your laptop, then have it build an app.
 

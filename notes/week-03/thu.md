@@ -1,4 +1,4 @@
-# Week 3 · Thursday: Verifying AI Output
+# Week 3 · Thursday: Verifying AI Output (24/9)
 
 A report goes out under your name. How to check it, and what to do when it is too long to check in full.
 

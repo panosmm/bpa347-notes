@@ -1,4 +1,4 @@
-# Week 4 · Monday: Deep Research Agents
+# Week 4 · Monday: Deep Research Agents (28/9)
 
 How to ask a research agent for the report you need, and how to check the report before you use it.
 

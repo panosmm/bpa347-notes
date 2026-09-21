@@ -1,4 +1,4 @@
-# Week 2 · Thursday: Context Engineering
+# Week 2 · Thursday: Context Engineering (17/9)
 
 Everything the model knows about you arrives through the context window. What to put there, and three ways to keep it small.
 

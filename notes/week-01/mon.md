@@ -1,4 +1,4 @@
-# Week 1 · Monday: What this course is
+# Week 1 · Monday: What this course is (7/9)
 
 What to buy, what not to buy, and the tools. Grading and rules are in the syllabus on Blackboard.
 

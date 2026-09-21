@@ -1,4 +1,4 @@
-# Week 3 · Monday: Context Engineering
+# Week 3 · Monday: Context Engineering (21/9)
 
 Continue Context Engineering from Week 2 Thursday: what to put in the context window, and three ways to keep it small.
 
