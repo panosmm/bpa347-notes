@@ -18,6 +18,8 @@ permalink: /index.html
 {% endfor %}
 </tbody>
 </table>
+<h2>Submit your homework</h2>
+<p><a href="https://bpa347-submit.vercel.app/">https://bpa347-submit.vercel.app/</a></p>
 {% if collections.extras.length %}
 <h2>Extra activities</h2>
 <p>Optional. Do one when you have finished the steps for the session.</p>
@@ -25,6 +27,5 @@ permalink: /index.html
 {% for p in collections.extras %}
   <li><a href="{{ p.url }}">{{ p.data.title | replace("Extra activity · ", "") }}</a>{% if p.data.draft %} <em>(draft)</em>{% endif %}</li>
 {% endfor %}
-  <li><a href="https://bpa347-submit.vercel.app/">Submit your homework</a></li>
 </ul>
 {% endif %}
