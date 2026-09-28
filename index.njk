@@ -25,5 +25,6 @@ permalink: /index.html
 {% for p in collections.extras %}
   <li><a href="{{ p.url }}">{{ p.data.title | replace("Extra activity · ", "") }}</a>{% if p.data.draft %} <em>(draft)</em>{% endif %}</li>
 {% endfor %}
+  <li><a href="https://bpa347-submit.vercel.app/">Submit your homework</a></li>
 </ul>
 {% endif %}
