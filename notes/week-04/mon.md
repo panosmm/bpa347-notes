@@ -13,14 +13,15 @@ How to ask a research agent for the report you need, and how to check the report
    ```prompt
    I am going to give a research agent this request: "Plan a budget trip to Rome for me and a friend, 4 or 5 days in the week before Christmas. We have 600 euros each for everything. Decide everything else yourself." Before I do, interview me instead: ask me one question at a time, and keep asking until you have covered everything that needs to be taken into account when planning this trip. Then write the full request as one message, ready to paste.
    ```
-2. Answer the questions as yourself: your real dates, your airport, your budget, what you want to see. If it asks several questions at once, answer them all. If it writes the request before it has asked about something that matters for the trip, tell it, and let it write the request again. When you have the full request, copy it and save it as a file named `prompt_for_report2.md` in the `bpa347-week3` folder: if you do not know how, ask in the same chat. Then start a new chat, choose the **Sonnet** model as in the homework (Codex: a **Terra** model), click the `+` in the box where you type and choose **Research** (Codex: **Deep research**), paste the request and send it. If it asks questions before it starts, answer them. It then searches for some minutes.
-3. When it finishes, save the report as a file named `report2.md` in the `bpa347-week3` folder, next to `report1.md`, with the web addresses of its sources inside, as you did for `report1.md`: if you do not know how, ask in the same chat; open the file and look for `https://`; if the addresses are missing, ask for the list of sources and paste it at the end.
-4. Which report is more useful? Open a terminal in the `bpa347-week3` folder, start the agent and paste this:
+2. Answer the questions as yourself: your real dates, your airport, your budget, what you want to see. If it asks several questions at once, answer them all. If it writes the request before it has asked about something that matters for the trip, tell it, and let it write the request again. When you have the full request, copy it and save it as a file named `prompt_for_report2.md` in the `bpa347-week3` folder: if you do not know how, ask in the same chat.
+3. Start a new chat, choose the **Sonnet** model as in the homework (Codex: a **Terra** model), click the `+` in the box where you type and choose **Research** (Codex: **Deep research**), paste the full request and send it. If it asks questions before it starts, answer them. It then searches for some minutes.
+4. When it finishes, save the report as a file named `report2.md` in the `bpa347-week3` folder, next to `report1.md`, with the web addresses of its sources inside, as you did for `report1.md`: if you do not know how, ask in the same chat; open the file and look for `https://`; if the addresses are missing, ask for the list of sources and paste it at the end.
+5. Which report is more useful? Open a terminal in the `bpa347-week3` folder, start the agent and paste this:
    ```prompt
    Read report1.md and report2.md. Both were written for the same two people, who want to book a budget trip to Rome. Which report is more useful to the people who asked for it, and why? What is wrong or missing in each one? Where does each one say it could not find something?
    ```
-   While the agent works, read parts of both reports for a few minutes. The prompt in step 5 says `report2.md`; if the agent picked report 1, type `report1.md` instead.
-5. Check that report. Paste this, then read the table:
+   While the agent works, read parts of both reports for a few minutes. The prompt in step 6 says `report2.md`; if the agent picked report 1, type `report1.md` instead.
+6. Check that report. Paste this, then read the table:
    ```prompt
    For every claim in report2.md that carries a number, a date or a source: does the source exist, does it say what the report says, and is the claim a fact from the source or the writer's own explanation? Answer as a table: claim, what the source says, verdict (holds / does not hold / cannot tell). Then two or three sentences on what you could not check and why.
    ```
@@ -45,4 +46,4 @@ Before Monday 5 October, on your own: the agent's table for the report it picked
 
 ## Example
 
-- The same research agent on the same trip: [report 1](https://bpa347-notes.vercel.app/week-03/files/rome-report-1.pdf) from the short request, [report 2](https://bpa347-notes.vercel.app/week-03/files/rome-report-2.pdf) from the full request written after an interview, and [which of the two is more useful](https://bpa347-notes.vercel.app/week-03/files/rome-comparison.pdf), answered by the agent with the prompt of step 4.
+- The same research agent on the same trip: [report 1](https://bpa347-notes.vercel.app/week-03/files/rome-report-1.pdf) from the short request, [report 2](https://bpa347-notes.vercel.app/week-03/files/rome-report-2.pdf) from the full request written after an interview, and [which of the two is more useful](https://bpa347-notes.vercel.app/week-03/files/rome-comparison.pdf), answered by the agent with the prompt of step 5.
