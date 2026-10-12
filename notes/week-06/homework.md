@@ -1,5 +1,7 @@
 # Week 6 · Homework
 
+**Hand in:** your GitHub username in a file named `github.txt`, by Thursday 15 October, 09:00 (step 4).
+
 ## Before Thursday 15 October
 
 1. Create a GitHub account at [github.com](https://github.com): click **Sign up**, use an email you read, and type the code GitHub sends you. Choose your username with care: it appears in the web addresses of your projects.
