@@ -20,7 +20,7 @@ Do all three parts before Thursday 15 October.
 
 ## Part 3: Install Node.js and GitHub CLI
 
-Vercel's tool needs Node.js. GitHub CLI lets the agent work with your GitHub account.
+On Thursday your app goes on the web. GitHub CLI puts your project on GitHub, where other services can use it. Vercel runs your app on the web from GitHub, and Node.js lets your laptop control Vercel.
 
 > [!IMPORTANT]
 > **KEY POINT:** Choose **one** way, A **or** B. Do not do both.
