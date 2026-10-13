@@ -18,9 +18,9 @@ Do all three parts before Thursday 15 October.
    ```
 2. Open the [homework submission page](https://bpa347-submit.vercel.app/) and type your student ID, which starts with UC. Under `github.txt`, choose the file `github.txt` from your `bpa347-week6` folder and click **Submit**. You can submit again; the latest file counts.
 
-## Part 3: Install Node.js
+## Part 3: Install Node.js and GitHub CLI
 
-Vercel's tool needs Node.js.
+Vercel's tool needs Node.js. GitHub CLI lets the agent work with your GitHub account.
 
 > [!IMPORTANT]
 > **KEY POINT:** Choose **one** way, A **or** B. Do not do both.
@@ -29,7 +29,7 @@ Vercel's tool needs Node.js.
 
 1. Open a terminal in the `bpa347-week6` folder, start the agent and paste:
    ```prompt
-   Install Node.js on this computer, using the installer from the Node.js website, so that it works in every new terminal window. Tell me when I need to click something or type my password.
+   Install Node.js and GitHub CLI on this computer, using the installers from their own websites, so that they work in every new terminal window. Tell me when I need to click something or type my password.
    ```
 
 ### Way B: paste a command yourself
@@ -39,18 +39,18 @@ We asked Claude for a command to paste into the terminal, and got the ones below
 > [!WARNING]
 > **PLEASE NOTE:** Paste the command into PowerShell (Windows) or Terminal (Mac) itself, not into Claude Code or Codex.
 
-1. Windows: open PowerShell and paste the command below. When Windows asks whether the installer may make changes to your device, click **Yes**.
+1. Windows: open PowerShell and paste the command below. When Windows asks whether an installer may make changes to your device, click **Yes** (twice).
    ```bash
-   winget install --id OpenJS.NodeJS.LTS -e --accept-source-agreements --accept-package-agreements
+   winget install --id OpenJS.NodeJS.LTS -e --accept-source-agreements --accept-package-agreements; winget install --id GitHub.cli -e --accept-source-agreements --accept-package-agreements
    ```
-   Mac: open Terminal and paste the command below. The installer opens: click **Continue** until **Install**, and type your Mac password when it asks.
+   Mac: open Terminal and paste the command below. Two installers open, one after the other: in each, click **Continue** until **Install**, type your Mac password when it asks, then click **Close**.
    ```bash
-   curl -fsSL -o /tmp/node.pkg "https://nodejs.org/dist/latest-v24.x/$(curl -fsSL https://nodejs.org/dist/latest-v24.x/ | grep -o 'node-v[0-9.]*\.pkg' | head -1)" && open /tmp/node.pkg
+   curl -fsSL -o /tmp/node.pkg "https://nodejs.org/dist/latest-v24.x/$(curl -fsSL https://nodejs.org/dist/latest-v24.x/ | grep -o 'node-v[0-9.]*\.pkg' | head -1)" && curl -fsSL -o /tmp/gh.pkg "$(curl -fsSL https://api.github.com/repos/cli/cli/releases/latest | grep -o 'https://[^"]*macOS_universal\.pkg' | head -1)" && open -W /tmp/node.pkg && open /tmp/gh.pkg
    ```
 
 ### Then, everyone: check
 
 1. Close every terminal window. Open a terminal in the `bpa347-week6` folder, start the agent and paste:
    ```prompt
-   Check whether Node.js is installed on this computer and tell me its version.
+   Check whether Node.js and GitHub CLI are installed on this computer and tell me their versions.
    ```
