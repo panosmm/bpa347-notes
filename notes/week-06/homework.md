@@ -22,11 +22,24 @@ Do all three parts before Thursday 15 October.
 
 Vercel's tool needs Node.js.
 
-> [!WARNING]
-> **PLEASE NOTE:** Paste the command in step 1 into PowerShell (Windows) or Terminal (Mac) itself, not into Claude Code or Codex.
+> [!IMPORTANT]
+> **KEY POINT:** Choose **one** way, A **or** B. Do not do both.
 
-1. Install Node.js.
-   Windows: open PowerShell and paste the command below. When Windows asks whether the installer may make changes to your device, click **Yes**.
+### Way A: ask your agent
+
+1. Open a terminal in the `bpa347-week6` folder, start the agent and paste:
+   ```prompt
+   Install Node.js on this computer, using the installer from the Node.js website, so that it works in every new terminal window. Tell me when I need to click something or type my password.
+   ```
+
+### Way B: paste a command yourself
+
+We asked Claude for a command to paste into the terminal, and got the ones below.
+
+> [!WARNING]
+> **PLEASE NOTE:** Paste the command into PowerShell (Windows) or Terminal (Mac) itself, not into Claude Code or Codex.
+
+1. Windows: open PowerShell and paste the command below. When Windows asks whether the installer may make changes to your device, click **Yes**.
    ```bash
    winget install --id OpenJS.NodeJS.LTS -e --accept-source-agreements --accept-package-agreements
    ```
@@ -34,7 +47,10 @@ Vercel's tool needs Node.js.
    ```bash
    curl -fsSL -o /tmp/node.pkg "https://nodejs.org/dist/latest-v24.x/$(curl -fsSL https://nodejs.org/dist/latest-v24.x/ | grep -o 'node-v[0-9.]*\.pkg' | head -1)" && open /tmp/node.pkg
    ```
-2. Close every terminal window. Open a terminal in the `bpa347-week6` folder, start the agent and paste:
+
+### Then, everyone: check
+
+1. Close every terminal window. Open a terminal in the `bpa347-week6` folder, start the agent and paste:
    ```prompt
    Check whether Node.js is installed on this computer and tell me its version.
    ```
