@@ -73,4 +73,4 @@ Your trip app goes on the web, so that you can use it on your phone during the t
 
 ## Homework
 
-Before Monday 19 October: ask your agent to write the web address of your app in a file named `app.txt`, and hand it in on the [homework submission page](https://bpa347-submit.vercel.app/).
+Before Monday 19 October: hand in the web address of your trip app. See [Week 7 homework](https://bpa347-notes.vercel.app/week-07/homework/).
